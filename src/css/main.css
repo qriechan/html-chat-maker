@@ -1,0 +1,192 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+body {
+  font-family: "Rubik", sans-serif;
+  margin: 1.5rem;
+}
+
+h1 {
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: #121212;
+}
+
+nav {
+  text-align: center;
+  margin: 1.5rem;
+  margin-top: 3rem;
+  margin-bottom: 3.5rem;
+}
+nav a {
+  padding: 1rem 2rem 1rem 2rem;
+  background-color: #121212;
+  color: #b9bdbf;
+}
+
+.container {
+  margin: 2rem;
+}
+
+.phone {
+  max-width: 21.875rem;
+  font-family: Bahnschrift, Inter, sans-serif !important;
+  display: table;
+  margin: auto;
+  background-color: #d4d8dc;
+  border-radius: 0 0.938rem 0 0;
+  outline: 0.094rem solid rgba(213, 214, 215, 0.9);
+  outline-offset: 0.125rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+}
+
+.header {
+  min-width: 21.875rem;
+  background: none;
+  border-bottom: 0.094rem solid #b9bdbf;
+  margin-bottom: 1rem;
+  padding-left: 0.5rem;
+  padding-top: 0.5rem;
+}
+
+.main-contact {
+  font-size: larger;
+  color: #121212;
+  font-weight: bold;
+  margin-top: 0.75rem;
+  margin-bottom: 0;
+}
+
+.bio {
+  margin: 0.25rem auto 0.75rem auto;
+  color: #666868;
+  font-size: smaller;
+  font-weight: 600;
+}
+
+.full-message {
+  min-height: -moz-fit-content;
+  min-height: fit-content;
+  margin-bottom: 0.25rem;
+  width: auto;
+}
+
+.full-text {
+  margin-right: auto;
+  margin-left: 0rem;
+}
+
+.full-reply {
+  margin-right: 0rem;
+  margin-left: auto;
+}
+
+.message-contact {
+  font-weight: 500;
+  font-size: 90%;
+  color: #666868;
+}
+
+.sender-contact {
+  padding: 0 0 0.25rem 0.75rem;
+}
+
+.receiver-contact {
+  padding: 0 0.75rem 0.25rem 0;
+  text-align: right;
+}
+
+.icon {
+  width: 3.75rem;
+  height: 3.75rem;
+  border-radius: 100%;
+  background-color: #121212;
+}
+
+.td-icon {
+  vertical-align: top;
+  width: 3.75rem;
+}
+
+.text {
+  font-weight: 500;
+  color: #121212;
+  padding: 0.5rem 1rem;
+  max-width: 75%;
+  clear: both;
+  position: relative;
+  box-shadow: #9ea0a1;
+}
+
+.sender {
+  float: left;
+  margin: 0 0 0.75rem 0.75rem;
+  border-radius: 0 0.65rem 0.65rem 0.65rem;
+  background: #ededed;
+  box-shadow: -0.063rem 0.125rem;
+}
+
+.reply {
+  float: right;
+  margin: 0 0.75rem 0.75rem 0;
+  border-radius: 0.65rem 0 0.65rem 0.65rem;
+  background: #d9caa9;
+  box-shadow: 0.063rem 0.125rem;
+}
+
+.fullalert {
+  vertical-align: middle;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.alert-icon {
+  width: 1.094rem;
+  height: 1.094rem;
+}
+
+.alert-display {
+  width: -moz-fit-content;
+  width: fit-content;
+  text-align: center;
+}
+
+.alert {
+  vertical-align: middle;
+  text-align: left;
+  color: #858586;
+  font-size: small;
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
+  margin: 0.25rem 0 0.75rem 0rem;
+  display: table;
+}
+
+.write-text {
+  background-color: #cbcecf;
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 1rem;
+  margin: 0 -1rem -1rem -1rem;
+  align-items: center;
+  text-align: center;
+}
+
+input {
+  margin-top: 0.75rem;
+  font-family: Bahnschrift, Inter, sans-serif;
+  width: 70%;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  border: 0.094rem solid #d4d8dc;
+  font-size: medium;
+  outline: none;
+}
+input :focus {
+  border-color: #121212;
+}/*# sourceMappingURL=main.css.map */

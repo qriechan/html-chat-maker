@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+//width-heights
+$main-width: 21.875rem;                 //device-width
+// $main-width: 350px;                  //device-width
+$main-padding: 1rem;                    //padding-size
+$big-padding: 2rem;                     //larger-padding-size
+$main-margin: 1.5rem;                   //margin-size
+$message-padding: .5rem 1rem;           //text-padding
+$alert-dimensions: 1.094rem;            //alert-icon-dimensions
+$zero: 0rem;                            
+
+//main-colors
+$dark-color: #121212;               //font-color, icon-bg
+$blk: #000;                         //black-font
+
+//hsr-chat-colors
+$bgcolor-hsr: #d4d8dc;              //hsr-chat-background, chat-outline
+$sub-color: #666868;                //contact-name, bio-text
+$sub-color2: #b9bdbf;               //bio-underline
+$sender-color-hsr: #ededed;         //sender-hsr
+$receiver-color-hsr: #d9caa9;       //receiver-hsr
+$textbox-shadow-color: #9ea0a1;     //textbox-shadow-hsr
+$alert-color-hsr: #858586;          //alerts-hsr
+$darker-bgcolor: #cbcecf;            //slightly-darker-background
+
+//fonts
+$main-font-family: Bahnschrift, Inter, sans-serif;
+
+body {
+    font-family: "Rubik", sans-serif;
+    margin: $main-margin;
+}
+
+h1 {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: #121212;
+}
+
+nav {
+    text-align: center;
+    margin: $main-margin;
+    margin-top: 3rem;
+    margin-bottom: 3.5rem;
+
+    a {
+        padding: 1rem 2rem 1rem 2rem;
+        background-color: $dark-color;
+        color: $sub-color2;
+    }
+}
+
+.container {
+    margin: 2rem;
+}
+
+.phone {
+    max-width: $main-width;
+    font-family: $main-font-family!important;
+    display: table;
+    margin: auto;
+    background-color: $bgcolor-hsr;
+    border-radius: 0 .938rem 0 0;
+    outline: .094rem solid rgba(213, 214, 215, .9);
+    outline-offset: .125rem;
+    padding-left: $main-padding;
+    padding-right: $main-padding;
+    padding-bottom: $main-padding;
+}
+
+.header {
+    min-width: $main-width;
+    background: none;
+    border-bottom: .094rem solid $sub-color2;
+    margin-bottom: 1rem;
+    padding-left: .5rem;
+    padding-top: .5rem;
+}
+
+.main-contact {
+    font-size: larger;
+    color: $dark-color;
+    font-weight: bold;
+    margin-top: .75rem;
+    margin-bottom: 0;
+}
+
+.bio {
+    margin: .25rem auto .75rem auto;
+    color: $sub-color;
+    font-size: smaller;
+    font-weight: 600;
+}
+
+.full-message {
+    min-height: fit-content;
+    margin-bottom: .25rem;
+    width: auto;
+}
+
+.full-text {
+    margin-right: auto;
+    margin-left: 0rem;
+}
+
+.full-reply {
+    margin-right: 0rem;
+    margin-left: auto;
+}
+
+.message-contact {
+    font-weight: 500;
+    font-size: 90%;
+    color: $sub-color;
+}
+
+.sender-contact {
+    padding: 0 0 .25rem .75rem;
+}
+
+.receiver-contact {
+    padding: 0 .75rem .25rem 0;
+    text-align: right;
+}
+.icon {
+    width: 3.75rem;
+    height: 3.75rem;
+    border-radius: 100%;
+    background-color: $dark-color;
+}
+.td-icon {
+    vertical-align: top;
+    width: 3.75rem;
+}
+.text {
+    font-weight: 500;
+    color: $dark-color;
+    padding: $message-padding;
+    max-width: 75%;
+    clear: both;
+    position: relative;
+    box-shadow: $textbox-shadow-color;
+}
+.sender {
+    float: left;
+    margin: 0 0 .75rem .75rem;
+    border-radius: 0 .65rem .65rem .65rem;
+    background: $sender-color-hsr;
+    box-shadow: -.063rem .125rem;
+}
+.reply {
+    float: right;
+    margin: 0 .75rem .75rem 0;
+    border-radius: .65rem 0 .65rem .65rem;
+    background: $receiver-color-hsr;
+    box-shadow: .063rem .125rem;
+}
+.fullalert {
+    vertical-align: middle;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+.alert-icon {
+    width: $alert-dimensions;
+    height: $alert-dimensions;
+}
+.alert-display {
+    width: fit-content;
+    text-align: center;
+}
+.alert {
+    vertical-align: middle;
+    text-align: left;
+    color: $alert-color-hsr;
+    font-size: small;
+    padding-bottom: .5rem;
+    padding-top: .5rem;
+    margin: .25rem 0 .75rem 0rem;
+    display: table;
+}
+
+.write-text {
+    background-color: $darker-bgcolor;
+    width: 100%;
+    height: fit-content;
+    padding: $main-padding;
+    margin: 0 -1rem -1rem -1rem;
+    align-items: center;
+    text-align: center;
+}
+
+input {
+    margin-top: .75rem;
+    font-family: $main-font-family;
+    width: 70%;
+    padding: .5rem 1rem .5rem 1rem;
+    border: .094rem solid $bgcolor-hsr;
+    font-size: medium;
+    outline: none;
+
+    :focus {
+        border-color: $dark-color;
+    }
+}
