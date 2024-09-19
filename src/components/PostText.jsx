@@ -24,7 +24,7 @@ function PostText(props){
         "Clara",
         "Dan Heng",
         "Dan Heng Imbititor Lunae",
-        "Dr. Ratio",
+        "Dr Ratio",
         "Feixiao",
         "Firefly",
         "Gepard",

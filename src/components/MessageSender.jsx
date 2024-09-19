@@ -1,10 +1,11 @@
 import React from 'react'
+import './Images'
 
-function SenderMessage({ contact , text }) {
+function SenderMessage({ contact , text, imageURLs }) {
 
     const iconRef = contact.replace(/ /g, '_');
-
-    const imagePath = './Images/Character_${iconRef}_Icon.webp'
+    const iconKey = `${iconRef}_Icon`;
+    const iconURL = imageURLs[iconKey] || 'https://i.postimg.cc/xdGSdCQH/Character-Unknown-Icon.webp';
 
     return (
         <>
@@ -14,7 +15,7 @@ function SenderMessage({ contact , text }) {
                     <td rowSpan='2' className='container-icon'>
                         <img 
                             className='icon' 
-                            src={imagePath} 
+                            src={iconURL} 
                             width='100%'
                             alt={contact} />
                         </td>

@@ -3,6 +3,7 @@ import { useState } from 'react'
 import PostText from './PostText'
 import SenderMessage from './MessageSender'
 import ReceiverMessage from './MessageReceiver'
+import { imageURLs } from './ImageURLs';
 
 function Phone() {
     const [messages, setMessages] = useState([]);
@@ -25,12 +26,14 @@ function Phone() {
                             key={index}
                             contact={message.contactName}
                             text={message.textValue}
+                            imageURLs = {imageURLs}
                         />
                     ) : (
                         <ReceiverMessage 
                             key={index}
                             contact={message.contactName}
                             text={message.textValue}
+                            imageURLs = {imageURLs}
                         />
                     )
                 ))}
