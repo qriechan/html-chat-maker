@@ -75,6 +75,7 @@ function PostText(props){
         const messageDetails = { textValue, contactName, statusType };
         console.log(messageDetails);
         props.onSubmit(messageDetails);
+        setTextValue('');
     };
 
     return (

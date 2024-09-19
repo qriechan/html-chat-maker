@@ -5,10 +5,10 @@ import SenderMessage from './MessageSender'
 import ReceiverMessage from './MessageReceiver'
 
 function Phone() {
-    const [messageDetails, setMessageDetails] = useState(null);
+    const [messages, setMessages] = useState([]);
 
-    const getData = (data) => {
-        setMessageDetails(data);
+    const handleAddMessage = (messageDetails) => {
+        setMessages((prevMessages) => [...prevMessages, messageDetails]);
     };
 
     return (
@@ -19,21 +19,23 @@ function Phone() {
                     <p className='main-contact'>Contact Name</p>
                     <p className='bio'>Bio</p>
                 </div>
-            </div>
-            <PostText onSubmit={getData} />
-            {messageDetails && (
-                    messageDetails.statusType === 'send' ? (
+                {messages.map((message, index) => (
+                    message.statusType === 'send' ? (
                         <SenderMessage 
-                            contact={messageDetails.contactName}
-                            text={messageDetails.textValue}
+                            key={index}
+                            contact={message.contactName}
+                            text={message.textValue}
                         />
                     ) : (
                         <ReceiverMessage 
-                            contact={messageDetails.contactName}
-                            text={messageDetails.textValue}
+                            key={index}
+                            contact={message.contactName}
+                            text={message.textValue}
                         />
                     )
-                )}
+                ))}
+            </div>
+            <PostText onSubmit={handleAddMessage} />
         </div>
         </div>
     )
