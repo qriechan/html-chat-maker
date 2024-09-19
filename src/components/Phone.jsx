@@ -1,12 +1,14 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { useState } from 'react'
 import PostText from './PostText'
 import SenderMessage from './MessageSender'
 import ReceiverMessage from './MessageReceiver'
 
 function Phone() {
+    const [messageDetails, setMessageDetails] = useState(null);
+
     const getData = (data) => {
-        console.log(data)
+        setMessageDetails(data);
     };
 
     return (
@@ -17,11 +19,21 @@ function Phone() {
                     <p className='main-contact'>Contact Name</p>
                     <p className='bio'>Bio</p>
                 </div>
-                {/* <SenderMessage sender-contact={senderChrName} />
-                <ReceiverMessage receiver-contact={} /> */}
-                {/* Let user choose which type of message to upload (sender / receiver) */}
             </div>
             <PostText onSubmit={getData} />
+            {messageDetails && (
+                    messageDetails.statusType === 'send' ? (
+                        <SenderMessage 
+                            contact={messageDetails.contactName}
+                            text={messageDetails.textValue}
+                        />
+                    ) : (
+                        <ReceiverMessage 
+                            contact={messageDetails.contactName}
+                            text={messageDetails.textValue}
+                        />
+                    )
+                )}
         </div>
         </div>
     )

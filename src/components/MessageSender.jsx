@@ -1,18 +1,21 @@
 import React from 'react'
 
-function SenderMessage() {
+function SenderMessage({ contact , text }) {
     return (
-        <table className='full-text'>
-                <tr className='msg-row'>
-                    <td rowSpan="2" className='td-icon'>
-                        <img className='hsricon' src='{imgUrl}' width="100%" alt='{chrName} icon' />
-                    </td>
-                    <td className='sender-contact'>Contact Name</td>
-                </tr>
-                <tr className='msg-row'>
-                    <td className='text'>Message Text</td>
-                </tr>
-        </table>
+        <div className='full-message full-text'>
+            <img 
+                className='icon' 
+                // add img srcs tmrw 
+                src={getImageURL(contact)} 
+                width="100%" 
+                alt={contact} />
+            <div className='message-content'>
+                <div className='sender-contact message-contact'>
+                    <p>{contact}</p>
+                </div>
+                <div className='sender text'>{text}</div>
+            </div>
+        </div>
     )
 }
 

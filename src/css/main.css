@@ -72,16 +72,24 @@ nav a {
   min-height: fit-content;
   margin-bottom: 0.25rem;
   width: auto;
+  display: flex;
 }
 
 .full-text {
   margin-right: auto;
   margin-left: 0rem;
+  flex-direction: row;
 }
 
 .full-reply {
   margin-right: 0rem;
   margin-left: auto;
+  flex-direction: row-reverse;
+}
+
+.message-content {
+  display: flex;
+  flex-direction: column;
 }
 
 .message-contact {
@@ -92,6 +100,7 @@ nav a {
 
 .sender-contact {
   padding: 0 0 0.25rem 0.75rem;
+  flex: 1;
 }
 
 .receiver-contact {
@@ -104,11 +113,8 @@ nav a {
   height: 3.75rem;
   border-radius: 100%;
   background-color: #121212;
-}
-
-.td-icon {
   vertical-align: top;
-  width: 3.75rem;
+  flex: 0;
 }
 
 .text {
@@ -118,7 +124,7 @@ nav a {
   max-width: 75%;
   clear: both;
   position: relative;
-  box-shadow: #9ea0a1;
+  flex: 1;
 }
 
 .sender {
@@ -126,7 +132,7 @@ nav a {
   margin: 0 0 0.75rem 0.75rem;
   border-radius: 0 0.65rem 0.65rem 0.65rem;
   background: #ededed;
-  box-shadow: -0.063rem 0.125rem;
+  box-shadow: -0.063rem 0.125rem #9ea0a1;
 }
 
 .reply {
@@ -134,7 +140,7 @@ nav a {
   margin: 0 0.75rem 0.75rem 0;
   border-radius: 0.65rem 0 0.65rem 0.65rem;
   background: #d9caa9;
-  box-shadow: 0.063rem 0.125rem;
+  box-shadow: 0.063rem 0.125rem #9ea0a1;
 }
 
 .fullalert {
@@ -178,7 +184,7 @@ nav a {
   text-align: center;
 }
 
-input {
+input[type=text] {
   margin-top: 0.75rem;
   font-family: Bahnschrift, Inter, sans-serif;
   width: 70%;
@@ -187,6 +193,39 @@ input {
   font-size: medium;
   outline: none;
 }
-input :focus {
+input[type=text] :focus {
+  border-color: #121212;
+}
+
+button {
+  font-family: Bahnschrift, Inter, sans-serif;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  border: 0.094rem solid #d4d8dc;
+  border-left: 0;
+  font-size: medium;
+  color: #d4d8dc;
+  background-color: #121212;
+}
+
+input[type=radio] {
+  margin-top: 0.75rem;
+  font-family: Bahnschrift, Inter, sans-serif;
+  border: 0.094rem solid #d4d8dc;
+  font-size: medium;
+  outline: none;
+}
+input[type=radio] :focus {
+  border-color: #121212;
+}
+
+select {
+  margin-top: 0.75rem;
+  font-family: Bahnschrift, Inter, sans-serif;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  border: 0.094rem solid #d4d8dc;
+  font-size: medium;
+  outline: none;
+}
+select :focus {
   border-color: #121212;
 }/*# sourceMappingURL=main.css.map */

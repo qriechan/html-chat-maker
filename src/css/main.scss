@@ -100,16 +100,24 @@ nav {
     min-height: fit-content;
     margin-bottom: .25rem;
     width: auto;
+    display: flex;
 }
 
 .full-text {
     margin-right: auto;
     margin-left: 0rem;
+    flex-direction: row;
 }
 
 .full-reply {
     margin-right: 0rem;
     margin-left: auto;
+    flex-direction: row-reverse;
+}
+
+.message-content {
+    display: flex;
+    flex-direction: column;
 }
 
 .message-contact {
@@ -120,22 +128,23 @@ nav {
 
 .sender-contact {
     padding: 0 0 .25rem .75rem;
+    flex: 1;
 }
 
 .receiver-contact {
     padding: 0 .75rem .25rem 0;
     text-align: right;
 }
+
 .icon {
     width: 3.75rem;
     height: 3.75rem;
     border-radius: 100%;
     background-color: $dark-color;
-}
-.td-icon {
     vertical-align: top;
-    width: 3.75rem;
+    flex: 0;
 }
+
 .text {
     font-weight: 500;
     color: $dark-color;
@@ -143,28 +152,32 @@ nav {
     max-width: 75%;
     clear: both;
     position: relative;
-    box-shadow: $textbox-shadow-color;
+    flex: 1;
 }
+
 .sender {
     float: left;
     margin: 0 0 .75rem .75rem;
     border-radius: 0 .65rem .65rem .65rem;
     background: $sender-color-hsr;
-    box-shadow: -.063rem .125rem;
+    box-shadow: -.063rem .125rem $textbox-shadow-color;
 }
+
 .reply {
     float: right;
     margin: 0 .75rem .75rem 0;
     border-radius: .65rem 0 .65rem .65rem;
     background: $receiver-color-hsr;
-    box-shadow: .063rem .125rem;
+    box-shadow: .063rem .125rem $textbox-shadow-color;
 }
+
 .fullalert {
     vertical-align: middle;
     width: fit-content;
     margin-left: auto;
     margin-right: auto;
 }
+
 .alert-icon {
     width: $alert-dimensions;
     height: $alert-dimensions;
@@ -194,10 +207,45 @@ nav {
     text-align: center;
 }
 
-input {
+input[type=text] {
     margin-top: .75rem;
     font-family: $main-font-family;
     width: 70%;
+    padding: .5rem 1rem .5rem 1rem;
+    border: .094rem solid $bgcolor-hsr;
+    font-size: medium;
+    outline: none;
+
+    :focus {
+        border-color: $dark-color;
+    }
+}
+
+button {
+    font-family: $main-font-family;
+    padding: .5rem 1rem .5rem 1rem;
+    border: .094rem solid $bgcolor-hsr;
+    border-left: 0;
+    font-size: medium;
+    color: $bgcolor-hsr;
+    background-color: $dark-color;
+}
+
+input[type=radio] {
+    margin-top: .75rem;
+    font-family: $main-font-family;
+    border: .094rem solid $bgcolor-hsr;
+    font-size: medium;
+    outline: none;
+
+    :focus {
+        border-color: $dark-color;
+    }
+}
+
+select {
+    margin-top: .75rem;
+    font-family: $main-font-family;
     padding: .5rem 1rem .5rem 1rem;
     border: .094rem solid $bgcolor-hsr;
     font-size: medium;
