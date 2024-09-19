@@ -1,11 +1,16 @@
 import React from 'react'
 
 function SenderMessage({ contact , text }) {
+
+    const iconRef = contact.replace(/ /g, '_');
+
+    const imagePath = `/Images/Character_${iconRef}_Icon.webp`
+
     return (
         <div className='full-message full-reply'>
             <img 
                 className='icon' 
-                src={getImageURL(contact)} 
+                src={imagePath} 
                 width="100%" 
                 alt={contact} />
             <div className='message-content'>
