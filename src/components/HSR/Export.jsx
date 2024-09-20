@@ -95,12 +95,13 @@ function Export({ messages, chatName, chatDesc, imageURLs }) {
         setExportedHTML(fullHTML);
 
         const copyToClipboard = (fullHTML) => {
-            navigator.clipboard.writeText(fullHTML).then(() => {
-                setCopySuccess(true); 
-                setTimeout(() => setCopySuccess(false), 2000); 
-            }).catch(() => {
-                setCopySuccess(false); 
-            });
+            navigator.clipboard.writeText(fullHTML)
+                .then(() => {
+                    alert("Copied HTML to clipboard!");
+                })
+                .catch(err => {
+                    console.error("Failed to copy: ", err);
+                });
         };
         copyToClipboard(fullHTML);
     };

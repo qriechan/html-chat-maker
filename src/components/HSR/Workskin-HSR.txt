@@ -1,0 +1,153 @@
+#workskin .phone {
+    max-width: 350px;
+    font-family: Bahnschrift, Inter, sans-serif !important;
+    display: table;
+    margin: auto;
+    background-color: #d4d8dc;
+    border-radius: 0 15px 0 0;
+    outline: 1.5px solid rgba(213, 214, 215, 0.9);
+    outline-offset: 2px;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-bottom: 1em;
+}
+#workskin .msg-row:hover {
+    background-color: #d4d8dc;
+}
+#workskin .header {
+    min-width: 350px;
+    background: none;
+    border-bottom: 1.5px solid #b9bdbf;
+    margin-bottom: 1em;
+    padding-left: .5em;
+}
+#workskin .main-contact {
+    font-size: larger;
+    color: #121212;
+    font-weight: bold;
+    margin-top: .75em;
+    margin-bottom: 0;
+}
+#workskin .bio {
+    margin: .25em auto .75em auto;
+    color: #666868;
+    font-size: smaller;
+    font-weight: 600;
+}
+#workskin .fulltext {
+    min-height: fit-content;
+    margin-right: auto;
+    margin-left: 0px;
+    margin-bottom: .25em;
+    width: auto;
+}
+#workskin .fullreply {
+    min-height: fit-content;
+    margin-right: 0px;
+    margin-left: auto;
+    margin-bottom: .25em;
+    width: auto;
+}
+#workskin .full-reply .picture, .full-text .picture {
+    width: 150px;
+    height: 75px;
+    background-color: #000;
+}
+#workskin .L-contact {
+    font-weight: 500;
+    font-size: 90%;
+    color: #666868;
+    padding: 0 0 .25em .75em;
+}
+#workskin .R-contact {
+    font-weight: 500;
+    font-size: 90%;
+    color: #666868;
+    padding: 0 0.75em .25em 0;
+    text-align: right;
+}
+#workskin .hsricon {
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    background-color: #121212;
+}
+#workskin .td-icon {
+    vertical-align: top;
+    width: 60px;
+}
+#workskin .text {
+    font-weight: 500;
+    float: left;
+    color: #121212;
+    margin: 0 0 0.75em 0.75em;
+    border-radius: 0 .65em .65em .65em;
+    padding: 0.5em 1em;
+    background: #ededed;
+    max-width: 80%;
+    clear: both;
+    position: relative;
+    box-shadow: #9ea0a1 -1px 2px;
+}
+#workskin .reply {
+    font-weight: 500;
+    float: right;
+    color: #121212;
+    margin: 0 .75em .75em 0;
+    border-radius: .65em 0 .65em .65em;
+    padding: .5em 1em;
+    background: #d9caa9;
+    max-width: 80%;
+    clear: both;
+    position: relative;
+    box-shadow: #9ea0a1 1px 2px;
+}
+#workskin .full-reply .hsr-picture, .full-text .hsr-picture {
+    width: 150px;
+    height: 75px;
+    background-color: #000;
+}
+#workskin .full-reply .hsr-sticker, .full-text .hsr-sticker {
+    width: 75px;
+    height: 75px;
+    background-color: none;
+    margin: 1rem;
+}
+#workskin .full-text .hsr-picture {
+    float: left;
+    margin: 0.5rem 0.75rem 1rem 1.5rem;
+}
+#workskin .full-text .hsr-sticker {
+    float: left;
+}
+#workskin .full-reply .hsr-picture {
+    float: left;
+    margin: 0.5rem 1.5rem 1rem 0.75rem;
+}
+#workskin .full-reply .hsr-sticker {
+    float: right;
+}
+#workskin .fullalert {
+    vertical-align: middle;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+#workskin .alert-icon {
+    width: 17.5px;
+    height: 17.5px;
+}
+#workskin .alert-display {
+    width: fit-content;
+    text-align: center;
+}
+#workskin .alert {
+    vertical-align: middle;
+    text-align: left;
+    color: #858586;
+    font-size: small;
+    padding-bottom: .5em;
+    padding-top: .5em;
+    margin: .25em 0 .75em 0em;
+    display: table;
+}

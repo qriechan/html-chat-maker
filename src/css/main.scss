@@ -56,6 +56,39 @@ nav {
     }
 }
 
+.workskin-container {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+}
+
+.workskin-box {
+    width: $main-width;
+    max-height: 15rem;
+    border: $alert-color-hsr;
+    background-color: $bgcolor-hsr;
+    overflow: scroll;
+}
+
+.copy-workskin {
+    width: 12.5rem;
+    font-family: $main-font-family;
+    margin: $main-margin;
+    margin-left: 0;
+    margin-top: 0;
+    padding: $main-padding;
+    font-size: medium;
+    color: $wht;
+    background-color: $blk;
+    cursor: pointer;
+}
+
+.tiny {
+    font-size: xx-small;
+    margin: 0;
+    padding: 0;
+}
+
 .container {
     margin: 2rem;
 }

@@ -8,7 +8,7 @@ function Nav() {
         <nav>
             <NavLink to="/">Home</NavLink>
             <NavLink to="/hsr">Honkai Star Rail</NavLink>
-            <NavLink to="/workskin">HSR Workskin</NavLink>
+            <NavLink to="/workskin">Workskins</NavLink>
         </nav>
     </header>
   )
