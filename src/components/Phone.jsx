@@ -74,7 +74,7 @@ function Phone() {
 
     return (
         <div className='container'>
-        <div className='phone'>
+        <div className='hsr-phone'>
             <div className='text-area'>
                 <div className='header'>
                     <EditorPopup 

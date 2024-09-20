@@ -22,14 +22,14 @@ nav {
 nav a {
   padding: 1rem 2rem 1rem 2rem;
   background-color: #121212;
-  color: #b9bdbf;
+  color: #fff;
 }
 
 .container {
   margin: 2rem;
 }
 
-.phone {
+.hsr-phone {
   max-width: 21.875rem;
   font-family: Bahnschrift, Inter, sans-serif !important;
   display: table;
@@ -331,4 +331,9 @@ label {
   border-radius: 5px;
   padding: 0.25rem;
   height: 7.5rem;
+}
+.export-container .success-message {
+  color: rgb(74, 193, 44);
+  margin: 0;
+  font-size: smaller;
 }/*# sourceMappingURL=main.css.map */

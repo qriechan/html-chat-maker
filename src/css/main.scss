@@ -52,7 +52,7 @@ nav {
     a {
         padding: 1rem 2rem 1rem 2rem;
         background-color: $dark-color;
-        color: $sub-color2;
+        color: $wht;
     }
 }
 
@@ -60,7 +60,7 @@ nav {
     margin: 2rem;
 }
 
-.phone {
+.hsr-phone {
     max-width: $main-width;
     font-family: $hsr-font-family!important;
     display: table;
@@ -371,6 +371,12 @@ label {
         border-radius: 5px;
         padding: .25rem;
         height: 7.5rem;
+    }
+
+    .success-message {
+        color: rgb(74, 193, 44);
+        margin: 0;
+        font-size: smaller;
     }
 
 }

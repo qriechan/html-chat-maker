@@ -5,6 +5,7 @@ import { imageURLs } from './ImageURLs';
 function Export({ messages, chatName, chatDesc, imageURLs }) {
 
     const [exportedHTML, setExportedHTML] = useState('');
+    const [copySuccess, setCopySuccess] = useState(false);
 
     const generateMessageHTML = (message) => {
         const { contactName, textValue, statusType } = message;
@@ -65,11 +66,22 @@ function Export({ messages, chatName, chatDesc, imageURLs }) {
         `;
 
         setExportedHTML(fullHTML);
+
+        const copyToClipboard = (fullHTML) => {
+            navigator.clipboard.writeText(fullHTML).then(() => {
+                setCopySuccess(true); 
+                setTimeout(() => setCopySuccess(false), 2000); 
+            }).catch(() => {
+                setCopySuccess(false); 
+            });
+        };
+        copyToClipboard(fullHTML);
     };
 
     return (  
         <div className='export-container'>
         <button className='exporter' onClick={generateFullHTML}>Export as HTML (preview code below)</button>
+        {copySuccess && <p className='success-message'>Copied to clipboard!</p>}
         <textarea
             readOnly
             value={exportedHTML}
