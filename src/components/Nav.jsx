@@ -6,9 +6,9 @@ function Nav() {
     <header>
         <Link to="/"><h1>HTML Chat Maker</h1></Link>
         <nav>
-            <NavLink to="/about">About</NavLink>
-            <NavLink to="/contact">Contact</NavLink>
-            <NavLink to="/workskin">Workskin</NavLink>
+            <NavLink to="/">Home</NavLink>
+            <NavLink to="/hsr">Honkai Star Rail</NavLink>
+            <NavLink to="/workskin">HSR Workskin</NavLink>
         </nav>
     </header>
   )

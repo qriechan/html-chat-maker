@@ -4,10 +4,10 @@ import axios from 'axios'
 
 import About from './components/About'
 import Contact from './components/Contact'
-import Home from './components/Home'
+import HSR from './components/HSR/HSR'
 import Nav from './components/Nav'
-import Phone from './components/Phone'
-import PostText from './components/PostText'
+import Phone from './components/HSR/Phone'
+import PostText from './components/HSR/PostText'
 import Workskin from './components/Workskin'
 
 import './css/main.css'
@@ -21,8 +21,8 @@ function App() {
                 <Nav />
 
                 <Routes>
-                    <Route exact path='/' element={ <Home /> } />
                     <Route exact path='about' element={ <About /> } />
+                    <Route exact path='hsr' element={ <HSR /> } />
                     <Route exact path='contact' element={ <Contact /> } />
                     <Route exact path='workskin' element={ <Workskin /> } />
                     <Route exact path='phone' element={ <Phone /> }>
