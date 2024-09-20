@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import PostText from './PostText'
 import SenderMessage from './MessageSender'
 import ReceiverMessage from './MessageReceiver'
+import ActionMessage from './MessageAction'
 import { imageURLs } from './ImageURLs';
 import EditorPopup from './EditorPopup';
 import contactInfo from './ContactInfo'
@@ -104,7 +105,7 @@ function Phone() {
                                 imageURLs = {imageURLs}
                                 messageClass={message.messageType}
                             />
-                        ) : (
+                        ) : message.statusType === 'send' ? (
                             <ReceiverMessage 
                                 key={index}
                                 contact={message.contactName}
@@ -112,7 +113,11 @@ function Phone() {
                                 imageURLs = {imageURLs}
                                 messageClass={message.messageType}
                             />
-                        )}
+                        ) : <ActionMessage
+                                key={index}
+                                text={message.textValue}
+                            />
+                        }
                         {activeMessageIndex === index && (
                             <div className='edit-btn-div'>
                             <button

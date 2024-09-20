@@ -181,6 +181,7 @@ label {
     width: 75px;
     height: 75px;
     background-color: none;
+    margin: $main-padding;
 }
 
 .full-text {
@@ -329,6 +330,19 @@ label {
     display: table;
 }
 
+%hsr-button {
+    font-family: $hsr-font-family;
+    padding: .5rem 1rem .5rem 1rem;
+    border: .094rem solid $bgcolor-hsr;
+    font-size: medium;
+    font-weight: 600;
+    cursor: pointer;
+
+    &:hover, &:focus, &:active {
+        transition: .15s;
+    }
+}
+
 .write-text {
     background-color: $darker-bgcolor;
     width: 100%;
@@ -354,31 +368,30 @@ label {
     }
 
     .text-send {
-        font-family: $hsr-font-family;
-        padding: .5rem 1rem .5rem 1rem;
-        border: .094rem solid $bgcolor-hsr;
+        @extend %hsr-button;
+        border-color: $bgcolor-hsr;
         border-left: 0;
-        font-size: medium;
         color: $dark-color;
         background-color: $bgcolor-hsr;
-        font-weight: 600;
-        cursor: pointer;
 
         &:hover, &:focus, &:active {
             color: $bgcolor-hsr;
             background-color: $dark-color;
             border-color: $dark-color;
-            transition: .15s;
         }
     }
 
     input[type=radio] {
-        margin-top: .75rem;
+        margin-top: 1rem;
+        margin-bottom: .75rem;
         font-family: $hsr-font-family;
         border: .094rem solid $bgcolor-hsr;
         font-size: medium;
         outline: none;
         cursor: pointer;
+        &:disabled {
+            cursor: not-allowed;
+        }
     }
 
     select {
@@ -396,6 +409,76 @@ label {
         }
     }
 
+    hr {
+        border: $sub-color2 .094rem solid;
+        margin-top: .75rem;
+        width: 20%;
+    }
+
+    .sticker-select {
+        @extend %hsr-button;
+        margin: $main-padding;
+        
+        &:hover, &:focus, &:active {
+            color: $bgcolor-hsr;
+            background-color: $dark-color;
+            border-color: $dark-color;
+        }
+    }
+
+}
+
+.sticker-popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba($dark-color, .8);
+    color: $bgcolor-hsr;
+    opacity: 75;
+    padding: $big-padding;
+    margin: 0;
+    box-shadow: 0 0 .938rem $sub-color;
+    width: 25rem;
+    max-height: 25rem;
+    border-radius: .938rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: $main-padding;
+    padding: $main-padding;
+    z-index: 3;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    -webkit-animation: fadein 0.15s cubic-bezier(0.38, 0.1, 0.36, 0.9);
+        animation: fadein 0.15s cubic-bezier(0.38, 0.1, 0.36, 0.9);
+}
+
+.sticker-item {
+    text-align: center;
+    background-color: none;
+    padding: $main-padding;
+    border-radius: .938rem;
+    align-self: center;
+    justify-self: center;
+    cursor: pointer;
+}
+  
+.sticker-image {
+    width: 100%;
+    height: auto;
+    max-width: 80px;
+    margin: $main-padding;
+    display: block;
+    align-self: center;
+    justify-self: center;
+}
+  
+.sticker-id {
+    font-size: small;
+    color: $bgcolor-hsr;
 }
 
 .export-container {

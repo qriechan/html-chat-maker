@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
 import characterNames from './CharacterNames';
+import Popup from 'reactjs-popup';
+import StickerPopup from './StickerPopup';
+import stickerIDs from './StickerIDs';
 
 function PostText(props){
 
@@ -7,11 +10,16 @@ function PostText(props){
     const [contactName, setContactName] = useState('Unknown');
     const [statusType, setStatusType] = useState('send');
     const [messageType, setMessageType] = useState('text');
-    const inputPlaceholder = messageType === 'picture' ? 'Paste image URL' : 'Enter text here...';
-
+    const [selectedStickerId, setSelectedStickerId] = useState('');
+    const inputPlaceholder = messageType === 'picture' 
+        ? 'Paste image URL...' 
+        : messageType === 'sticker'
+        ? 'Select sticker' 
+        : 'Enter text here...';
     const messageStatus = [
         {value: "receive", label: "Receive"},
-        {value: "send", label: "Send"}
+        {value: "send", label: "Send"},
+        {value: "action", label: "Action"}
     ];
 
     const handleSubmit = (e) => {
@@ -21,6 +29,12 @@ function PostText(props){
         props.onSubmit(messageDetails);
         setTextValue('');
     };
+    const handleStickerClick = (stickerId) => {
+        if (messageType === 'sticker') {
+            setSelectedStickerId(stickerId); 
+            setTextValue(stickerId); 
+        }
+    }; 
 
     return (
         <div className='write-text'>
@@ -35,9 +49,10 @@ function PostText(props){
                 <input 
                     type="text" 
                     required
-                    value={textValue} 
+                    value={messageType === 'sticker' ? selectedStickerId : textValue} 
                     onChange={(e) => setTextValue(e.target.value)} 
                     placeholder={inputPlaceholder}
+                    readOnly={messageType === 'sticker'}
                 />
                 <button type='submit' className='text-send'>Send</button>
                 <div className='radio'>
@@ -53,12 +68,13 @@ function PostText(props){
                     <label key={i}>{x.label}</label>
                     </span>
                 )}
+                <hr className='divider' />
                 <div className="message-type-selector">
                     <label>
                         <input 
                             type="radio" 
                             value="text" 
-                            checked={messageType === 'text'} 
+                            checked={messageType === 'text' && statusType === 'action'} 
                             onChange={(e) => setMessageType(e.target.value)} 
                         />
                         Text
@@ -67,8 +83,9 @@ function PostText(props){
                         <input 
                             type="radio" 
                             value="sticker" 
-                            checked={messageType === 'sticker'} 
+                            checked={messageType === 'sticker' && statusType != 'action'} 
                             onChange={(e) => setMessageType(e.target.value)} 
+                            disabled={statusType === 'action'}
                         />
                         Sticker
                     </label>
@@ -76,11 +93,22 @@ function PostText(props){
                         <input 
                             type="radio" 
                             value="picture" 
-                            checked={messageType === 'picture'} 
+                            checked={messageType === 'picture' && statusType != 'action'} 
                             onChange={(e) => setMessageType(e.target.value)} 
+                            disabled={statusType === 'action'}
                         />
                         Picture
                     </label>
+                    {messageType === 'sticker' && 
+                    (<Popup
+                        trigger={<button type='button' className='sticker-select'>Select Sticker</button>}
+                        lockScroll='true'
+                        position={'top center'}>
+                            <StickerPopup
+                                stickerIDs={stickerIDs} 
+                                onStickerClick={handleStickerClick} 
+                            />
+                    </Popup>)}
                 </div>
             </form>
         </div>
