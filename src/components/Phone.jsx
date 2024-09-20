@@ -137,7 +137,12 @@ function Phone() {
             </div>
             <PostText onSubmit={handleAddMessage} />
         </div>
-        <Export />
+        <Export 
+            messages={messages}
+            chatName={chatName}
+            chatDesc={chatDesc}
+            imageURLs={imageURLs}
+        />
         </div>
     )
 }
