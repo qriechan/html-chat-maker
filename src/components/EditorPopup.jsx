@@ -48,7 +48,7 @@ function EditorPopup( {handleInputChange, handleTypeSwitch, handleAutofillChange
                     onChange={handleTypeSwitch && handleAutofillChange}
                     required
                 />
-                <label>Autofill</label>
+                <label>Autofill description</label>
             </div>
         </Popup>
         </>
