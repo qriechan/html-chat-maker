@@ -12,12 +12,6 @@ function Export({ messages, chatName, chatDesc, imageURLs }) {
         return sticker ? sticker.stickerURL : '';
     };
 
-    const backgroundStyle = isPictureMessage
-            ? `background-image: url('${textValue}'); background-size: cover; background-position: center;`
-            : isStickerMessage
-            ? `background-image: url('${stickerURL}'); background-size: contain; background-position: center; background-repeat: no-repeat;`
-            : '';
-
     const generateMessageHTML = (message) => {
         const { contactName, textValue, statusType, messageType } = message;
         const iconRef = contactName.replace(/ /g, '_');
@@ -25,6 +19,12 @@ function Export({ messages, chatName, chatDesc, imageURLs }) {
         const isPictureMessage = messageType === 'picture';
         const isStickerMessage = messageType === 'sticker';
         const stickerURL = isStickerMessage ? getStickerURL(textValue) : '';
+
+        const backgroundStyle = isPictureMessage
+        ? `background-image: url('${textValue}'); background-size: cover; background-position: center;`
+        : isStickerMessage
+        ? `background-image: url('${stickerURL}'); background-size: contain; background-position: center; background-repeat: no-repeat;`
+        : '';
 
         if (statusType === 'receive') {
             return `
