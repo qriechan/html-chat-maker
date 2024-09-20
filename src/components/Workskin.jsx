@@ -3,6 +3,7 @@ import React from 'react'
 function Workskin() {
   return (
     <div>
+        <div>
         <p>#workskin .phone {'{'}</p>
         <p>&nbsp; &nbsp; max-width: 350px;</p>
         <p>&nbsp; &nbsp; font-family: Bahnschrift, Inter, sans-serif !important;</p>
@@ -144,6 +145,7 @@ function Workskin() {
         <p>&nbsp; {'}'}</p>
         <p>&nbsp;</p>
         <p>&nbsp;</p>
+      </div>
     </div>
   )
 }

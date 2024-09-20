@@ -1,7 +1,7 @@
 import React from 'react'
-import './Images'
+import { imageURLs } from './ImageURLs';
 
-function SenderMessage({ contact , text }) {
+function SenderMessage({ contact , text, imageURLs }) {
 
     const iconRef = contact.replace(/ /g, '_');
     const iconKey = `${iconRef}_Icon`;

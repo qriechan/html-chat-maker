@@ -1,5 +1,5 @@
 import React from 'react'
-import './Images'
+import { imageURLs } from './ImageURLs';
 
 function SenderMessage({ contact , text, imageURLs }) {
 

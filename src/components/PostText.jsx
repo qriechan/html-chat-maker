@@ -4,7 +4,7 @@ function PostText(props){
 
     const [textValue, setTextValue] = useState('');
     const [contactName, setContactName] = useState('Unknown');
-    const [statusType, setStatusType] = useState('Send');
+    const [statusType, setStatusType] = useState('send');
 
     const characterNames = [
         "Unknown",
@@ -27,6 +27,8 @@ function PostText(props){
         "Dr Ratio",
         "Feixiao",
         "Firefly",
+        "Fu Xuan",
+        "Gallagher",
         "Gepard",
         "Guinaifen",
         "Hanya",
@@ -66,8 +68,8 @@ function PostText(props){
         "Yunli"
     ];
     const messageStatus = [
-        {value: "send", label: "Send"},
-        {value: "receive", label: "Receive"}
+        {value: "receive", label: "Receive"},
+        {value: "send", label: "Send"}
     ];
 
     const handleSubmit = (e) => {
@@ -95,10 +97,10 @@ function PostText(props){
                     onChange={(e) => setTextValue(e.target.value)} 
                     placeholder='Enter text here...'
                 />
-                <button type='submit'>Send</button>
+                <button type='submit' className='text-send'>Send</button>
                 <div className='radio'>
                 </div>
-                {messageStatus.map((x, i) => <label key={i}>
+                {messageStatus.map((x, i) => <span>
                     <input 
                         type="radio"
                         name="status"
@@ -106,8 +108,9 @@ function PostText(props){
                         onChange={(e) => setStatusType(e.target.value)}
                         required
                     /> 
-                    {x.label}
-                </label>)}
+                    <label key={i}>{x.label}</label>
+                    </span>
+                )}
             </form>
         </div>
     )

@@ -13,6 +13,7 @@ $zero: 0rem;
 //main-colors
 $dark-color: #121212;               //font-color, icon-bg
 $blk: #000;                         //black-font
+$wht: #fff;                         //white-font
 
 //hsr-chat-colors
 $bgcolor-hsr: #d4d8dc;              //hsr-chat-background, chat-outline
@@ -94,6 +95,68 @@ nav {
     color: $sub-color;
     font-size: smaller;
     font-weight: 600;
+}
+
+.icon-edit {
+    float: right;
+    z-index: 1;
+    padding: $main-padding;
+    color: $sub-color2;
+    background: none;
+    border: none;
+
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 75;
+    }
+}
+
+.popupper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba($dark-color, .8);
+    color: $bgcolor-hsr;
+    opacity: 75;
+    padding: $big-padding;
+    margin: 0;
+    box-shadow: 0 0 .938rem $sub-color;
+    width: 17.5rem;
+    height: fit-content;
+    border-radius: .938rem;
+    transition: .5s;
+    z-index: 2;
+    -webkit-animation: fadein 0.15s cubic-bezier(0.38, 0.1, 0.36, 0.9);
+        animation: fadein 0.15s cubic-bezier(0.38, 0.1, 0.36, 0.9);
+
+    input[type=text] {
+        margin-top: .75rem;
+        color: $wht;
+        font-family: $main-font-family;
+        padding: .5rem 1rem .5rem 1rem;
+        border: .094rem solid $dark-color;
+        background-color: $blk;
+        font-size: medium;
+        outline: none;
+        width: 85%;
+        margin-bottom: 1rem;
+
+        &:focus {
+            border-color: $sub-color;
+            transition: .15s;
+        }
+    }
+
+}
+
+label {
+    padding: .5rem 1rem .5rem .5rem;
 }
 
 .full-message {
@@ -202,53 +265,53 @@ nav {
     margin: 0 -1rem -1rem -1rem;
     align-items: center;
     text-align: center;
-}
 
-input[type=text] {
-    margin-top: .75rem;
-    font-family: $main-font-family;
-    width: 70%;
-    padding: .5rem 1rem .5rem 1rem;
-    border: .094rem solid $bgcolor-hsr;
-    font-size: medium;
-    outline: none;
+    input[type=text] {
+        margin-top: .75rem;
+        font-family: $main-font-family;
+        width: 70%;
+        padding: .5rem 1rem .5rem 1rem;
+        border: .094rem solid $bgcolor-hsr;
+        font-size: medium;
+        outline: none;
 
-    :focus {
-        border-color: $dark-color;
+        &:focus {
+            border-color: $dark-color;
+            transition: .15s;
+        }
     }
-}
 
-button {
-    font-family: $main-font-family;
-    padding: .5rem 1rem .5rem 1rem;
-    border: .094rem solid $bgcolor-hsr;
-    border-left: 0;
-    font-size: medium;
-    color: $bgcolor-hsr;
-    background-color: $dark-color;
-}
-
-input[type=radio] {
-    margin-top: .75rem;
-    font-family: $main-font-family;
-    border: .094rem solid $bgcolor-hsr;
-    font-size: medium;
-    outline: none;
-
-    :focus {
-        border-color: $dark-color;
+    .text-send {
+        font-family: $main-font-family;
+        padding: .5rem 1rem .5rem 1rem;
+        border: .094rem solid $bgcolor-hsr;
+        border-left: 0;
+        font-size: medium;
+        color: $bgcolor-hsr;
+        background-color: $dark-color;
     }
-}
 
-select {
-    margin-top: .75rem;
-    font-family: $main-font-family;
-    padding: .5rem 1rem .5rem 1rem;
-    border: .094rem solid $bgcolor-hsr;
-    font-size: medium;
-    outline: none;
+    input[type=radio] {
+        margin-top: .75rem;
+        font-family: $main-font-family;
+        border: .094rem solid $bgcolor-hsr;
+        font-size: medium;
+        outline: none;
 
-    :focus {
-        border-color: $dark-color;
     }
+
+    select {
+        margin-top: .75rem;
+        font-family: $main-font-family;
+        padding: .5rem 1rem .5rem 1rem;
+        border: .094rem solid $bgcolor-hsr;
+        font-size: medium;
+        outline: none;
+
+        &:focus {
+            border-color: $dark-color;
+            transition: .15s;
+        }
+    }
+
 }

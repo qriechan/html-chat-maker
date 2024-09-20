@@ -67,6 +67,63 @@ nav a {
   font-weight: 600;
 }
 
+.icon-edit {
+  float: right;
+  z-index: 1;
+  padding: 1rem;
+  color: #b9bdbf;
+  background: none;
+  border: none;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 75;
+  }
+}
+.popupper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(18, 18, 18, 0.8);
+  color: #d4d8dc;
+  opacity: 75;
+  padding: 2rem;
+  margin: 0;
+  box-shadow: 0 0 0.938rem #666868;
+  width: 17.5rem;
+  height: -moz-fit-content;
+  height: fit-content;
+  border-radius: 0.938rem;
+  transition: 0.5s;
+  z-index: 2;
+  animation: fadein 0.15s cubic-bezier(0.38, 0.1, 0.36, 0.9);
+}
+.popupper input[type=text] {
+  margin-top: 0.75rem;
+  color: #fff;
+  font-family: Bahnschrift, Inter, sans-serif;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  border: 0.094rem solid #121212;
+  background-color: #000;
+  font-size: medium;
+  outline: none;
+  width: 85%;
+  margin-bottom: 1rem;
+}
+.popupper input[type=text]:focus {
+  border-color: #666868;
+  transition: 0.15s;
+}
+
+label {
+  padding: 0.5rem 1rem 0.5rem 0.5rem;
+}
+
 .full-message {
   min-height: -moz-fit-content;
   min-height: fit-content;
@@ -181,8 +238,7 @@ nav a {
   align-items: center;
   text-align: center;
 }
-
-input[type=text] {
+.write-text input[type=text] {
   margin-top: 0.75rem;
   font-family: Bahnschrift, Inter, sans-serif;
   width: 70%;
@@ -191,11 +247,11 @@ input[type=text] {
   font-size: medium;
   outline: none;
 }
-input[type=text] :focus {
+.write-text input[type=text]:focus {
   border-color: #121212;
+  transition: 0.15s;
 }
-
-button {
+.write-text .text-send {
   font-family: Bahnschrift, Inter, sans-serif;
   padding: 0.5rem 1rem 0.5rem 1rem;
   border: 0.094rem solid #d4d8dc;
@@ -204,19 +260,14 @@ button {
   color: #d4d8dc;
   background-color: #121212;
 }
-
-input[type=radio] {
+.write-text input[type=radio] {
   margin-top: 0.75rem;
   font-family: Bahnschrift, Inter, sans-serif;
   border: 0.094rem solid #d4d8dc;
   font-size: medium;
   outline: none;
 }
-input[type=radio] :focus {
-  border-color: #121212;
-}
-
-select {
+.write-text select {
   margin-top: 0.75rem;
   font-family: Bahnschrift, Inter, sans-serif;
   padding: 0.5rem 1rem 0.5rem 1rem;
@@ -224,6 +275,7 @@ select {
   font-size: medium;
   outline: none;
 }
-select :focus {
+.write-text select:focus {
   border-color: #121212;
+  transition: 0.15s;
 }/*# sourceMappingURL=main.css.map */
