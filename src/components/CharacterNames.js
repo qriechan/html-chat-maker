@@ -1,4 +1,4 @@
-export const characterNames = [
+const characterNames = [
     "Unknown",
     "Stelle",
     "Caelus",
@@ -59,3 +59,5 @@ export const characterNames = [
     "Yukong",
     "Yunli"
 ];
+
+export default characterNames

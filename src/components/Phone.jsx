@@ -17,7 +17,7 @@ function Phone() {
     const [chatDesc, setChatDesc] = useState('Enter description...');
     const [channelType, setChannelType] = useState(''); 
     const [autofill, setAutofill] = useState(false);
-    const [activeMessageIndex, setActiveMessageIndex] = useState(null);
+    const [activeMessageIndex, setActiveMessageIndex] = useState(null); 
 
     const handleAddMessage = (messageDetails) => {
         setMessages((prevMessages) => [...prevMessages, messageDetails]);
@@ -102,6 +102,7 @@ function Phone() {
                                 contact={message.contactName}
                                 text={message.textValue}
                                 imageURLs = {imageURLs}
+                                messageClass={message.messageType}
                             />
                         ) : (
                             <ReceiverMessage 
@@ -109,6 +110,7 @@ function Phone() {
                                 contact={message.contactName}
                                 text={message.textValue}
                                 imageURLs = {imageURLs}
+                                messageClass={message.messageType}
                             />
                         )}
                         {activeMessageIndex === index && (

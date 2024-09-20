@@ -60,6 +60,11 @@ function Workskin() {
         <p>&nbsp; &nbsp; margin-bottom: .25em;</p>
         <p>&nbsp; &nbsp; width: auto;</p>
         <p>&nbsp; {'}'}</p>
+        <p>&nbsp; #workskin .full-reply .picture, .full-text .picture {'{'}</p>
+        <p>&nbsp; &nbsp; width: 150px;</p>
+        <p>&nbsp; &nbsp; height: 75px;</p>
+        <p>&nbsp; &nbsp; background-color: #000;</p>
+        <p>&nbsp; &nbsp; {'}'}</p>
         <p>&nbsp;</p>
         <p>&nbsp; #workskin .L-contact {'{'}</p>
         <p>&nbsp; &nbsp; font-weight: 500;</p>

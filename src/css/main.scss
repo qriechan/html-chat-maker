@@ -98,17 +98,6 @@ nav {
     font-weight: 600;
 }
 
-.icon-edit {
-    float: right;
-    z-index: 1;
-    padding: $main-padding;
-    color: mix($sub-color, $sub-color2, 50%);
-    background: none;
-    border: none;
-    cursor: pointer;
-
-}
-
 @keyframes fadein {
     from {
         opacity: 0;
@@ -116,6 +105,21 @@ nav {
     to {
         opacity: 75;
     }
+}
+
+.icon-edit {
+    float: right;
+    z-index: 1;
+    padding-top: $main-padding;
+    padding-right: $main-padding;
+    padding-left: 0;
+    padding-bottom: 0;
+    color: mix($sub-color, $sub-color2, 50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    -webkit-animation: fadein 0.15s cubic-bezier(0.38, 0.1, 0.36, 0.9);
+        animation: fadein 0.15s cubic-bezier(0.38, 0.1, 0.36, 0.9);
 }
 
 .popupper {
@@ -167,14 +171,74 @@ label {
     width: auto;
 }
 
+%picture-shared {
+    width: 150px;
+    height: 75px;
+    background-color: #000;
+}
+
+%sticker-shared {
+    width: 75px;
+    height: 75px;
+    background-color: none;
+}
+
 .full-text {
     margin-right: auto;
     margin-left: 0rem;
+
+    .text {
+        font-weight: 500;
+        color: $dark-color;
+        padding: $message-padding;
+        max-width: 80%;
+        clear: both;
+        position: relative;
+        background: $sender-color-hsr;
+        box-shadow: -.063rem .125rem $textbox-shadow-color;
+        border-radius: 0 .65rem .65rem .65rem;
+    }
+
+    .picture {
+        float: left;
+        margin: .5rem .75rem 1rem 1.5rem;
+        @extend %picture-shared;
+    }
+
+    .sticker {
+        float: left;
+        @extend %sticker-shared
+    }
+
 }
 
 .full-reply {
     margin-right: 0rem;
     margin-left: auto;
+
+    .text {
+        font-weight: 500;
+        color: $dark-color;
+        padding: $message-padding;
+        max-width: 80%;
+        clear: both;
+        position: relative;
+        border-radius: .65rem 0 .65rem .65rem;
+        background: $receiver-color-hsr;
+        box-shadow: .063rem .125rem $textbox-shadow-color;
+    }
+
+    .picture {
+        float: left;
+        margin: .5rem 1.5rem 1rem .75rem;
+        @extend %picture-shared;
+    }
+
+    .sticker {
+        float: right;
+        @extend %sticker-shared
+    }
+
 }
 
 .message-content {
@@ -208,29 +272,14 @@ label {
     vertical-align: top;
 }
 
-.text {
-    font-weight: 500;
-    color: $dark-color;
-    padding: $message-padding;
-    max-width: 80%;
-    clear: both;
-    position: relative;
-}
-
 .sender {
     float: left;
     margin: 0 0 .75rem .75rem;
-    border-radius: 0 .65rem .65rem .65rem;
-    background: $sender-color-hsr;
-    box-shadow: -.063rem .125rem $textbox-shadow-color;
 }
 
 .receiver {
     float: right;
     margin: 0 .75rem .75rem 0;
-    border-radius: .65rem 0 .65rem .65rem;
-    background: $receiver-color-hsr;
-    box-shadow: .063rem .125rem $textbox-shadow-color;
 }
 
 .edit-btn-div {
@@ -310,9 +359,17 @@ label {
         border: .094rem solid $bgcolor-hsr;
         border-left: 0;
         font-size: medium;
-        color: $bgcolor-hsr;
-        background-color: $dark-color;
+        color: $dark-color;
+        background-color: $bgcolor-hsr;
+        font-weight: 600;
         cursor: pointer;
+
+        &:hover, &:focus, &:active {
+            color: $bgcolor-hsr;
+            background-color: $dark-color;
+            border-color: $dark-color;
+            transition: .15s;
+        }
     }
 
     input[type=radio] {
