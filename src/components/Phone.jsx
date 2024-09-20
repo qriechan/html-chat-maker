@@ -7,6 +7,9 @@ import ReceiverMessage from './MessageReceiver'
 import { imageURLs } from './ImageURLs';
 import EditorPopup from './EditorPopup';
 import contactInfo from './ContactInfo'
+import { RiDeleteBin2Fill } from "react-icons/ri";
+import { IoMdArrowRoundUp, IoMdArrowRoundDown } from "react-icons/io";
+import Export from './Export'
 
 function Phone() {
     const [messages, setMessages] = useState([]);
@@ -14,10 +17,36 @@ function Phone() {
     const [chatDesc, setChatDesc] = useState('Enter description...');
     const [channelType, setChannelType] = useState(''); 
     const [autofill, setAutofill] = useState(false);
+    const [activeMessageIndex, setActiveMessageIndex] = useState(null);
 
     const handleAddMessage = (messageDetails) => {
         setMessages((prevMessages) => [...prevMessages, messageDetails]);
     };
+    const handleDeleteMessage = (index) => {
+        setMessages((prevMessages) => prevMessages.filter((_, i) => i !== index));
+    };
+    const toggleDeleteButton = (index) => {
+        setActiveMessageIndex((prevIndex) => (prevIndex === index ? null : index));
+    };
+    const moveMessageUp = (index) => {
+        if (index > 0) {
+            const updatedMessages = [...messages];
+            const temp = updatedMessages[index - 1];
+            updatedMessages[index - 1] = updatedMessages[index];
+            updatedMessages[index] = temp;
+            setMessages(updatedMessages);
+        }
+    };
+    const moveMessageDown = (index) => {
+        if (index < messages.length - 1) {
+            const updatedMessages = [...messages];
+            const temp = updatedMessages[index + 1];
+            updatedMessages[index + 1] = updatedMessages[index];
+            updatedMessages[index] = temp;
+            setMessages(updatedMessages);
+        }
+    };
+
     const handleTypeSwitch = (e) => {
         setChannelType(e.target.value);
     }
@@ -60,25 +89,55 @@ function Phone() {
                     <p className='bio'>{chatDesc}</p>
                 </div>
                 {messages.map((message, index) => (
-                    message.statusType === 'receive' ? (
-                        <SenderMessage 
-                            key={index}
-                            contact={message.contactName}
-                            text={message.textValue}
-                            imageURLs = {imageURLs}
-                        />
-                    ) : (
-                        <ReceiverMessage 
-                            key={index}
-                            contact={message.contactName}
-                            text={message.textValue}
-                            imageURLs = {imageURLs}
-                        />
-                    )
+                    <div
+                        key={index}
+                        onMouseEnter={() => setActiveMessageIndex(index)}
+                        onMouseLeave={() => setActiveMessageIndex(null)}
+                        onClick={() => toggleDeleteButton(index)}
+                        style={{ position: 'relative' }}
+                    >
+                        {message.statusType === 'receive' ? (
+                            <SenderMessage 
+                                key={index}
+                                contact={message.contactName}
+                                text={message.textValue}
+                                imageURLs = {imageURLs}
+                            />
+                        ) : (
+                            <ReceiverMessage 
+                                key={index}
+                                contact={message.contactName}
+                                text={message.textValue}
+                                imageURLs = {imageURLs}
+                            />
+                        )}
+                        {activeMessageIndex === index && (
+                            <div className='edit-btn-div'>
+                            <button
+                                onClick={() => handleDeleteMessage(index)}
+                            >
+                                <RiDeleteBin2Fill size='20px' />
+                            </button>
+                            <button
+                                onClick={() => moveMessageUp(index)}
+                                disabled={index === 0} // Disable if already at the top
+                            >
+                                <IoMdArrowRoundUp size='20px' />
+                            </button>
+                            <button
+                                onClick={() => moveMessageDown(index)}
+                                disabled={index === messages.length - 1} // Disable if already at the bottom
+                            >
+                                <IoMdArrowRoundDown size='20px' />
+                            </button>
+                            </div>
+                        )}
+                    </div>
                 ))}
             </div>
             <PostText onSubmit={handleAddMessage} />
         </div>
+        <Export />
         </div>
     )
 }
