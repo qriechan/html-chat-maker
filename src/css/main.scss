@@ -11,7 +11,8 @@ $alert-dimensions: 1.094rem;            //alert-icon-dimensions
 $zero: 0rem;                            
 
 //main-colors
-$dark-color: #121212;               //font-color, icon-bg
+$dark-color: #121212;             
+$light-color: #F6F6F6;               
 $blk: #000;                         //black-font
 $wht: #fff;                         //white-font
 
@@ -27,6 +28,7 @@ $darker-bgcolor: #cbcecf;            //slightly-darker-background
 
 //fonts
 $main-font-family: "Rubik", sans-serif;
+$ios-font-family: Arial, Helvetica, Inter, Roboto, sans-serif;
 $hsr-font-family: Bahnschrift, Inter, sans-serif;
 
 body {
@@ -91,6 +93,100 @@ nav {
 
 .container {
     margin: 2rem;
+}
+
+.ios-phone {
+    font-family: $ios-font-family;
+    max-width: $main-width;
+    display: table;
+    margin: auto;
+    padding-left: $main-padding;
+    padding-right: $main-padding;
+    padding-bottom: $main-padding;
+}
+
+.ios-header {
+    background-color: $light-color;
+    min-width: $main-width;
+    border-bottom: .094rem solid $sub-color2;
+    padding-bottom: .5rem;
+    padding-top: .5rem;
+    margin-left: -.5rem;
+    margin-right: -.5em;
+    margin-bottom: 1rem;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.main-ios-contact {
+    color: $blk;
+    font-weight: bold;
+    margin-top: .75rem;
+    margin-bottom: 0;
+    font-size: larger;
+    margin-left: 1.5rem;
+}
+
+.ios-bio {
+    margin: .5rem auto .25rem auto;
+    color: $sub-color;
+    font-size: smaller;
+}
+
+.ios-text {
+    float: left;
+    color: $blk;
+    margin: 0 0 0.5em;
+    border-radius: 1em;
+    padding: 0.5em 1em;
+    background: $sub-color2;
+    max-width: 75%;
+    clear: both;
+    position: relative;
+
+    &::after {
+        content: "";
+        position: absolute;
+        left: -.5em;
+        bottom: 0;
+        width: 0.5em;
+        height: 1em;
+        border-right: 0.5em solid $sub-color2;
+        border-bottom-right-radius: 1em 0.5em;
+    }
+}
+
+.ios-reply {
+    float: right;
+    color: #FFFFFF;
+    margin: 0 0 0.5em;
+    border-radius: 1em;
+    padding: 0.5em 1em;
+    background: #1289fe;
+    max-width: 75%;
+    clear: both;
+    position: relative;
+    
+    &::after {
+        content: "";
+        position: absolute;
+        right: -0.5em;
+        bottom: 0;
+        width: 0.5em;
+        height: 1em;
+        border-left: 0.5em solid #1289fe;
+        border-bottom-left-radius: 1em 0.5em;
+    }
+}
+
+.full-ios-text {
+    margin-right: auto;
+    margin-left: 0rem;
+}
+
+.full-ios-reply {
+    margin-left: auto;
+    margin-right: 0rem;
 }
 
 .hsr-phone {
@@ -241,7 +337,7 @@ label {
 
     .sticker {
         float: left;
-        @extend %sticker-shared
+        @extend %sticker-shared;
     }
 
 }
@@ -270,7 +366,7 @@ label {
 
     .sticker {
         float: right;
-        @extend %sticker-shared
+        @extend %sticker-shared;
     }
 
 }
@@ -290,7 +386,7 @@ label {
 .receiver-contact {
     font-weight: 500;
     font-size: 90%;
-    color: $sub-color;
+    color: $sub-color; 
     padding: 0 .75rem .25rem 0;
     text-align: right;
 }
@@ -363,8 +459,7 @@ label {
     display: table;
 }
 
-%hsr-button {
-    font-family: $hsr-font-family;
+%my-button {
     padding: .5rem 1rem .5rem 1rem;
     border: .094rem solid $bgcolor-hsr;
     font-size: medium;
@@ -401,7 +496,8 @@ label {
     }
 
     .text-send {
-        @extend %hsr-button;
+        @extend %my-button;
+        font-family: $hsr-font-family;
         border-color: $bgcolor-hsr;
         border-left: 0;
         color: $dark-color;
@@ -449,7 +545,8 @@ label {
     }
 
     .sticker-select {
-        @extend %hsr-button;
+        @extend %my-button;
+        font-family: $hsr-font-family;
         margin: $main-padding;
         
         &:hover, &:focus, &:active {
@@ -460,6 +557,83 @@ label {
     }
 
 }
+
+
+.write-ios-text {
+    background-color: $darker-bgcolor;
+    width: 100%;
+    height: fit-content;
+    padding: $main-padding;
+    margin: 0 -1rem -1rem -1rem;
+    align-items: center;
+    text-align: center;
+
+    input[type=text] {
+        margin-top: .75rem;
+        font-family: $ios-font-family;
+        width: 60%;
+        padding: .5rem 1rem .5rem 1rem;
+        border: .094rem solid $bgcolor-hsr;
+        font-size: medium;
+        outline: none;
+
+        &:focus {
+            border-color: $dark-color;
+            transition: .15s;
+        }
+    }
+
+    .text-send {
+        @extend %my-button;
+        font-family: $ios-font-family;
+        border-color: $bgcolor-hsr;
+        border-left: 0;
+        color: $dark-color;
+        background-color: $bgcolor-hsr;
+
+        &:hover, &:focus, &:active {
+            color: $bgcolor-hsr;
+            background-color: $dark-color;
+            border-color: $dark-color;
+        }
+    }
+
+    input[type=radio] {
+        margin-top: 1rem;
+        margin-bottom: .75rem;
+        font-family: $ios-font-family;
+        border: .094rem solid $bgcolor-hsr;
+        font-size: medium;
+        outline: none;
+        cursor: pointer;
+        &:disabled {
+            cursor: not-allowed;
+        }
+    }
+
+    select {
+        margin-top: .75rem;
+        font-family: $ios-font-family;
+        padding: .5rem 1rem .5rem 1rem;
+        border: .094rem solid $bgcolor-hsr;
+        font-size: medium;
+        outline: none;
+        cursor: pointer;
+
+        &:focus {
+            border-color: $dark-color;
+            transition: .15s;
+        }
+    }
+
+    hr {
+        border: $sub-color2 .094rem solid;
+        margin-top: .75rem;
+        width: 20%;
+    }
+
+}
+
 
 .sticker-popup {
     position: absolute;

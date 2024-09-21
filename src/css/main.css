@@ -62,6 +62,98 @@ nav a {
   margin: 2rem;
 }
 
+.ios-phone {
+  font-family: Arial, Helvetica, Inter, Roboto, sans-serif;
+  max-width: 21.875rem;
+  display: table;
+  margin: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+}
+
+.ios-header {
+  background-color: #F6F6F6;
+  min-width: 21.875rem;
+  border-bottom: 0.094rem solid #b9bdbf;
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
+  margin-left: -0.5rem;
+  margin-right: -0.5em;
+  margin-bottom: 1rem;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.main-ios-contact {
+  color: #000;
+  font-weight: bold;
+  margin-top: 0.75rem;
+  margin-bottom: 0;
+  font-size: larger;
+  margin-left: 1.5rem;
+}
+
+.ios-bio {
+  margin: 0.5rem auto 0.25rem auto;
+  color: #666868;
+  font-size: smaller;
+}
+
+.ios-text {
+  float: left;
+  color: #000;
+  margin: 0 0 0.5em;
+  border-radius: 1em;
+  padding: 0.5em 1em;
+  background: #b9bdbf;
+  max-width: 75%;
+  clear: both;
+  position: relative;
+}
+.ios-text::after {
+  content: "";
+  position: absolute;
+  left: -0.5em;
+  bottom: 0;
+  width: 0.5em;
+  height: 1em;
+  border-right: 0.5em solid #b9bdbf;
+  border-bottom-right-radius: 1em 0.5em;
+}
+
+.ios-reply {
+  float: right;
+  color: #FFFFFF;
+  margin: 0 0 0.5em;
+  border-radius: 1em;
+  padding: 0.5em 1em;
+  background: #1289fe;
+  max-width: 75%;
+  clear: both;
+  position: relative;
+}
+.ios-reply::after {
+  content: "";
+  position: absolute;
+  right: -0.5em;
+  bottom: 0;
+  width: 0.5em;
+  height: 1em;
+  border-left: 0.5em solid #1289fe;
+  border-bottom-left-radius: 1em 0.5em;
+}
+
+.full-ios-text {
+  margin-right: auto;
+  margin-left: 0rem;
+}
+
+.full-ios-reply {
+  margin-left: auto;
+  margin-right: 0rem;
+}
+
 .hsr-phone {
   max-width: 21.875rem;
   font-family: Bahnschrift, Inter, sans-serif !important;
@@ -319,15 +411,14 @@ label {
   display: table;
 }
 
-.write-text .sticker-select, .write-text .text-send {
-  font-family: Bahnschrift, Inter, sans-serif;
+.write-ios-text .text-send, .write-text .sticker-select, .write-text .text-send {
   padding: 0.5rem 1rem 0.5rem 1rem;
   border: 0.094rem solid #d4d8dc;
   font-size: medium;
   font-weight: 600;
   cursor: pointer;
 }
-.write-text .sticker-select:hover, .write-text .text-send:hover, .write-text .sticker-select:focus, .write-text .text-send:focus, .write-text .sticker-select:active, .write-text .text-send:active {
+.write-ios-text .text-send:hover, .write-text .sticker-select:hover, .write-text .text-send:hover, .write-ios-text .text-send:focus, .write-text .sticker-select:focus, .write-text .text-send:focus, .write-ios-text .text-send:active, .write-text .sticker-select:active, .write-text .text-send:active {
   transition: 0.15s;
 }
 
@@ -355,6 +446,7 @@ label {
   transition: 0.15s;
 }
 .write-text .text-send {
+  font-family: Bahnschrift, Inter, sans-serif;
   border-color: #d4d8dc;
   border-left: 0;
   color: #121212;
@@ -396,12 +488,79 @@ label {
   width: 20%;
 }
 .write-text .sticker-select {
+  font-family: Bahnschrift, Inter, sans-serif;
   margin: 1rem;
 }
 .write-text .sticker-select:hover, .write-text .sticker-select:focus, .write-text .sticker-select:active {
   color: #d4d8dc;
   background-color: #121212;
   border-color: #121212;
+}
+
+.write-ios-text {
+  background-color: #cbcecf;
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 1rem;
+  margin: 0 -1rem -1rem -1rem;
+  align-items: center;
+  text-align: center;
+}
+.write-ios-text input[type=text] {
+  margin-top: 0.75rem;
+  font-family: Arial, Helvetica, Inter, Roboto, sans-serif;
+  width: 60%;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  border: 0.094rem solid #d4d8dc;
+  font-size: medium;
+  outline: none;
+}
+.write-ios-text input[type=text]:focus {
+  border-color: #121212;
+  transition: 0.15s;
+}
+.write-ios-text .text-send {
+  font-family: Arial, Helvetica, Inter, Roboto, sans-serif;
+  border-color: #d4d8dc;
+  border-left: 0;
+  color: #121212;
+  background-color: #d4d8dc;
+}
+.write-ios-text .text-send:hover, .write-ios-text .text-send:focus, .write-ios-text .text-send:active {
+  color: #d4d8dc;
+  background-color: #121212;
+  border-color: #121212;
+}
+.write-ios-text input[type=radio] {
+  margin-top: 1rem;
+  margin-bottom: 0.75rem;
+  font-family: Arial, Helvetica, Inter, Roboto, sans-serif;
+  border: 0.094rem solid #d4d8dc;
+  font-size: medium;
+  outline: none;
+  cursor: pointer;
+}
+.write-ios-text input[type=radio]:disabled {
+  cursor: not-allowed;
+}
+.write-ios-text select {
+  margin-top: 0.75rem;
+  font-family: Arial, Helvetica, Inter, Roboto, sans-serif;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  border: 0.094rem solid #d4d8dc;
+  font-size: medium;
+  outline: none;
+  cursor: pointer;
+}
+.write-ios-text select:focus {
+  border-color: #121212;
+  transition: 0.15s;
+}
+.write-ios-text hr {
+  border: #b9bdbf 0.094rem solid;
+  margin-top: 0.75rem;
+  width: 20%;
 }
 
 .sticker-popup {

@@ -1,29 +1,15 @@
 import React from 'react'
 import { useState } from 'react'
-import { imageURLs } from './ImageURLs';
-import stickerIDs from './StickerIDs';
 
 function Export({ messages, chatName, chatDesc, imageURLs }) {
 
     const [exportedHTML, setExportedHTML] = useState('');
-    const [copySuccess, setCopySuccess] = useState(false);
-    const getStickerURL = (stickerId) => {
-        const sticker = stickerIDs.find(s => s.stickerId === stickerId);
-        return sticker ? sticker.stickerURL : '';
-    };
 
     const generateMessageHTML = (message) => {
         const { contactName, textValue, statusType, messageType } = message;
-        const iconRef = contactName.replace(/ /g, '_');
-        const iconURL = imageURLs[`${iconRef}_Icon`] || '';
-        const isPictureMessage = messageType === 'picture';
-        const isStickerMessage = messageType === 'sticker';
-        const stickerURL = isStickerMessage ? getStickerURL(textValue) : '';
 
         const backgroundStyle = isPictureMessage
         ? `background-image: url('${textValue}'); background-size: cover; background-position: center;`
-        : isStickerMessage
-        ? `background-image: url('${stickerURL}'); background-size: contain; background-position: center; background-repeat: no-repeat;`
         : '';
 
         if (statusType === 'receive') {
@@ -39,7 +25,7 @@ function Export({ messages, chatName, chatDesc, imageURLs }) {
                         <tr class='msg-row'>
                             <td class='hsr-${messageType}' 
                             ${backgroundStyle ? `style="${backgroundStyle}"` : ''}>
-                                ${(!isPictureMessage && !isStickerMessage) ? textValue : ''}</td>
+                                ${!isPictureMessage ? textValue : ''}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -57,7 +43,7 @@ function Export({ messages, chatName, chatDesc, imageURLs }) {
                         <tr class='msg-row'>
                             <td class='hsr-${messageType}' 
                             ${backgroundStyle ? `style="${backgroundStyle}"` : ''}>
-                                ${(!isPictureMessage && !isStickerMessage) ? textValue : ''}</td>
+                                ${!isPictureMessage ? textValue : ''}</td>
                         </tr>
                     </tbody>
                 </table>
