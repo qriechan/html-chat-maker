@@ -1,13 +1,14 @@
 import React, { useRef } from 'react'
 import WorkskinHSR from './HSR/Workskin-HSR'
+import WorkskinIOS from './iOS/Workskin-iOS';
 
 function Workskin() {
-    const textRef = useRef(null); // Create a ref for the div
+    const textRef = useRef(null); 
 
     const copyToClipboard = () => {
         if (textRef.current) {
-            const textToCopy = textRef.current.innerText; // Get the text from the div
-            navigator.clipboard.writeText(textToCopy) // Copy to clipboard
+            const textToCopy = textRef.current.innerText; 
+            navigator.clipboard.writeText(textToCopy) 
                 .then(() => {
                     alert("Copied workskin to clipboard!");
                 })
@@ -21,6 +22,11 @@ function Workskin() {
     <>
         <div className='workskin-container'>
             <WorkskinHSR 
+            textRef={textRef} />
+            <button className='copy-workskin' onClick={copyToClipboard}>Copy workskin CSS</button>
+        </div>
+        <div className='workskin-container'>
+            <WorkskinIOS 
             textRef={textRef} />
             <button className='copy-workskin' onClick={copyToClipboard}>Copy workskin CSS</button>
         </div>

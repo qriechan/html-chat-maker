@@ -6,7 +6,7 @@ function Nav() {
     <header>
         <Link to="/"><h1>HTML Chat Maker</h1></Link>
         <nav>
-            <NavLink to="/">Home</NavLink>
+            <NavLink to="/">About</NavLink>
             <NavLink to="/hsr">Honkai Star Rail</NavLink>
             <NavLink to="/ios">iOS</NavLink>
             <NavLink to="/workskin">Workskins</NavLink>

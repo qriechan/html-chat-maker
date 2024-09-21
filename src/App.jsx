@@ -1,7 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 import About from './components/About'
-import Contact from './components/Contact'
 import HSR from './components/HSR/HSR'
 import Nav from './components/Nav'
 import Ios from './components/iOS/iOS'
@@ -18,7 +17,7 @@ function App() {
                 <Nav />
 
                 <Routes>
-                    <Route exact path='about' element={ <About /> } />
+                    <Route exact path='/' element={ <About /> } />
                     <Route exact path='hsr' element={ <HSR /> } />
                     <Route exact path='ios' element={ <Ios /> } />
                     <Route exact path='workskin' element={ <Workskin /> } />

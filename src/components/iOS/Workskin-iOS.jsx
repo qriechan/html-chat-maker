@@ -1,6 +1,6 @@
 import React from 'react'
 
-function WorkskinHSR({ textRef }) {
+function WorkskinIOS({ textRef }) {
   return (
     <div>
         <h3>iOS Message Workskin</h3>
@@ -159,4 +159,4 @@ function WorkskinHSR({ textRef }) {
   )
 }
 
-export default WorkskinHSR
+export default WorkskinIOS
