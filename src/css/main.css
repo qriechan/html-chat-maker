@@ -435,7 +435,7 @@ label {
 .write-text input[type=text] {
   margin-top: 0.75rem;
   font-family: Bahnschrift, Inter, sans-serif;
-  width: 70%;
+  width: 60%;
   padding: 0.5rem 1rem 0.5rem 1rem;
   border: 0.094rem solid #d4d8dc;
   font-size: medium;
