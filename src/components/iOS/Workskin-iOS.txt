@@ -1,153 +1,149 @@
-#workskin .phone {
-    max-width: 350px;
-    font-family: Bahnschrift, Inter, sans-serif !important;
+#workskin .ios-phone {
+    font-family: Arial, Helvetica, Inter, Roboto, sans-serif;
+    max-width: 21.875rem;
     display: table;
     margin: auto;
-    background-color: #d4d8dc;
-    border-radius: 0 15px 0 0;
-    outline: 1.5px solid rgba(213, 214, 215, 0.9);
-    outline-offset: 2px;
-    padding-left: 1em;
-    padding-right: 1em;
-    padding-bottom: 1em;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
 }
-#workskin .msg-row:hover {
-    background-color: #d4d8dc;
+
+#workskin .ios-header {
+    background-color: #F6F6F6;
+    min-width: 21.875rem;
+    border-bottom: 0.094rem solid #b9bdbf;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+    margin-left: -0.5rem;
+    margin-right: -0.5em;
+    margin-bottom: 1rem;
+    text-align: center;
+    text-transform: capitalize;
 }
-#workskin .header {
-    min-width: 350px;
-    background: none;
-    border-bottom: 1.5px solid #b9bdbf;
-    margin-bottom: 1em;
-    padding-left: .5em;
-}
-#workskin .main-contact {
-    font-size: larger;
-    color: #121212;
+
+#workskin .main-ios-contact {
+    color: #000;
     font-weight: bold;
-    margin-top: .75em;
+    margin-top: 0.75rem;
     margin-bottom: 0;
+    font-size: larger;
 }
-#workskin .bio {
-    margin: .25em auto .75em auto;
+
+#workskin .ios-bio {
+    margin: 0.5rem auto 0.25rem auto;
     color: #666868;
     font-size: smaller;
-    font-weight: 600;
 }
-#workskin .fulltext {
-    min-height: fit-content;
-    margin-right: auto;
-    margin-left: 0px;
-    margin-bottom: .25em;
-    width: auto;
-}
-#workskin .fullreply {
-    min-height: fit-content;
-    margin-right: 0px;
-    margin-left: auto;
-    margin-bottom: .25em;
-    width: auto;
-}
-#workskin .full-reply .picture, .full-text .picture {
-    width: 150px;
-    height: 75px;
-    background-color: #000;
-}
-#workskin .L-contact {
-    font-weight: 500;
-    font-size: 90%;
-    color: #666868;
-    padding: 0 0 .25em .75em;
-}
-#workskin .R-contact {
-    font-weight: 500;
-    font-size: 90%;
-    color: #666868;
-    padding: 0 0.75em .25em 0;
-    text-align: right;
-}
-#workskin .hsricon {
-    width: 60px;
-    height: 60px;
-    border-radius: 100%;
-    background-color: #121212;
-}
-#workskin .td-icon {
-    vertical-align: top;
-    width: 60px;
-}
-#workskin .text {
-    font-weight: 500;
+
+#workskin .ios-text {
     float: left;
-    color: #121212;
-    margin: 0 0 0.75em 0.75em;
-    border-radius: 0 .65em .65em .65em;
+    color: #000000;
+    margin: 0 0 0.5em;
     padding: 0.5em 1em;
-    background: #ededed;
-    max-width: 80%;
     clear: both;
     position: relative;
-    box-shadow: #9ea0a1 -1px 2px;
 }
-#workskin .reply {
-    font-weight: 500;
-    float: right;
-    color: #121212;
-    margin: 0 .75em .75em 0;
-    border-radius: .65em 0 .65em .65em;
-    padding: .5em 1em;
-    background: #d9caa9;
-    max-width: 80%;
+#workskin .ios-reply {
+   float: right;
+   color: #FFFFFF;
+   margin: 0 0 0.5em;
+   padding: 0.5em 1em;
+   clear: both;
+   position: relative;
+}
+#workskin .full-text {
+    margin-right: auto;
+    margin-left: 0rem;
+}
+#workskin .full-text .ios-ios-text {
+    float: left;
+    color: #000000;
+    margin: 0 0 0.5em;
+    border-radius: 1em;
+    padding: 0.5em 1em;
+    background: #e5e5ea;
+    max-width: 75%;
     clear: both;
     position: relative;
-    box-shadow: #9ea0a1 1px 2px;
 }
-#workskin .full-reply .hsr-picture, .full-text .hsr-picture {
-    width: 150px;
-    height: 75px;
-    background-color: #000;
+#workskin .full-text .ios-ios-text::after {
+    content: "";
+    position: absolute;
+    left: -.5em;
+    bottom: 0;
+    width: 0.5em;
+    height: 1em;
+    border-right: 0.5em solid #e5e5ea;
+    border-bottom-right-radius: 1em 0.5em;
 }
-#workskin .full-reply .hsr-sticker, .full-text .hsr-sticker {
-    width: 75px;
-    height: 75px;
-    background-color: none;
-    margin: 1rem;
-}
-#workskin .full-text .hsr-picture {
+#workskin .full-text .ios-ios-picture {
     float: left;
     margin: 0.5rem 0.75rem 1rem 1.5rem;
 }
-#workskin .full-text .hsr-sticker {
-    float: left;
+#workskin .full-reply {
+    margin-right: 0rem;
+    margin-left: auto;
 }
-#workskin .full-reply .hsr-picture {
-    float: left;
+#workskin .full-reply .ios-ios-text {
+    float: right;
+    color: #FFFFFF;
+    margin: 0 0 0.5em;
+    border-radius: 1em;
+    padding: 0.5em 1em;
+    background: #1289fe;
+    max-width: 75%;
+    clear: both;
+    position: relative;
+}
+#workskin .full-reply .ios-ios-text::after {
+    content: "";
+    position: absolute;
+    right: -0.5em;
+    bottom: 0;
+    width: 0.5em;
+    height: 1em;
+    border-left: 0.5em solid #1289fe;
+    border-bottom-left-radius: 1em 0.5em;
+}
+#workskin .full-reply .ios-ios-picture {
+    float: right;
     margin: 0.5rem 1.5rem 1rem 0.75rem;
 }
-#workskin .full-reply .hsr-sticker {
+#workskin .sender-contact {
+    font-weight: 500;
+    font-size: 90%;
+    color: #666868;
+    padding: 0 0 0.25rem 0.75rem;
+    float: left;
+}
+#workskin .receiver-contact {
+    font-weight: 500;
+    font-size: 90%;
+    color: #666868;
+    padding: 0 0.75rem 0.25rem 0;
+    text-align: right;
     float: right;
 }
 #workskin .fullalert {
     vertical-align: middle;
+    width: -moz-fit-content;
     width: fit-content;
     margin-left: auto;
     margin-right: auto;
 }
-#workskin .alert-icon {
-    width: 17.5px;
-    height: 17.5px;
-}
 #workskin .alert-display {
+    width: -moz-fit-content;
     width: fit-content;
     text-align: center;
 }
+
 #workskin .alert {
     vertical-align: middle;
     text-align: left;
     color: #858586;
     font-size: small;
-    padding-bottom: .5em;
-    padding-top: .5em;
-    margin: .25em 0 .75em 0em;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+    margin: 0.25rem 0 0.75rem 0rem;
     display: table;
 }

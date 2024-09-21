@@ -13,9 +13,10 @@ import Export from './Export'
 function Phone() {
     const [messages, setMessages] = useState([]);
     const [chatName, setChatName] = useState('Contact Name');
-    const [chatDesc, setChatDesc] = useState('Enter description...');
+    const [chatDesc, setChatDesc] = useState('');
     const [channelType, setChannelType] = useState(''); 
     const [activeMessageIndex, setActiveMessageIndex] = useState(null); 
+    const [includeContact, setIncludeContact] = useState(false);
 
     const handleAddMessage = (messageDetails) => {
         setMessages((prevMessages) => [...prevMessages, messageDetails]);
@@ -58,6 +59,9 @@ function Phone() {
             setChatDesc(inputValue);
         }
     };
+    const handleContactName = (e) => {
+        setIncludeContact(e.target.checked);
+    }
 
     return (
         <div className='container'>
@@ -67,8 +71,10 @@ function Phone() {
                     <EditorPopup 
                         handleInputChange={handleInputChange}
                         handleTypeSwitch={handleTypeSwitch}
+                        handleContactName={handleContactName}
                         description={chatDesc}
                         channel={chatName}
+                        includeContact={includeContact}
                     />
                     <p className='main-ios-contact'>{chatName}</p>
                     <p className='ios-bio'>{chatDesc}</p>
@@ -87,6 +93,7 @@ function Phone() {
                                 contact={message.contactName}
                                 text={message.textValue}
                                 messageClass={message.messageType}
+                                includeContact={includeContact}
                             />
                         ) : message.statusType === 'send' ? (
                             <ReceiverMessage 
@@ -130,6 +137,7 @@ function Phone() {
             messages={messages}
             chatName={chatName}
             chatDesc={chatDesc}
+            includeContact={includeContact}
         />
         </div>
     )

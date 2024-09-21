@@ -5,8 +5,8 @@ function PostText(props){
     const [textValue, setTextValue] = useState('');
     const [contactName, setContactName] = useState('Unknown');
     const [statusType, setStatusType] = useState('send');
-    const [messageType, setMessageType] = useState('text');
-    const inputPlaceholder = messageType === 'picture' 
+    const [messageType, setMessageType] = useState('ios-text');
+    const inputPlaceholder = messageType === 'ios-picture' 
         ? 'Paste image URL...' 
         : 'Enter text here...';
     const messageStatus = [
@@ -60,7 +60,7 @@ function PostText(props){
                         <input 
                             type="radio" 
                             value="ios-text" 
-                            checked={messageType === 'text' && statusType === 'action'} 
+                            checked={messageType === 'ios-text'} 
                             onChange={(e) => setMessageType(e.target.value)} 
                         />
                         Text
@@ -69,7 +69,7 @@ function PostText(props){
                         <input 
                             type="radio" 
                             value="ios-picture" 
-                            checked={messageType === 'picture' && statusType != 'action'} 
+                            checked={messageType === 'ios-picture' && statusType != 'action'} 
                             onChange={(e) => setMessageType(e.target.value)} 
                             disabled={statusType === 'action'}
                         />

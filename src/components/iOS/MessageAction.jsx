@@ -5,7 +5,6 @@ function ActionMessage({ text }) {
     <>
     <table class="fullalert">
         <tr class="msg-row">
-            <td class="alert-display"></td>
             <td class="alert">{text}</td>
         </tr>
     </table>

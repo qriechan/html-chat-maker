@@ -1,6 +1,6 @@
 import React from 'react'
 
-function SenderMessage({ contact , text, messageClass }) {
+function SenderMessage({ text, messageClass }) {
 
     const isPictureMessage = messageClass === 'picture';
     
@@ -14,10 +14,7 @@ function SenderMessage({ contact , text, messageClass }) {
         <table className='full-message full-ios-reply'>
             <tbody>
                 <tr>
-                    <td className='receiver-contact message-contact'>{contact}</td>
-                </tr>
-                <tr>
-                    <td className={`ios-reply ${messageClass}`} style={backgroundStyle}>
+                    <td className={`ios-reply ios-${messageClass}`} style={backgroundStyle}>
                     {!isPictureMessage && text}</td>
                 </tr>
             </tbody>

@@ -2,7 +2,7 @@ import React from 'react'
 import Popup from 'reactjs-popup';
 import { BiEdit } from "react-icons/bi";
 
-function EditorPopup( {handleInputChange, channel, description} ) {
+function EditorPopup( {handleInputChange, handleContactName, channel, description, includeContact} ) {
 
     return (
         <>
@@ -30,8 +30,14 @@ function EditorPopup( {handleInputChange, channel, description} ) {
                     value={description}
                     onChange={(e) => handleInputChange(e, 'chatDesc')}
                     placeholder='Enter description (OPTIONAL)'
-                    required
                 />
+                <input 
+                    type="checkbox"
+                    name="type"
+                    checked={includeContact}
+                    onChange={handleContactName}
+                />
+                <label>Include contact names</label>
             </div>
         </Popup>
         </>

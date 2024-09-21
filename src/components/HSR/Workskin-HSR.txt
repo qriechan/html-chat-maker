@@ -48,7 +48,7 @@
     margin-bottom: .25em;
     width: auto;
 }
-#workskin .full-reply .picture, .full-text .picture {
+#workskin .fullreply .picture, .fulltext .picture {
     width: 150px;
     height: 75px;
     background-color: #000;
@@ -102,29 +102,29 @@
     position: relative;
     box-shadow: #9ea0a1 1px 2px;
 }
-#workskin .full-reply .hsr-picture, .full-text .hsr-picture {
+#workskin .fullreply .hsr-picture, .fulltext .hsr-picture {
     width: 150px;
     height: 75px;
     background-color: #000;
 }
-#workskin .full-reply .hsr-sticker, .full-text .hsr-sticker {
+#workskin .fullreply .hsr-sticker, .fulltext .hsr-sticker {
     width: 75px;
     height: 75px;
     background-color: none;
     margin: 1rem;
 }
-#workskin .full-text .hsr-picture {
+#workskin .fulltext .hsr-picture {
     float: left;
     margin: 0.5rem 0.75rem 1rem 1.5rem;
 }
-#workskin .full-text .hsr-sticker {
+#workskin .fulltext .hsr-sticker {
     float: left;
 }
-#workskin .full-reply .hsr-picture {
+#workskin .fullreply .hsr-picture {
     float: left;
     margin: 0.5rem 1.5rem 1rem 0.75rem;
 }
-#workskin .full-reply .hsr-sticker {
+#workskin .fullreply .hsr-sticker {
     float: right;
 }
 #workskin .fullalert {

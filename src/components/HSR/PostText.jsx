@@ -74,7 +74,7 @@ function PostText(props){
                         <input 
                             type="radio" 
                             value="text" 
-                            checked={messageType === 'text' && statusType === 'action'} 
+                            checked={messageType === 'text'} 
                             onChange={(e) => setMessageType(e.target.value)} 
                         />
                         Text
