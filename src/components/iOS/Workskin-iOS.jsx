@@ -2,7 +2,7 @@ import React from 'react'
 
 function WorkskinIOS({ textRef }) {
   return (
-    <div>
+    <div className='code-box'>
         <h3>iOS Message Workskin</h3>
         <div className='workskin-box' ref={textRef}>
         <p className='tiny'>#workskin .ios-phone {'{'}</p>
@@ -72,6 +72,7 @@ function WorkskinIOS({ textRef }) {
         <p className='tiny'>&nbsp; max-width: 75%;</p>
         <p className='tiny'>&nbsp; clear: both;</p>
         <p className='tiny'>&nbsp; position: relative;</p>
+        <p className='tiny'>&nbsp; overflow-wrap: break-word;</p>
         <p className='tiny'>{'}'}</p>
         <p className='tiny'>#workskin .full-text .ios-ios-text::after {'{'}</p>
         <p className='tiny'>&nbsp; content: "";</p>
@@ -101,6 +102,7 @@ function WorkskinIOS({ textRef }) {
         <p className='tiny'>&nbsp; max-width: 75%;</p>
         <p className='tiny'>&nbsp; clear: both;</p>
         <p className='tiny'>&nbsp; position: relative;</p>
+        <p className='tiny'>&nbsp; overflow-wrap: break-word;</p>
         <p className='tiny'>{'}'}</p>
         <p className='tiny'>#workskin .full-reply .ios-ios-text::after {'{'}</p>
         <p className='tiny'>&nbsp; content: "";</p>

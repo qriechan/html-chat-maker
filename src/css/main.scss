@@ -2,6 +2,7 @@
 
 //width-heights
 $main-width: 21.875rem;                 //device-width
+$sub-width: 15rem;                 //device-width
 // $main-width: 350px;                  //device-width
 $main-padding: 1rem;                    //padding-size
 $big-padding: 2rem;                     //larger-padding-size
@@ -123,11 +124,11 @@ nav {
     display: flex;
     align-items: start;
     flex-direction: column;
-    max-width: 25rem;
+    max-width: $main-width;
 }
 
 .workskin-box {
-    width: $main-width;
+    width: (($main-width)-1rem);
     max-height: 15rem;
     border: $alert-color-hsr;
     background-color: $bgcolor-hsr;
@@ -205,6 +206,7 @@ nav {
     max-width: 75%;
     clear: both;
     position: relative;
+    overflow-wrap: break-word;
 
     &::after {
         content: "";
@@ -228,6 +230,7 @@ nav {
     max-width: 75%;
     clear: both;
     position: relative;
+    overflow-wrap: break-word;
     
     &::after {
         content: "";
@@ -389,6 +392,7 @@ label {
         background: $sender-color-hsr;
         box-shadow: -.063rem .125rem $textbox-shadow-color;
         border-radius: 0 .65rem .65rem .65rem;
+        overflow-wrap: break-word;
     }
 
     .picture {
@@ -418,6 +422,7 @@ label {
         border-radius: .65rem 0 .65rem .65rem;
         background: $receiver-color-hsr;
         box-shadow: .063rem .125rem $textbox-shadow-color;
+        overflow-wrap: break-word;
     }
 
     .picture {
@@ -797,9 +802,18 @@ label {
 }
 
 @media (max-width: 480px) {
-
     .container {
         margin: 0;
+    }
+
+    .export-container {
+        width: $sub-width;
+    }
+    .ios-phone, .hsr-phone {
+        max-width: $sub-width;
+    }
+    .ios-header, .header {
+        min-width: $sub-width;
     }
 
     nav {

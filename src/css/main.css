@@ -80,11 +80,11 @@ nav ul li a:active:hover, nav ul li a:focus:hover {
   display: flex;
   align-items: start;
   flex-direction: column;
-  max-width: 25rem;
+  max-width: 21.875rem;
 }
 
 .workskin-box {
-  width: 21.875rem;
+  width: 20.875rem;
   max-height: 15rem;
   border: #858586;
   background-color: #d4d8dc;
@@ -162,6 +162,7 @@ nav ul li a:active:hover, nav ul li a:focus:hover {
   max-width: 75%;
   clear: both;
   position: relative;
+  overflow-wrap: break-word;
 }
 .ios-text::after {
   content: "";
@@ -184,6 +185,7 @@ nav ul li a:active:hover, nav ul li a:focus:hover {
   max-width: 75%;
   clear: both;
   position: relative;
+  overflow-wrap: break-word;
 }
 .ios-reply::after {
   content: "";
@@ -340,6 +342,7 @@ label {
   background: #ededed;
   box-shadow: -0.063rem 0.125rem #9ea0a1;
   border-radius: 0 0.65rem 0.65rem 0.65rem;
+  overflow-wrap: break-word;
 }
 .full-text .picture {
   float: left;
@@ -363,6 +366,7 @@ label {
   border-radius: 0.65rem 0 0.65rem 0.65rem;
   background: #d9caa9;
   box-shadow: 0.063rem 0.125rem #9ea0a1;
+  overflow-wrap: break-word;
 }
 .full-reply .picture {
   float: left;
@@ -711,6 +715,15 @@ label {
 @media (max-width: 480px) {
   .container {
     margin: 0;
+  }
+  .export-container {
+    width: 15rem;
+  }
+  .ios-phone, .hsr-phone {
+    max-width: 15rem;
+  }
+  .ios-header, .header {
+    min-width: 15rem;
   }
   nav {
     flex-direction: column;

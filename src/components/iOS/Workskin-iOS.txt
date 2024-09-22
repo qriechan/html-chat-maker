@@ -65,6 +65,7 @@
     max-width: 75%;
     clear: both;
     position: relative;
+    overflow-wrap: break-word;
 }
 #workskin .full-text .ios-ios-text::after {
     content: "";
@@ -94,6 +95,7 @@
     max-width: 75%;
     clear: both;
     position: relative;
+    overflow-wrap: break-word;
 }
 #workskin .full-reply .ios-ios-text::after {
     content: "";

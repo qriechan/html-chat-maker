@@ -95,6 +95,7 @@ function WorkskinHSR({ textRef }) {
         <p className='tiny'>&nbsp; clear: both;</p>
         <p className='tiny'>&nbsp; position: relative;</p>
         <p className='tiny'>&nbsp; box-shadow: #9ea0a1 -1px 2px;</p>
+        <p className='tiny'>&nbsp; overflow-wrap: break-word;</p>
         <p className='tiny'>{'}'}</p>
         <p className='tiny'>#workskin .reply {'{'}</p>
         <p className='tiny'>&nbsp; font-weight: 500;</p>
@@ -108,6 +109,7 @@ function WorkskinHSR({ textRef }) {
         <p className='tiny'>&nbsp; clear: both;</p>
         <p className='tiny'>&nbsp; position: relative;</p>
         <p className='tiny'>&nbsp; box-shadow: #9ea0a1 1px 2px;</p>
+        <p className='tiny'>&nbsp; overflow-wrap: break-word;</p>
         <p className='tiny'>{'}'}</p>
         <p className='tiny'>#workskin .fullreply .hsr-picture, .fulltext .hsr-picture {'{'}</p>
         <p className='tiny'>&nbsp; width: 150px;</p>
