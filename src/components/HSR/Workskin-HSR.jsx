@@ -46,14 +46,14 @@ function WorkskinHSR({ textRef }) {
         <p className='tiny'>&nbsp; margin-right: auto;</p>
         <p className='tiny'>&nbsp; margin-left: 0px;</p>
         <p className='tiny'>&nbsp; margin-bottom: .25em;</p>
-        <p className='tiny'>&nbsp; width: auto;</p>
+        <p className='tiny'>&nbsp; width: 100%;</p>
         <p className='tiny'>{'}'}</p>
         <p className='tiny'>#workskin .fullreply {'{'}</p>
         <p className='tiny'>&nbsp; min-height: fit-content;</p>
         <p className='tiny'>&nbsp; margin-right: 0px;</p>
         <p className='tiny'>&nbsp; margin-left: auto;</p>
         <p className='tiny'>&nbsp; margin-bottom: .25em;</p>
-        <p className='tiny'>&nbsp; width: auto;</p>
+        <p className='tiny'>&nbsp; width: 100%;</p>
         <p className='tiny'>{'}'}</p>
         <p className='tiny'>#workskin .fullreply .picture, .fulltext .picture {'{'}</p>
         <p className='tiny'>&nbsp; width: 150px;</p>
@@ -91,7 +91,7 @@ function WorkskinHSR({ textRef }) {
         <p className='tiny'>&nbsp; border-radius: 0 .65em .65em .65em;</p>
         <p className='tiny'>&nbsp; padding: 0.5em 1em;</p>
         <p className='tiny'>&nbsp; background: #ededed;</p>
-        <p className='tiny'>&nbsp; max-width: 80%;</p>
+        <p className='tiny'>&nbsp; max-width: 70%;</p>
         <p className='tiny'>&nbsp; clear: both;</p>
         <p className='tiny'>&nbsp; position: relative;</p>
         <p className='tiny'>&nbsp; box-shadow: #9ea0a1 -1px 2px;</p>
@@ -105,7 +105,7 @@ function WorkskinHSR({ textRef }) {
         <p className='tiny'>&nbsp; border-radius: .65em 0 .65em .65em;</p>
         <p className='tiny'>&nbsp; padding: .5em 1em;</p>
         <p className='tiny'>&nbsp; background: #d9caa9;</p>
-        <p className='tiny'>&nbsp; max-width: 80%;</p>
+        <p className='tiny'>&nbsp; max-width: 70%;</p>
         <p className='tiny'>&nbsp; clear: both;</p>
         <p className='tiny'>&nbsp; position: relative;</p>
         <p className='tiny'>&nbsp; box-shadow: #9ea0a1 1px 2px;</p>

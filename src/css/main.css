@@ -127,7 +127,7 @@ blockquote a, blockquote a:focus, blockquote a:visited {
 }
 
 .ios-phone {
-  font-family: Arial, Helvetica, Inter, Roboto, sans-serif;
+  font-family: Helvetica, "Segoe UI", Inter, Roboto, sans-serif;
   max-width: 21.875rem;
   display: table;
   margin: auto;
@@ -137,7 +137,7 @@ blockquote a, blockquote a:focus, blockquote a:visited {
 }
 
 .ios-header {
-  background-color: #F6F6F6;
+  background-color: #f5f5f5;
   min-width: 21.875rem;
   border-bottom: 0.094rem solid #b9bdbf;
   padding-bottom: 0.5rem;
@@ -185,15 +185,16 @@ blockquote a, blockquote a:focus, blockquote a:visited {
 .full-ios-text {
   margin-right: auto;
   margin-left: 0rem;
+  width: 100%;
 }
 .full-ios-text .ios-ios-text {
   float: left;
   color: #000;
-  margin: 0 0 0.5em;
-  border-radius: 1em;
-  padding: 0.5em 1em;
-  background: #b9bdbf;
-  max-width: 75%;
+  margin: 0 0 0.5rem;
+  max-width: 70%;
+  border-radius: 1.25rem;
+  padding: 0.75rem 1.25rem 0.75rem 1.25rem;
+  background: #e5e5ea;
   clear: both;
   position: relative;
   overflow-wrap: break-word;
@@ -201,12 +202,12 @@ blockquote a, blockquote a:focus, blockquote a:visited {
 .full-ios-text .ios-ios-text::after {
   content: "";
   position: absolute;
-  left: -0.5em;
+  left: -0.5rem;
   bottom: 0;
-  width: 0.5em;
-  height: 1em;
-  border-right: 0.5em solid #b9bdbf;
-  border-bottom-right-radius: 1em 0.5em;
+  width: 0.5rem;
+  height: 1.5rem;
+  border-right: 0.75rem solid #e5e5ea;
+  border-bottom-right-radius: 1.25rem 0.5rem;
 }
 .full-ios-text .ios-ios-picture {
   float: left;
@@ -216,15 +217,16 @@ blockquote a, blockquote a:focus, blockquote a:visited {
 .full-ios-reply {
   margin-left: auto;
   margin-right: 0rem;
+  width: 100%;
 }
 .full-ios-reply .ios-ios-text {
   float: right;
   color: #FFFFFF;
-  margin: 0 0 0.5em;
-  border-radius: 1em;
-  padding: 0.5em 1em;
-  background: #1289fe;
-  max-width: 75%;
+  margin: 0 0 0.5rem;
+  max-width: 70%;
+  border-radius: 1.25rem;
+  padding: 0.75rem 1.25rem 0.75rem 1.25rem;
+  background: #0b93f6;
   clear: both;
   position: relative;
   overflow-wrap: break-word;
@@ -232,12 +234,15 @@ blockquote a, blockquote a:focus, blockquote a:visited {
 .full-ios-reply .ios-ios-text::after {
   content: "";
   position: absolute;
-  right: -0.5em;
+  right: -0.5rem;
   bottom: 0;
-  width: 0.5em;
-  height: 1em;
-  border-left: 0.5em solid #1289fe;
-  border-bottom-left-radius: 1em 0.5em;
+  width: 0.5rem;
+  height: 1.5rem;
+  border-left: 0.75rem solid #0b93f6;
+  border-bottom-left-radius: 1.25rem 0.5rem;
+}
+.full-ios-reply .ios-ios-text .no-after::after {
+  content: none;
 }
 .full-ios-reply .ios-ios-picture {
   float: left;
@@ -348,7 +353,6 @@ label {
   min-height: -moz-fit-content;
   min-height: fit-content;
   margin-bottom: 0.25rem;
-  width: auto;
 }
 
 .full-reply .picture, .full-text .picture {
@@ -367,12 +371,13 @@ label {
 .full-text {
   margin-right: auto;
   margin-left: 0rem;
+  width: 100%;
 }
 .full-text .text {
   font-weight: 500;
   color: #121212;
   padding: 0.5rem 1rem;
-  max-width: 80%;
+  max-width: 70%;
   clear: both;
   position: relative;
   background: #ededed;
@@ -391,12 +396,13 @@ label {
 .full-reply {
   margin-right: 0rem;
   margin-left: auto;
+  width: 100%;
 }
 .full-reply .text {
   font-weight: 500;
   color: #121212;
   padding: 0.5rem 1rem;
-  max-width: 80%;
+  max-width: 70%;
   clear: both;
   position: relative;
   border-radius: 0.65rem 0 0.65rem 0.65rem;
@@ -611,7 +617,7 @@ label {
 }
 .write-ios-text input[type=text] {
   margin-top: 0.75rem;
-  font-family: Arial, Helvetica, Inter, Roboto, sans-serif;
+  font-family: Helvetica, "Segoe UI", Inter, Roboto, sans-serif;
   width: 60%;
   padding: 0.5rem 1rem 0.5rem 1rem;
   border: 0.094rem solid #d4d8dc;
@@ -623,7 +629,7 @@ label {
   transition: 0.15s;
 }
 .write-ios-text .text-send {
-  font-family: Arial, Helvetica, Inter, Roboto, sans-serif;
+  font-family: Helvetica, "Segoe UI", Inter, Roboto, sans-serif;
   border-color: #d4d8dc;
   border-left: 0;
   color: #121212;
@@ -637,7 +643,7 @@ label {
 .write-ios-text input[type=radio] {
   margin-top: 1rem;
   margin-bottom: 0.75rem;
-  font-family: Arial, Helvetica, Inter, Roboto, sans-serif;
+  font-family: Helvetica, "Segoe UI", Inter, Roboto, sans-serif;
   border: 0.094rem solid #d4d8dc;
   font-size: medium;
   outline: none;
@@ -648,7 +654,7 @@ label {
 }
 .write-ios-text select {
   margin-top: 0.75rem;
-  font-family: Arial, Helvetica, Inter, Roboto, sans-serif;
+  font-family: Helvetica, "Segoe UI", Inter, Roboto, sans-serif;
   padding: 0.5rem 1rem 0.5rem 1rem;
   border: 0.094rem solid #d4d8dc;
   font-size: medium;
@@ -805,4 +811,7 @@ label {
   nav .menu {
     display: flex;
   }
+}
+.no-after::after {
+  content: none;
 }/*# sourceMappingURL=main.css.map */

@@ -1,11 +1,12 @@
 import React from 'react'
 
-function SenderMessage({ contact, text, messageClass, includeContact, showContactName, sameSenderAndStatus }) {
+function SenderMessage({ contact, text, messageClass, includeContact, showContactName, sameSenderAndStatus, isLastInSequence }) {
 
     const isPictureMessage = messageClass === 'ios-picture';
     const messageMargin = {
         marginTop: sameSenderAndStatus ? '-.75rem' : '.5rem' 
     };
+    const messageClassName = `ios-text ios-${messageClass} ${!isLastInSequence ? 'no-after' : ''}`;
     
     let backgroundStyle = {};
     if (isPictureMessage) {
@@ -22,7 +23,7 @@ function SenderMessage({ contact, text, messageClass, includeContact, showContac
                 </tr>
             )}
                 <tr>
-                    <td className={`ios-reply ios-${messageClass}`} style={backgroundStyle}>
+                    <td className={messageClassName} style={backgroundStyle}>
                     {!isPictureMessage && text}</td>
                 </tr>
             </tbody>

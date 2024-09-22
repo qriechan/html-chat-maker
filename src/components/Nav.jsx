@@ -7,7 +7,7 @@ function Nav() {
     return (
     <header>
         <nav>
-            <Link to="/"><h1>HTML Chat Maker</h1></Link>
+            <Link to="/" key='home'><h1>HTML Chat Maker</h1></Link>
             <div className='menu' onClick={() => {
                 setMenuOpen(!menuOpen);
             }}>
@@ -18,10 +18,10 @@ function Nav() {
                 </div>
             </div>
             <ul className={menuOpen ? 'open' : ''}>
-                <li><NavLink to="/">About</NavLink></li>
-                <li><NavLink to="/hsr">HSR</NavLink></li>
-                <li><NavLink to="/ios">iOS</NavLink></li>
-                <li><NavLink to="/workskin">Workskins</NavLink></li>
+                <li><NavLink to="/" key='about'>About</NavLink></li>
+                <li><NavLink to="/hsr" key='hsr'>HSR</NavLink></li>
+                <li><NavLink to="/ios" key='ios'>iOS</NavLink></li>
+                <li><NavLink to="/workskin" key='workskin'>Workskins</NavLink></li>
             </ul>
         </nav>
     </header>

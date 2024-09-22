@@ -1,5 +1,5 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 import PostText from './PostText'
 import SenderMessage from './MessageSender'
@@ -17,6 +17,9 @@ function Phone() {
     const [channelType, setChannelType] = useState(''); 
     const [activeMessageIndex, setActiveMessageIndex] = useState(null); 
     const [includeContact, setIncludeContact] = useState(false);
+
+    useEffect(() => {
+    }, [messages]);
 
     const handleAddMessage = (messageDetails) => {
         setMessages((prevMessages) => [...prevMessages, messageDetails]);
@@ -81,6 +84,12 @@ function Phone() {
                 </div>
                 {messages.map((message, index) => {
                     const previousMessage = index > 0 ? messages[index - 1] : null;
+                    const nextMessage = index < messages.length - 1 ? messages[index + 1] : null;
+
+                    const isLastInSequence = !nextMessage || 
+                        message.contactName !== nextMessage.contactName || 
+                        message.statusType !== nextMessage.statusType;
+
                     const sameSenderAndStatus = previousMessage &&
                         message.contactName === previousMessage.contactName &&
                         message.statusType === previousMessage.statusType;
@@ -108,6 +117,7 @@ function Phone() {
                                 includeContact={includeContact}
                                 showContactName={showContactName}
                                 sameSenderAndStatus={sameSenderAndStatus}
+                                isLastInSequence={isLastInSequence}
                             />
                         ) : message.statusType === 'send' ? (
                             <ReceiverMessage 
@@ -118,6 +128,7 @@ function Phone() {
                                 includeContact={includeContact}
                                 showContactName={showContactName}
                                 sameSenderAndStatus={sameSenderAndStatus}
+                                isLastInSequence={isLastInSequence}
                             />
                         ) : <ActionMessage
                                 key={index}

@@ -8,16 +8,20 @@ function Export({ messages, chatName, chatDesc, includeContact }) {
     const generateMessageHTML = (message, index) => {
         const { contactName, textValue, statusType, messageType } = message;
         const isPictureMessage = messageType === 'ios-picture';
-        const previousMessage = index > 0 ? messages[index - 1] : null;
-
-        const sameSenderAndStatus = previousMessage &&
-            message.contactName === previousMessage.contactName &&
-            message.statusType === previousMessage.statusType;
-        const showContactName = index === 0 || message.contactName !== previousMessage?.contactName;
-
         const backgroundStyle = isPictureMessage
         ? `background-image: url('${textValue}'); background-size: cover; background-position: center; height: 9.375rem; max-width: 75%; width: 20rem; border-radius: 1rem;`
         : '';
+
+        const previousMessage = index > 0 ? messages[index - 1] : null;
+        const nextMessage = index < messages.length - 1 ? messages[index + 1] : null;
+        const sameSenderAndStatus = previousMessage &&
+            message.contactName === previousMessage.contactName &&
+            message.statusType === previousMessage.statusType;
+        const isLastInSequence = !nextMessage || 
+            message.contactName !== nextMessage.contactName || 
+            message.statusType !== nextMessage.statusType;
+        const messageClassName = `ios-text ios-${messageType} ${!isLastInSequence ? 'no-after' : ''}`;
+        const showContactName = index === 0 || message.contactName !== previousMessage?.contactName;
 
         if (statusType === 'receive') {
             return `
@@ -28,7 +32,7 @@ function Export({ messages, chatName, chatDesc, includeContact }) {
                         <td class='sender-contact'>${contactName}</td>
                     </tr>` : ''}
                     <tr class='msg-row'>
-                            <td class='ios-text ios-${messageType}' 
+                            <td class='${messageClassName}' 
                             ${backgroundStyle ? `style="${backgroundStyle}"` : ''}>
                                 ${!isPictureMessage ? textValue : ''}</td>
                         </tr>
@@ -44,7 +48,7 @@ function Export({ messages, chatName, chatDesc, includeContact }) {
                         <td class='receiver-contact'>${contactName}</td>
                     </tr>` : ''}
                     <tr class='msg-row'>
-                            <td class='ios-reply ios-${messageType}' 
+                            <td class='${messageClassName}' 
                             ${backgroundStyle ? `style="${backgroundStyle}"` : ''}>
                                 ${!isPictureMessage ? textValue : ''}</td>
                         </tr>

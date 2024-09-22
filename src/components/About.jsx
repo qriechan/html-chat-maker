@@ -20,6 +20,8 @@ function About() {
         <blockquote>A: Add a space (or multiple spaces) after the different contacts' names.</blockquote>
         <p>Q: I want to display all the contact names except 1. How do I do this?</p>
         <blockquote>A: Leave the contact name text box blank. (No spaces!)</blockquote>
+        <p>Q: How do I make the phone stop expanding I keysmash too much?</p>
+        <blockquote>A: The message bubbles are set to overflow depending on spaces in words. Please don't write too long of a string in a single message; try to break apart the keysmash if you can!</blockquote>
     </div>
   )
 }
