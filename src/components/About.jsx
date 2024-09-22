@@ -3,7 +3,7 @@ import React from 'react'
 function About() {
   return (
     <div>
-        <h2>Quick guide to HSR chat maker</h2>
+        <h2>Quick guide to HTML chat maker</h2>
         <p>1. Use the visual editors to input your text</p>
         <p>2. Click export HTML</p>
         <p>3. Paste the exported HTML into your target document</p>
