@@ -121,6 +121,10 @@ blockquote {
     margin-bottom: $big-padding;
     max-width: fit-content;
     margin-left: .25rem;
+
+    a, a:focus, a:visited {
+        color: $alert-color-hsr;
+    }
 }
 
 .all-workskins {

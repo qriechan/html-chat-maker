@@ -79,6 +79,9 @@ blockquote {
   max-width: fit-content;
   margin-left: 0.25rem;
 }
+blockquote a, blockquote a:focus, blockquote a:visited {
+  color: #858586;
+}
 
 .all-workskins {
   display: flex;
