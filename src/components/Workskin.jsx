@@ -28,7 +28,6 @@ function Workskin() {
         <div className='workskin-container'>
             <WorkskinIOS 
             textRef={textRef} />
-            <p className='credits'>Credits to CodenameCarrot and La_Temperanza for the iOS message CSS!</p>
             <button className='copy-workskin' onClick={copyToClipboard}>Copy workskin CSS</button>
         </div>
     </div>
