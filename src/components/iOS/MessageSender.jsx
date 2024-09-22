@@ -1,8 +1,11 @@
 import React from 'react'
 
-function SenderMessage({ contact , text, messageClass, includeContact }) {
+function SenderMessage({ contact ,text, messageClass, includeContact, showContactName, sameSenderAndStatus }) {
 
-    const isPictureMessage = messageClass === 'picture';
+    const isPictureMessage = messageClass === 'ios-picture';
+    const messageMargin = {
+        marginTop: sameSenderAndStatus ? '-.75rem' : '.5rem' 
+    };
     
     let backgroundStyle = {};
     if (isPictureMessage) {
@@ -11,9 +14,9 @@ function SenderMessage({ contact , text, messageClass, includeContact }) {
 
     return (
         <>
-        <table className='full-message full-ios-text'>
+        <table className='full-message full-ios-text' style={messageMargin}>
             <tbody>
-            {includeContact && (
+            {includeContact && showContactName && !sameSenderAndStatus && (
                 <tr>
                 <td className='sender-contact message-contact'>{contact}</td>
                 </tr>

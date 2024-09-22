@@ -79,7 +79,19 @@ function Phone() {
                     <p className='main-ios-contact'>{chatName}</p>
                     <p className='ios-bio'>{chatDesc}</p>
                 </div>
-                {messages.map((message, index) => (
+                {messages.map((message, index) => {
+                    const previousMessage = index > 0 ? messages[index - 1] : null;
+                    const sameSenderAndStatus = previousMessage &&
+                        message.contactName === previousMessage.contactName &&
+                        message.statusType === previousMessage.statusType;
+
+                    const showContactName = index === 0 || message.contactName !== previousMessage?.contactName;
+
+                    console.log('Current message:', message);
+                    console.log('Previous message:', previousMessage);
+                    console.log('sameSenderAndStatus:', sameSenderAndStatus);
+
+                    return (
                     <div
                         key={index}
                         onMouseEnter={() => setActiveMessageIndex(index)}
@@ -90,17 +102,22 @@ function Phone() {
                         {message.statusType === 'receive' ? (
                             <SenderMessage 
                                 key={index}
-                                contact={message.contactName}
                                 text={message.textValue}
                                 messageClass={message.messageType}
+                                contact={message.contactName || ''}
                                 includeContact={includeContact}
+                                showContactName={showContactName}
+                                sameSenderAndStatus={sameSenderAndStatus}
                             />
                         ) : message.statusType === 'send' ? (
                             <ReceiverMessage 
                                 key={index}
-                                contact={message.contactName}
                                 text={message.textValue}
                                 messageClass={message.messageType}
+                                contact={message.contactName || ''}
+                                includeContact={includeContact}
+                                showContactName={showContactName}
+                                sameSenderAndStatus={sameSenderAndStatus}
                             />
                         ) : <ActionMessage
                                 key={index}
@@ -129,7 +146,8 @@ function Phone() {
                             </div>
                         )}
                     </div>
-                ))}
+                    );
+                })}
             </div>
             <PostText onSubmit={handleAddMessage} />
         </div>

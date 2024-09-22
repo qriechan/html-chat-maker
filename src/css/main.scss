@@ -114,6 +114,15 @@ nav {
 
 }
 
+blockquote {
+    border-left: $sub-color2 .188rem solid;
+    border-bottom: $sub-color2 .188rem solid;
+    padding: .5rem 1rem 1rem 1rem;
+    margin-bottom: $big-padding;
+    max-width: fit-content;
+    margin-left: .25rem;
+}
+
 .all-workskins {
     display: flex;
     flex-wrap: wrap;
@@ -198,60 +207,90 @@ nav {
 
 .ios-text {
     float: left;
-    color: $blk;
-    margin: 0 0 0.5em;
-    border-radius: 1em;
-    padding: 0.5em 1em;
-    background: $sub-color2;
-    max-width: 75%;
-    clear: both;
-    position: relative;
-    overflow-wrap: break-word;
+    margin: 0 0 .75rem .75rem;
+}
 
-    &::after {
-        content: "";
-        position: absolute;
-        left: -.5em;
-        bottom: 0;
-        width: 0.5em;
-        height: 1em;
-        border-right: 0.5em solid $sub-color2;
-        border-bottom-right-radius: 1em 0.5em;
-    }
+%picture-ios {
+    width: 12.5rem;
+    height: 9.375rem;
+    background-color: #000;
+    border-radius: 1rem;
+    margin-bottom: .5rem;
 }
 
 .ios-reply {
     float: right;
-    color: #FFFFFF;
-    margin: 0 0 0.5em;
-    border-radius: 1em;
-    padding: 0.5em 1em;
-    background: #1289fe;
-    max-width: 75%;
-    clear: both;
-    position: relative;
-    overflow-wrap: break-word;
-    
-    &::after {
-        content: "";
-        position: absolute;
-        right: -.5em;
-        bottom: 0;
-        width: .5em;
-        height: 1em;
-        border-left: .5em solid #1289fe;
-        border-bottom-left-radius: 1em 0.5em;
-    }
+    margin: 0 .75rem .75rem 0;
 }
 
 .full-ios-text {
     margin-right: auto;
     margin-left: 0rem;
+
+    .ios-ios-text {
+        float: left;
+        color: $blk;
+        margin: 0 0 0.5em;
+        border-radius: 1em;
+        padding: 0.5em 1em;
+        background: $sub-color2;
+        max-width: 75%;
+        clear: both;
+        position: relative;
+        overflow-wrap: break-word;
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: -.5em;
+            bottom: 0;
+            width: 0.5em;
+            height: 1em;
+            border-right: 0.5em solid $sub-color2;
+            border-bottom-right-radius: 1em 0.5em;
+        }
+    }
+
+    .ios-ios-picture {
+        float: left;
+        margin-left: 0; 
+        @extend %picture-ios;
+    }
 }
 
 .full-ios-reply {
     margin-left: auto;
     margin-right: 0rem;
+
+    .ios-ios-text {
+        float: right;
+        color: #FFFFFF;
+        margin: 0 0 0.5em;
+        border-radius: 1em;
+        padding: 0.5em 1em;
+        background: #1289fe;
+        max-width: 75%;
+        clear: both;
+        position: relative;
+        overflow-wrap: break-word;
+        
+        &::after {
+            content: "";
+            position: absolute;
+            right: -.5em;
+            bottom: 0;
+            width: .5em;
+            height: 1em;
+            border-left: .5em solid #1289fe;
+            border-bottom-left-radius: 1em 0.5em;
+        }
+    }
+
+    .ios-ios-picture {
+        float: left;
+        margin-right: 0;
+        @extend %picture-ios;
+    }
 }
 
 .hsr-phone {
@@ -515,6 +554,17 @@ label {
     width: fit-content;
     text-align: center;
 }
+
+.ios-alert {
+    vertical-align: middle;
+    text-align: left;
+    color: $alert-color-hsr;
+    font-size: small;
+    padding: 0;
+    margin: 0;
+    display: table;
+}
+
 .alert {
     vertical-align: middle;
     text-align: left;
@@ -631,7 +681,7 @@ label {
     width: 100%;
     height: fit-content;
     padding: $main-padding;
-    margin: 0 -1rem -1rem -1rem;
+    margin: 1rem -1rem -1rem -1rem;
     align-items: center;
     text-align: center;
 

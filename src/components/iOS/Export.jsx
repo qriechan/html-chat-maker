@@ -5,21 +5,28 @@ function Export({ messages, chatName, chatDesc, includeContact }) {
 
     const [exportedHTML, setExportedHTML] = useState('');
 
-    const generateMessageHTML = (message) => {
+    const generateMessageHTML = (message, index) => {
         const { contactName, textValue, statusType, messageType } = message;
         const isPictureMessage = messageType === 'ios-picture';
+        const previousMessage = index > 0 ? messages[index - 1] : null;
+
+        const sameSenderAndStatus = previousMessage &&
+            message.contactName === previousMessage.contactName &&
+            message.statusType === previousMessage.statusType;
+        const showContactName = index === 0 || message.contactName !== previousMessage?.contactName;
 
         const backgroundStyle = isPictureMessage
-        ? `background-image: url('${textValue}'); background-size: cover; background-position: center;`
+        ? `background-image: url('${textValue}'); background-size: cover; background-position: center; height: 9.375rem; max-width: 75%; width: 20rem; border-radius: 1rem;`
         : '';
 
         if (statusType === 'receive') {
             return `
-            <table class='full-text'>
+            <table class='full-text' style="margin-top: ${sameSenderAndStatus ? '-.5rem' : '.5rem'}">
                 <tbody>
+                    ${includeContact === true && showContactName ? `
                     <tr>
-                    <td class='sender-contact'>${includeContact === 'true' ? contactName : ''}</td>
-                    </tr>
+                        <td class='sender-contact'>${contactName}</td>
+                    </tr>` : ''}
                     <tr class='msg-row'>
                             <td class='ios-text ios-${messageType}' 
                             ${backgroundStyle ? `style="${backgroundStyle}"` : ''}>
@@ -30,8 +37,12 @@ function Export({ messages, chatName, chatDesc, includeContact }) {
             `;
         } else if (statusType === 'send') {
             return `
-            <table class='full-reply'>
+            <table class='full-reply' style="margin-top: ${sameSenderAndStatus ? '-.5rem' : '.5rem'}">
                 <tbody>
+                    ${includeContact === true && showContactName ? `
+                    <tr>
+                        <td class='receiver-contact'>${contactName}</td>
+                    </tr>` : ''}
                     <tr class='msg-row'>
                             <td class='ios-reply ios-${messageType}' 
                             ${backgroundStyle ? `style="${backgroundStyle}"` : ''}>

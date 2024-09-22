@@ -70,6 +70,16 @@ nav ul li a:active:hover, nav ul li a:focus:hover {
   background-color: #fff;
 }
 
+blockquote {
+  border-left: #b9bdbf 0.188rem solid;
+  border-bottom: #b9bdbf 0.188rem solid;
+  padding: 0.5rem 1rem 1rem 1rem;
+  margin-bottom: 2rem;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  margin-left: 0.25rem;
+}
+
 .all-workskins {
   display: flex;
   flex-wrap: wrap;
@@ -154,6 +164,28 @@ nav ul li a:active:hover, nav ul li a:focus:hover {
 
 .ios-text {
   float: left;
+  margin: 0 0 0.75rem 0.75rem;
+}
+
+.full-ios-reply .ios-ios-picture, .full-ios-text .ios-ios-picture {
+  width: 12.5rem;
+  height: 9.375rem;
+  background-color: #000;
+  border-radius: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.ios-reply {
+  float: right;
+  margin: 0 0.75rem 0.75rem 0;
+}
+
+.full-ios-text {
+  margin-right: auto;
+  margin-left: 0rem;
+}
+.full-ios-text .ios-ios-text {
+  float: left;
   color: #000;
   margin: 0 0 0.5em;
   border-radius: 1em;
@@ -164,7 +196,7 @@ nav ul li a:active:hover, nav ul li a:focus:hover {
   position: relative;
   overflow-wrap: break-word;
 }
-.ios-text::after {
+.full-ios-text .ios-ios-text::after {
   content: "";
   position: absolute;
   left: -0.5em;
@@ -174,8 +206,16 @@ nav ul li a:active:hover, nav ul li a:focus:hover {
   border-right: 0.5em solid #b9bdbf;
   border-bottom-right-radius: 1em 0.5em;
 }
+.full-ios-text .ios-ios-picture {
+  float: left;
+  margin-left: 0;
+}
 
-.ios-reply {
+.full-ios-reply {
+  margin-left: auto;
+  margin-right: 0rem;
+}
+.full-ios-reply .ios-ios-text {
   float: right;
   color: #FFFFFF;
   margin: 0 0 0.5em;
@@ -187,7 +227,7 @@ nav ul li a:active:hover, nav ul li a:focus:hover {
   position: relative;
   overflow-wrap: break-word;
 }
-.ios-reply::after {
+.full-ios-reply .ios-ios-text::after {
   content: "";
   position: absolute;
   right: -0.5em;
@@ -197,15 +237,9 @@ nav ul li a:active:hover, nav ul li a:focus:hover {
   border-left: 0.5em solid #1289fe;
   border-bottom-left-radius: 1em 0.5em;
 }
-
-.full-ios-text {
-  margin-right: auto;
-  margin-left: 0rem;
-}
-
-.full-ios-reply {
-  margin-left: auto;
-  margin-right: 0rem;
+.full-ios-reply .ios-ios-picture {
+  float: left;
+  margin-right: 0;
 }
 
 .hsr-phone {
@@ -456,6 +490,16 @@ label {
   text-align: center;
 }
 
+.ios-alert {
+  vertical-align: middle;
+  text-align: left;
+  color: #858586;
+  font-size: small;
+  padding: 0;
+  margin: 0;
+  display: table;
+}
+
 .alert {
   vertical-align: middle;
   text-align: left;
@@ -559,7 +603,7 @@ label {
   height: -moz-fit-content;
   height: fit-content;
   padding: 1rem;
-  margin: 0 -1rem -1rem -1rem;
+  margin: 1rem -1rem -1rem -1rem;
   align-items: center;
   text-align: center;
 }

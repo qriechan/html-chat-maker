@@ -37,23 +37,21 @@
 
 #workskin .ios-text {
     float: left;
-    color: #000000;
-    margin: 0 0 0.5em;
-    padding: 0.5em 1em;
-    clear: both;
-    position: relative;
+    margin: 0 0 .75rem .75rem;
 }
 #workskin .ios-reply {
-   float: right;
-   color: #FFFFFF;
-   margin: 0 0 0.5em;
-   padding: 0.5em 1em;
-   clear: both;
-   position: relative;
+    float: right;
+    margin: 0 0.75rem 0.75rem 0;
 }
 #workskin .full-text {
     margin-right: auto;
     margin-left: 0rem;
+}
+.full-ios-reply .ios-ios-picture, .full-ios-text .ios-ios-picture {
+    width: 12.5rem;
+    height: 9.375rem;
+    background-color: #000;
+    border-radius: 1rem;
 }
 #workskin .full-text .ios-ios-text {
     float: left;
@@ -79,7 +77,7 @@
 }
 #workskin .full-text .ios-ios-picture {
     float: left;
-    margin: 0.5rem 0.75rem 1rem 1.5rem;
+    margin: 0;
 }
 #workskin .full-reply {
     margin-right: 0rem;
@@ -109,7 +107,7 @@
 }
 #workskin .full-reply .ios-ios-picture {
     float: right;
-    margin: 0.5rem 1.5rem 1rem 0.75rem;
+    margin: 0;
 }
 #workskin .sender-contact {
     font-weight: 500;
@@ -144,8 +142,7 @@
     text-align: left;
     color: #858586;
     font-size: small;
-    padding-bottom: 0.5rem;
-    padding-top: 0.5rem;
-    margin: 0.25rem 0 0.75rem 0rem;
+    padding: 0;
+    margin: 0;
     display: table;
 }

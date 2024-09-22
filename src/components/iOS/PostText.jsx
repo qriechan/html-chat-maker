@@ -28,7 +28,6 @@ function PostText(props){
             <form onSubmit={handleSubmit}>
                 <input 
                     type="text" 
-                    required
                     value={contactName} 
                     onChange={(e) => setContactName(e.target.value)} 
                     placeholder='Enter contact name...'

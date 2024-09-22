@@ -8,10 +8,15 @@ function About() {
         <p>2. Click export HTML</p>
         <p>3. Paste the exported HTML into your target document</p>
         <p>4. Go to the workskins page and copy the CSS</p>
-        <p>5. Paste the CSS into the workskins section of the posting page (or wherever else you're calling the CSS from)</p>
-        <p>Done!</p>
+        <p>5. Paste the CSS into the workskins section of the posting page (or wherever else you're calling the CSS)</p>
+        <h4>Done!</h4>
         <br />
-        <p>NOTE: All the text functions should work perfectly, but the sticker and picture functions haven't been thoroughly tested yet, so please forgive any bugs and do tell me if you bump into any! More stickers can be added later on request.</p>
+        <h2>Troubleshooting Q&A</h2>
+        <h3>For iOS messages</h3>
+        <p>Q: Two or more of my contacts have the same name. How do I make it so they can appear differently?</p>
+        <blockquote>A: Add a space (or multiple spaces) after the different contacts' names.</blockquote>
+        <p>Q: I want to display all the contact names except 1. How do I do this?</p>
+        <blockquote>A: Leave the contact name text box blank. (No spaces!)</blockquote>
     </div>
   )
 }

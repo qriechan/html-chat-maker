@@ -1,8 +1,11 @@
 import React from 'react'
 
-function SenderMessage({ text, messageClass }) {
+function SenderMessage({ contact, text, messageClass, includeContact, showContactName, sameSenderAndStatus }) {
 
-    const isPictureMessage = messageClass === 'picture';
+    const isPictureMessage = messageClass === 'ios-picture';
+    const messageMargin = {
+        marginTop: sameSenderAndStatus ? '-.75rem' : '.5rem' 
+    };
     
     let backgroundStyle = {};
     if (isPictureMessage) {
@@ -11,8 +14,13 @@ function SenderMessage({ text, messageClass }) {
 
     return (
         <>
-        <table className='full-message full-ios-reply'>
+        <table className='full-message full-ios-reply' style={messageMargin}>
             <tbody>
+            {includeContact && showContactName && !sameSenderAndStatus && (
+                <tr>
+                <td className='receiver-contact message-contact'>{contact}</td>
+                </tr>
+            )}
                 <tr>
                     <td className={`ios-reply ios-${messageClass}`} style={backgroundStyle}>
                     {!isPictureMessage && text}</td>

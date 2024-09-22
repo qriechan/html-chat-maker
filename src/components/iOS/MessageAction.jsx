@@ -5,7 +5,7 @@ function ActionMessage({ text }) {
     <>
     <table class="fullalert">
         <tr class="msg-row">
-            <td class="alert">{text}</td>
+            <td class="ios-alert">{text}</td>
         </tr>
     </table>
     </>
