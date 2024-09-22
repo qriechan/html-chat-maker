@@ -717,13 +717,13 @@ label {
     margin: 0;
   }
   .export-container {
-    width: 15rem;
+    width: 17.5rem;
   }
   .ios-phone, .hsr-phone {
-    max-width: 15rem;
+    max-width: 17.5rem;
   }
   .ios-header, .header {
-    min-width: 15rem;
+    min-width: 17.5rem;
   }
   nav {
     flex-direction: column;
