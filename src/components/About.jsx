@@ -8,7 +8,8 @@ function About() {
         <p>2. Click export HTML</p>
         <p>3. Paste the exported HTML into your target document</p>
         <p>4. Go to the workskins page and copy the CSS</p>
-        <p>5. Paste the CSS into the workskins section of the posting page (or wherever else you're calling the CSS)</p>
+        <p>5. Paste the CSS into your Workskins page</p>
+        <p>6. Select said workskin on the posting page</p>
         <h4>Done!</h4>
         <br />
         <h2>Troubleshooting Q&A</h2>
