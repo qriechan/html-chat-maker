@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import { NavLink, Link } from 'react-router-dom'
+import navItems from './NavItems';
+import NavBar from './NavBar';
 
 function Nav() {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -18,10 +20,9 @@ function Nav() {
                 </div>
             </div>
             <ul className={menuOpen ? 'open' : ''}>
-                <li><NavLink to="/" key='about'>About</NavLink></li>
-                <li><NavLink to="/hsr" key='hsr'>HSR</NavLink></li>
-                <li><NavLink to="/ios" key='ios'>iOS</NavLink></li>
-                <li><NavLink to="/workskin" key='workskin'>Workskins</NavLink></li>
+                {navItems.map((navmenu, index) => {
+                    return <NavBar items={navmenu} key={index} />;
+                })}
             </ul>
         </nav>
     </header>

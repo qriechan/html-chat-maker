@@ -116,6 +116,33 @@ nav {
         }
     }
 
+    .dropdown {
+        position: absolute;
+        background-color: $dark-color;
+        padding: .5rem;
+        margin-left: -.325rem;
+        border-bottom-left-radius: .5rem;
+        border-bottom-right-radius: .5rem;
+        width: 7.5rem;
+        z-index: 3;
+        display: none;
+        
+        a {
+            margin: 0;
+
+            &:visited, &:hover, &:focus, &:active {
+                background-color: transparent;
+                color: $wht;
+                text-decoration: underline $wht;
+                transition: .15s;
+            }
+        }
+    }
+
+    .dropdown.show {
+        display: block;
+    }
+
 }
 
 blockquote {
@@ -765,9 +792,8 @@ label {
 
 }
 
-
 .sticker-popup {
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -865,6 +891,10 @@ label {
     margin-left: 0;
 }
 
+.no-after::after {
+    content: none;
+}
+
 @media (max-width: 480px) {
     .container {
         margin: 0;
@@ -922,9 +952,26 @@ label {
         .menu {
             display: flex;
         }
-    }
-}
 
-.no-after::after {
-    content: none;
+        .dropdown {
+            width: 100%;
+            background-color: $sub-color2;
+            padding: 0;
+            margin: 0;
+            border-radius: 0;
+
+            a {
+                padding: .75rem;
+                color: $blk;
+                padding-left: $big-padding;
+                margin: .25rem;
+                border-radius: 0;
+
+                &:visited, &:hover, &:focus, &:active {
+                    color: $blk;
+                    text-decoration: $blk underline;
+                }
+            }
+        }
+    }
 }
