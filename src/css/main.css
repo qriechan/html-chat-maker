@@ -435,7 +435,7 @@ label {
   overflow-wrap: break-word;
 }
 .full-reply .picture {
-  float: left;
+  float: right;
   margin: 0.5rem 1.5rem 1rem 0.75rem;
 }
 .full-reply .sticker {
