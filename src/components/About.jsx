@@ -4,12 +4,13 @@ function About() {
   return (
     <div>
         <h2>Quick guide to HTML chat maker</h2>
-        <p>1. Use the visual editors to input your text</p>
-        <p>2. Click export HTML</p>
-        <p>3. Paste the exported HTML into your target document</p>
-        <p>4. Go to the workskins page and copy the CSS</p>
-        <p>5. Paste the CSS into your Workskins page</p>
-        <p>6. Select said workskin on the posting page</p>
+        <p>1. Go to "Create", then "Style" (Click on the menu icon in the top right if you're on mobile!) </p>
+        <p>2. Use the visual editors to input your text</p>
+        <p>3. Click export HTML</p>
+        <p>4. Paste the exported HTML into your target document</p>
+        <p>5. Go to the workskins page and copy the CSS</p>
+        <p>6. Paste the CSS into your Workskins page</p>
+        <p>7. Select said workskin on the posting page</p>
         <h4>Done!</h4>
         <br />
         <h2>Troubleshooting Q&A</h2>
