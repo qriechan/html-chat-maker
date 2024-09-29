@@ -13,7 +13,7 @@ const Feedback = () => {
         }
 
         try {
-            const response = await fetch('/api/submit-feedback', {
+            const res = await fetch('/api/submit-feedback', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -21,17 +21,11 @@ const Feedback = () => {
                 body: JSON.stringify({ 'suggestion-text': suggestionText }),
             });
 
-            const data = await response.json();
+            const data = await res.json();
+            setNotification(data.notification);
 
-            if (response.ok) {
-                setNotification(data.notification);
-                setSuggestionText(''); 
-            } else {
-                setNotification('Failed to submit feedback!');
-            }
-        } catch (error) {
-            console.error('Error submitting feedback:', error);
-            setNotification('An error occurred while submitting feedback');
+        } catch (err) {
+            console.error('Error submitting feedback:', err);
         }
     };
 
