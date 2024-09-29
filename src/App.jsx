@@ -5,6 +5,7 @@ import HSR from './components/HSR/HSR'
 import Nav from './components/Nav'
 import Ios from './components/iOS/iOS'
 import Workskin from './components/Workskin'
+import Feedback from './components/Feedback'
 
 import './css/main.css'
 
@@ -21,6 +22,7 @@ function App() {
                     <Route exact path='hsr' element={ <HSR /> } />
                     <Route exact path='ios' element={ <Ios /> } />
                     <Route exact path='workskin' element={ <Workskin /> } />
+                    <Route exact path='feedback' element={ <Feedback /> } />
                 </Routes>
 
             </Router>  

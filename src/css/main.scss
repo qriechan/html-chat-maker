@@ -895,6 +895,24 @@ label {
     content: none;
 }
 
+.suggestion {
+    font-family: $main-font-family;
+    padding: $main-padding;
+    font-size: medium;
+    border: .094rem solid $sub-color2;
+}
+
+.suggestion-submit {
+    font-family: $main-font-family;
+    margin: $main-margin;
+    margin-left: 0;
+    padding: .5rem 1rem .5rem 1rem;
+    font-size: medium;
+    color: $wht;
+    background-color: $blk;
+    cursor: pointer;
+}
+
 @media (max-width: 480px) {
     .container {
         margin: 0;

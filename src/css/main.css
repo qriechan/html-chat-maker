@@ -792,6 +792,24 @@ label {
   content: none;
 }
 
+.suggestion {
+  font-family: "Rubik", sans-serif;
+  padding: 1rem;
+  font-size: medium;
+  border: 0.094rem solid #b9bdbf;
+}
+
+.suggestion-submit {
+  font-family: "Rubik", sans-serif;
+  margin: 1.5rem;
+  margin-left: 0;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  font-size: medium;
+  color: #fff;
+  background-color: #000;
+  cursor: pointer;
+}
+
 @media (max-width: 480px) {
   .container {
     margin: 0;

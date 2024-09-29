@@ -20,6 +20,10 @@ const navItems = [
         title: 'Workskins',
         url: '/workskin',
     },
+    {
+        title: 'Feedback',
+        url: '/feedback',
+    },
 ];
 
 export default navItems
