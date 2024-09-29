@@ -5,7 +5,7 @@ export default async function handler(req, res) {
         const { suggestionText } = req.body;
 
         if (!suggestionText) {
-            return res.status(400).json({ notification: 'Feedback text is required' });
+            return res.status(400).json({ notification: "Please don't leave the contents blank!" });
         }
 
         try {
