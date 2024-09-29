@@ -15,17 +15,17 @@ const Feedback = () => {
         try {
             const res = await fetch('/api/submit-feedback', {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ 'suggestion-text': suggestionText }),
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ suggestionText }),
             });
-
+            if (!res.ok) {
+                throw new Error(`HTTP error! Status: ${res.status}`);
+            }
             const data = await res.json();
             setNotification(data.notification);
-
-        } catch (err) {
-            console.error('Error submitting feedback:', err);
+        } catch (error) {
+            console.error('Error submitting feedback:', error);
+            setNotification('Failed to submit feedback');
         }
     };
 
