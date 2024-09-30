@@ -27,12 +27,12 @@ function SenderMessage({ contact , text, imageURLs, messageClass }) {
             <tbody>
                 <tr>
                     <td rowSpan='2' className='container-icon'>
-                        <img 
-                            className='icon' 
-                            src={iconURL} 
-                            width='100%'
-                            alt={contact} />
-                        </td>
+                    <img 
+                        className='icon' 
+                        src={iconURL} 
+                        width='100%'
+                        alt={contact} />
+                    </td>
                     <td className='sender-contact message-contact'>{contact}</td>
                 </tr>
                 <tr>

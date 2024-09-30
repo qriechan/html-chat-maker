@@ -31,6 +31,11 @@ $darker-bgcolor: #cbcecf;            //slightly-darker-background
 $sender-color-ios: #e5e5ea;
 $receiver-color-ios: #0b93f6;
 
+//kkt-chat-colors
+$bgcolor-kkt: #b1c6d9;
+$sender-color-kkt: #ffffff;
+$receiver-color-kkt: #ffec36;
+
 //fonts
 $main-font-family: "Rubik", sans-serif;
 $ios-font-family: Helvetica, 'Segoe UI', Inter, Roboto, sans-serif;
@@ -333,6 +338,209 @@ blockquote {
     }
 }
 
+.kkt-phone {
+    font-family: $ios-font-family;
+    max-width: $main-width;
+    display: table;
+    margin: auto;
+    padding-left: $main-padding;
+    padding-right: $main-padding;
+    padding-bottom: $main-padding;
+    border-radius: .938rem; 
+    background-color: $bgcolor-kkt;
+}
+
+.kkt-header {
+    min-width: $main-width;
+    padding-bottom: .5rem;
+    padding-top: .5rem;
+    margin-left: -.5rem;
+    margin-right: -.5em;
+    margin-bottom: 1rem;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+%kkt-header-style {
+    display: flex;
+    align-items: center;
+}
+
+.kkt-header-components {
+    @extend %kkt-header-style;
+    justify-content: space-between;
+}
+
+.kkt-header-front {
+    @extend %kkt-header-style;
+    justify-content: flex-start;
+    margin-left: .5rem;
+}
+
+.kkt-header-back {
+    @extend %kkt-header-style;
+    justify-content: flex-end;
+    gap: .75rem;
+    margin-right: .75rem;
+}
+
+.main-kkt-contact {
+    color: $blk;
+    font-weight: bold;
+    margin-top: .75rem;
+    margin-bottom: .75rem;
+    font-size: larger;
+    margin-left: .75rem;
+}
+
+.kkt-bio {
+    margin: .5rem auto .25rem auto;
+    color: $sub-color;
+    font-size: smaller;
+}
+
+%picture-kkt {
+    width: 12.5rem;
+    height: 9.375rem;
+    background-color: #000;
+    border-radius: 1rem;
+    margin-bottom: .5rem;
+}
+
+%kkt-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 1.25rem;
+    background-color: $dark-color;
+}
+
+%kkt-icontainer {
+    width: 45px;
+    vertical-align: top;
+}
+
+.kkt-text {
+    float: left;
+    margin: 0 0 .75rem .75rem;
+}
+
+.kkt-reply {
+    float: right;
+    margin: 0 .75rem .75rem 0;
+}
+
+%kkt-contact {
+    font-size: small;
+    font-weight: 500;
+    color: $blk;
+    padding: 0;
+    padding-bottom: .25rem;
+}
+
+.full-kkt-text {
+    margin-right: auto;
+    margin-left: 0;
+    width: 100%;
+
+    .kkt-kkt-text {
+        float: left;
+        color: $blk;
+        margin: 0 .5rem .5rem 0;
+        max-width: 60%;
+        border-radius: 1.1rem;
+        padding: .75rem 1rem;
+        background: $sender-color-kkt;
+        clear: both;
+        position: relative;
+        overflow-wrap: break-word;
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: -.5rem;
+            top: 0;
+            width: .5rem;
+            height: 1.5rem;
+            border-right: .5rem solid $sender-color-kkt;
+            border-top-right-radius: .75rem .75rem;
+        }
+    }
+
+    .kkt-kkt-picture {
+        float: left;
+        margin-left: 0; 
+        @extend %picture-kkt;
+    }
+
+    .icon {
+        @extend %kkt-icon;
+        margin-right: .5rem;
+    }
+
+    .kkt-icon {
+        @extend %kkt-icontainer;
+    }
+
+    .sender-contact {
+        @extend %kkt-contact;
+    }
+
+}
+
+.full-kkt-reply {
+    margin-left: auto;
+    margin-right: 0rem;
+    width: 100%;
+
+    .kkt-kkt-text {
+        float: right;
+        color: $blk;
+        margin: 0 0 .5rem .5rem;
+        max-width: 60%;
+        border-radius: 1.1rem;
+        padding: .75rem 1rem;
+        background: $receiver-color-kkt;
+        clear: both;
+        position: relative;
+        overflow-wrap: break-word;
+        
+        &::after {
+            content: "";
+            position: absolute;
+            right: -.5rem;
+            top: 0;
+            width: .5rem;
+            height: 1.5rem;
+            border-left: .5rem solid $receiver-color-kkt;
+            border-top-left-radius: .75rem .75rem;
+        }
+
+        .no-after::after {
+            content: none;
+        }
+    }
+
+    .kkt-kkt-picture {
+        float: left;
+        margin-right: 0;
+        @extend %picture-kkt;
+    }
+
+    .icon {
+        @extend %kkt-icon;
+        margin-left: .5rem;
+    }
+
+    .kkt-icon {
+        @extend %kkt-icontainer;
+    }
+
+    .receiver-contact {
+        @extend %kkt-contact;
+    }
+
+}
+
 .hsr-phone {
     max-width: $main-width;
     font-family: $hsr-font-family!important;
@@ -380,19 +588,28 @@ blockquote {
     }
 }
 
-.icon-edit {
-    float: right;
-    z-index: 1;
+%edit-icon {
     padding-top: $main-padding;
-    padding-right: $main-padding;
-    padding-left: 0;
-    padding-bottom: 0;
-    color: mix($sub-color, $sub-color2, 50%);
     background: none;
     border: none;
     cursor: pointer;
     -webkit-animation: fadein 0.15s cubic-bezier(0.38, 0.1, 0.36, 0.9);
         animation: fadein 0.15s cubic-bezier(0.38, 0.1, 0.36, 0.9);
+}
+
+.icon-edit {
+    @extend %edit-icon;
+    color: mix($sub-color, $sub-color2, 50%);
+    float: right;
+    z-index: 1;
+    padding-right: $main-padding;
+    padding-left: 0;
+    padding-bottom: 0;
+}
+
+.icon-edit-kkt {
+    @extend %edit-icon;
+    color: $sub-color;
 }
 
 .popupper {
@@ -456,6 +673,18 @@ label {
     margin: $main-padding;
 }
 
+%hsr-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    background-color: $dark-color;
+}
+
+%hsr-icontainer {
+    width: 60px;
+    vertical-align: top;
+}
+
 .full-text {
     margin-right: auto;
     margin-left: 0rem;
@@ -483,6 +712,14 @@ label {
     .sticker {
         float: left;
         @extend %sticker-shared;
+    }
+
+    .icon {
+        @extend %hsr-icon;
+    }
+    
+    .container-icon {
+        @extend %hsr-icontainer;
     }
 
 }
@@ -516,6 +753,14 @@ label {
         @extend %sticker-shared;
     }
 
+    .icon {
+        @extend %hsr-icon;
+    }
+    
+    .container-icon {
+        @extend %hsr-icontainer;
+    }
+
 }
 
 .message-content {
@@ -536,17 +781,6 @@ label {
     color: $sub-color; 
     padding: 0 .75rem .25rem 0;
     text-align: right;
-}
-
-.icon {
-    width: 60px;
-    height: 60px;
-    border-radius: 100%;
-    background-color: $dark-color;
-}
-.container-icon {
-    width: 60px;
-    vertical-align: top;
 }
 
 .sender {
@@ -604,6 +838,18 @@ label {
     padding: 0;
     margin: 0;
     display: table;
+}
+
+.kkt-alert {
+    background-color: rgba(74, 74, 74, .3);
+    vertical-align: middle;
+    text-align: left;
+    color: $blk;
+    font-size: small;
+    padding: .25rem .5rem;
+    margin: .5rem 0 .75rem 0rem;
+    display: table;
+    border-radius: 2rem;
 }
 
 .alert {
@@ -716,8 +962,83 @@ label {
 
 }
 
-
 .write-ios-text {
+    background-color: $darker-bgcolor;
+    width: 100%;
+    height: fit-content;
+    padding: $main-padding;
+    margin: 1rem -1rem -1rem -1rem;
+    align-items: center;
+    text-align: center;
+
+    input[type=text] {
+        margin-top: .75rem;
+        font-family: $ios-font-family;
+        width: 60%;
+        padding: .5rem 1rem .5rem 1rem;
+        border: .094rem solid $bgcolor-hsr;
+        font-size: medium;
+        outline: none;
+
+        &:focus {
+            border-color: $dark-color;
+            transition: .15s;
+        }
+    }
+
+    .text-send {
+        @extend %my-button;
+        font-family: $ios-font-family;
+        border-color: $bgcolor-hsr;
+        border-left: 0;
+        color: $dark-color;
+        background-color: $bgcolor-hsr;
+
+        &:hover, &:focus, &:active {
+            color: $bgcolor-hsr;
+            background-color: $dark-color;
+            border-color: $dark-color;
+        }
+    }
+
+    input[type=radio] {
+        margin-top: 1rem;
+        margin-bottom: .75rem;
+        font-family: $ios-font-family;
+        border: .094rem solid $bgcolor-hsr;
+        font-size: medium;
+        outline: none;
+        cursor: pointer;
+        &:disabled {
+            cursor: not-allowed;
+        }
+    }
+
+    select {
+        margin-top: .75rem;
+        font-family: $ios-font-family;
+        padding: .5rem 1rem .5rem 1rem;
+        border: .094rem solid $bgcolor-hsr;
+        font-size: medium;
+        outline: none;
+        cursor: pointer;
+
+        &:focus {
+            border-color: $dark-color;
+            transition: .15s;
+        }
+    }
+
+    hr {
+        border: $sub-color2 .094rem solid;
+        margin-top: .75rem;
+        width: 20%;
+    }
+
+}
+
+
+.write-kkt-text {
     background-color: $darker-bgcolor;
     width: 100%;
     height: fit-content;
@@ -911,6 +1232,77 @@ label {
     color: $wht;
     background-color: $blk;
     cursor: pointer;
+}
+
+.notif {
+    margin: 0;
+    color: $alert-color-hsr;
+    font-size: small;
+}
+
+.login-page {
+    display: block;
+}
+
+%profile-input {
+    padding: .5rem .75rem;
+    font-family: $main-font-family;
+    border: .094rem solid $dark-color;
+}
+
+%user-button {
+    font-family: $main-font-family;
+    padding: .5rem 1rem .5rem 1rem;
+    font-size: medium;
+    color: $wht;
+    background-color: $blk;
+    cursor: pointer;
+}
+
+.login-input {
+    @extend %profile-input;
+    margin-bottom: $main-padding;
+    margin-left: 0;
+}
+
+.login-submit {
+    @extend %user-button;
+    margin-top: 0;
+}
+
+.login-switch {
+    background: none;
+    border: none;
+    font-family: $main-font-family;
+    color: $sub-color;
+    font-size: medium;
+    text-decoration: underline;
+}
+
+.user-image-upload {
+    @extend %profile-input;
+    margin-bottom: $main-padding;
+    width: $main-width;
+}
+
+.image-submit {
+    @extend %user-button;
+    margin: $main-padding;
+    margin-left: 0;
+    margin-top: 0;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+    gap: $main-padding;
+}
+.image-card {
+    text-align: center;
+}
+.image-card img {
+    max-width: 100%;
+    height: auto;
 }
 
 @media (max-width: 480px) {

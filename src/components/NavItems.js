@@ -15,6 +15,10 @@ const navItems = [
             title: 'HSR',
             url: '/hsr',
         },
+        {
+            title: 'KKT',
+            url: '/kkt',
+        },
     ]},
     {
         title: 'Workskins',
@@ -23,6 +27,10 @@ const navItems = [
     {
         title: 'Feedback',
         url: '/feedback',
+    },
+    {
+        title: 'Account',
+        url: '/account',
     },
 ];
 
