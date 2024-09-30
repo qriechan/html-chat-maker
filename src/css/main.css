@@ -69,6 +69,9 @@ nav ul li a:active, nav ul li a:focus {
 nav ul li a:active:hover, nav ul li a:focus:hover {
   background-color: #fff;
 }
+nav ul li .dropdown-container {
+  cursor: pointer;
+}
 nav .dropdown {
   position: absolute;
   background-color: #121212;

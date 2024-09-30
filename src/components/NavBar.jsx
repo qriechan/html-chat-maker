@@ -37,7 +37,7 @@ function NavBar({ items }) {
         onClick={closeDropdown}>
         {items.submenu ? (
         <>
-            <a role="button" aria-haspopup="navmenu" 
+            <a role="button" aria-haspopup="navmenu" className='dropdown-container'
                 aria-expanded={dropdown ? "true" : "false"}
                 onClick={() => setDropdown((prev) => !prev)}>
                 {items.title}{' '}
