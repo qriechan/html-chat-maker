@@ -3,7 +3,7 @@ import React from 'react'
 function WorkskinHSR({ textRef }) {
   return (
     <div>
-        <h3>Honkai Star Rail Workskin</h3>
+        <h3>Honkai: Star Rail Workskin</h3>
         <div className='workskin-box' ref={textRef}>
         <p className='tiny'>#workskin .phone {'{'}</p>
         <p className='tiny'>&nbsp; max-width: 350px;</p>

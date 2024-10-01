@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 
-function Export({ messages, chatName, chatDesc, includeContact }) {
+function Export({ messages, chatName, chatDesc }) {
 
     const [exportedHTML, setExportedHTML] = useState('');
 
@@ -25,15 +25,15 @@ function Export({ messages, chatName, chatDesc, includeContact }) {
 
         if (statusType === 'receive') {
             return `
-            <table class='full-text' style="margin-top: ${sameSenderAndStatus ? '-.5rem' : '.5rem'}">
+            <table class='full-kkt-text' style="margin-top: ${sameSenderAndStatus ? '-.5rem' : '.5rem'}; ${sameSenderAndStatus ? 'margin-left: "3.5rem";' : ''} width: ${sameSenderAndStatus ? '80%' : '100%'};">
                 <tbody>
-                    ${includeContact === true && showContactName ? `
+                    ${showContactName ? `
                     <tr>
                         <td class='sender-contact'>${contactName}</td>
                     </tr>` : ''}
                     <tr class='msg-row'>
                             <td class='${messageClassName}' 
-                            ${backgroundStyle ? `style="${backgroundStyle}"` : ''}>
+                            style="${backgroundStyle ? backgroundStyle : ''}${sameSenderAndStatus ? 'max-width: 62.5%;' : ''}">
                                 ${!isPictureMessage ? textValue : ''}</td>
                         </tr>
                 </tbody>
@@ -41,15 +41,15 @@ function Export({ messages, chatName, chatDesc, includeContact }) {
             `;
         } else if (statusType === 'send') {
             return `
-            <table class='full-reply' style="margin-top: ${sameSenderAndStatus ? '-.5rem' : '.5rem'}">
+            <table class='full-kkt-reply' style="margin-top: ${sameSenderAndStatus ? '-.5rem' : '.5rem'}; ${sameSenderAndStatus ? 'margin-left: "3.5rem"' : ''}; width: ${sameSenderAndStatus ? '80%' : '100%'};">
                 <tbody>
-                    ${includeContact === true && showContactName ? `
+                    ${showContactName ? `
                     <tr>
                         <td class='receiver-contact'>${contactName}</td>
                     </tr>` : ''}
                     <tr class='msg-row'>
                             <td class='${messageClassName}' 
-                            ${backgroundStyle ? `style="${backgroundStyle}"` : ''}>
+                            style="${backgroundStyle ? backgroundStyle : ''}${sameSenderAndStatus ? 'max-width: 62.5%;' : ''}">
                                 ${!isPictureMessage ? textValue : ''}</td>
                         </tr>
                 </tbody>
@@ -59,7 +59,7 @@ function Export({ messages, chatName, chatDesc, includeContact }) {
             return `
             <table class="fullalert">
                 <tr class="msg-row">
-                    <td class="alert">${textValue}</td>
+                    <td class="kkt-alert">${textValue}</td>
                 </tr>
             </table>
             `;

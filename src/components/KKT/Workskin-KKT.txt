@@ -1,116 +1,175 @@
-#workskin .ios-phone {
-    font-family: Arial, Helvetica, Inter, Roboto, sans-serif;
+#workskin .msg-row:hover {
+    background-color: #b1c6d9;
+}
+
+#workskin .kkt-phone {
+    font-family: Helvetica, "Segoe UI", Inter, Roboto, sans-serif;
     max-width: 21.875rem;
     display: table;
     margin: auto;
     padding-left: 1rem;
     padding-right: 1rem;
     padding-bottom: 1rem;
+    border-radius: 0.938rem;
+    background-color: #b1c6d9;
 }
 
-#workskin .ios-header {
-    background-color: #F6F6F6;
+#workskin .kkt-header {
     min-width: 21.875rem;
-    border-bottom: 0.094rem solid #b9bdbf;
     padding-bottom: 0.5rem;
     padding-top: 0.5rem;
     margin-left: -0.5rem;
-    margin-right: -0.5rem;
+    margin-right: -0.5em;
     margin-bottom: 1rem;
     text-align: center;
     text-transform: capitalize;
 }
 
-#workskin .main-ios-contact {
+#workskin .kkt-header-back, .kkt-header-front, .kkt-header-components {
+    display: flex;
+    align-items: center;
+}
+
+#workskin .kkt-header-components {
+    justify-content: space-between;
+}
+
+#workskin .kkt-header-front {
+    justify-content: flex-start;
+    margin-left: 0.5rem;
+}
+
+#workskin .kkt-header-back {
+    justify-content: flex-end;
+    gap: 0.75rem;
+    margin-right: 0.75rem;
+}
+
+#workskin .main-kkt-contact {
     color: #000;
     font-weight: bold;
     margin-top: 0.75rem;
-    margin-bottom: 0;
+    margin-bottom: 0.75rem;
     font-size: larger;
+    margin-left: 0.75rem;
 }
 
-#workskin .ios-bio {
+#workskin .kkt-bio {
     margin: 0.5rem auto 0.25rem auto;
     color: #666868;
     font-size: smaller;
 }
 
-#workskin .ios-text {
-    float: left;
-    margin: 0 0 .75rem .75rem;
-}
-#workskin .ios-reply {
-    float: right;
-    margin: 0 0.75rem 0.75rem 0;
-}
-#workskin .full-text {
-    margin-right: auto;
-    margin-left: 0rem;
-    width: 100%;
-}
-.full-ios-reply .ios-ios-picture, .full-ios-text .ios-ios-picture {
+#workskin .full-kkt-reply .kkt-kkt-picture, .full-kkt-text .kkt-kkt-picture {
     width: 12.5rem;
     height: 9.375rem;
     background-color: #000;
     border-radius: 1rem;
+    margin-bottom: 0.5rem;
 }
-#workskin .full-text .ios-ios-text {
-    float: left;
-    color: #000000;
-    margin: 0 0 0.5rem;
+
+#workskin .full-kkt-reply .icon, .full-kkt-text .icon {
+    width: 45px;
+    height: 45px;
     border-radius: 1.25rem;
-    padding: 0.75rem 1.25rem 0.75rem 1.25rem;
-    background: #e5e5ea;
-    max-width: 70%;
-    clear: both;
-    position: relative;
-    overflow-wrap: break-word;
+    background-color: #121212;
 }
-#workskin .full-text .ios-ios-text::after {
-    content: "";
-    position: absolute;
-    left: -.5rem;
-    bottom: 0;
-    width: 0.5rem;
-    height: 1.5rem;
-    border-right: 0.75rem solid #e5e5ea;
-    border-bottom-right-radius: 1.25rem 0.5rem;
+
+#workskin .full-kkt-reply .kkt-icon, .full-kkt-text .kkt-icon {
+    width: 45px;
+    vertical-align: top;
 }
-#workskin .full-text .ios-ios-picture {
+
+#workskin .kkt-text {
     float: left;
-    margin: 0;
+    margin: 0 0 0.75rem 0.75rem;
 }
-#workskin .full-reply {
-    margin-right: 0rem;
-    margin-left: auto;
+
+#workskin .kkt-reply {
+    float: right;
+    margin: 0 0.75rem 0.75rem 0;
+}
+
+#workskin .full-kkt-reply .receiver-contact, .full-kkt-text .sender-contact {
+    font-size: small;
+    font-weight: 500;
+    color: #000;
+    padding: 0;
+    padding-bottom: 0.25rem;
+}
+
+#workskin .full-kkt-text {
+    margin-right: auto;
+    margin-left: 0;
     width: 100%;
 }
-#workskin .full-reply .ios-ios-text {
-    float: right;
-    color: #FFFFFF;
-    margin: 0 0 0.5rem;
-    border-radius: 1.25rem;
-    padding: 0.75rem 1.25rem 0.75rem 1.25rem;
-    background: #e5e5ea;
-    max-width: 70%;
+#workskin .full-kkt-text .kkt-kkt-text {
+    float: left;
+    color: #000;
+    margin: 0 0.5rem 0.5rem 0;
+    max-width: 60%;
+    border-radius: 1.1rem;
+    padding: 0.75rem 1rem;
+    background: #ffffff;
     clear: both;
     position: relative;
     overflow-wrap: break-word;
 }
-#workskin .full-reply .ios-ios-text::after {
+#workskin .full-kkt-text .kkt-kkt-text::after {
+    content: "";
+    position: absolute;
+    left: -0.5rem;
+    top: 0;
+    width: 0.5rem;
+    height: 1.5rem;
+    border-right: 0.5rem solid #ffffff;
+    border-top-right-radius: 0.75rem 0.75rem;
+}
+#workskin .full-kkt-text .kkt-kkt-picture {
+    float: left;
+    margin-left: 0;
+}
+#workskin .full-kkt-text .icon {
+    margin-right: 0.5rem;
+}
+#workskin .full-kkt-reply {
+    margin-left: auto;
+    margin-right: 0rem;
+    width: 100%;
+}
+#workskin .full-kkt-reply .kkt-kkt-text {
+    float: right;
+    color: #000;
+    margin: 0 0 0.5rem 0.5rem;
+    max-width: 60%;
+    border-radius: 1.1rem;
+    padding: 0.75rem 1rem;
+    background: #ffec36;
+    clear: both;
+    position: relative;
+    overflow-wrap: break-word;
+}
+#workskin .full-kkt-reply .kkt-kkt-text::after {
     content: "";
     position: absolute;
     right: -0.5rem;
-    bottom: 0;
+    top: 0;
     width: 0.5rem;
     height: 1.5rem;
-    border-left: 0.75rem solid #e5e5ea;
-    border-bottom-left-radius: 1.25rem 0.5rem;
+    border-left: 0.5rem solid #ffec36;
+    border-top-left-radius: 0.75rem 0.75rem;
 }
-#workskin .full-reply .ios-ios-picture {
-    float: right;
-    margin: 0;
+#workskin .full-kkt-reply .kkt-kkt-text .no-after::after {
+    content: none;
 }
+#workskin .full-kkt-reply .kkt-kkt-picture {
+    float: left;
+    margin-right: 0;
+}
+#workskin .full-kkt-reply .icon {
+    margin-left: 0.5rem;
+}
+
 #workskin .sender-contact {
     font-weight: 500;
     font-size: 90%;
@@ -133,20 +192,16 @@
     margin-left: auto;
     margin-right: auto;
 }
-#workskin .alert-display {
-    width: -moz-fit-content;
-    width: fit-content;
-    text-align: center;
-}
-
-#workskin .alert {
+#workskin .kkt-alert {
+    background-color: rgba(74, 74, 74, 0.25);
     vertical-align: middle;
     text-align: left;
-    color: #858586;
+    color: #fff;
     font-size: small;
-    padding: 0;
-    margin: 0;
+    padding: 0.25rem 0.5rem;
+    margin: 0.5rem 0 0.75rem 0rem;
     display: table;
+    border-radius: 2rem;
 }
 
 #workskin .no-after::after {

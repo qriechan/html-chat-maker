@@ -15,7 +15,7 @@ const Login = ({ onLogin }) => {
         });
         const data = await res.json();
         if (res.ok) {
-            onLogin(data.userId, data.userName); 
+            onLogin(data.userid, data.username); 
         } else {
             setNotification(data.notification);
         }

@@ -118,7 +118,7 @@ nav {
                     }
                 }
             }
-            
+
             .dropdown-container {
                 cursor: pointer;
             }
@@ -845,10 +845,10 @@ label {
 }
 
 .kkt-alert {
-    background-color: rgba(74, 74, 74, .3);
+    background-color: rgba(74, 74, 74, .25);
     vertical-align: middle;
     text-align: left;
-    color: $blk;
+    color: $wht;
     font-size: small;
     padding: .25rem .5rem;
     margin: .5rem 0 .75rem 0rem;

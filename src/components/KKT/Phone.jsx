@@ -7,7 +7,7 @@ import ReceiverMessage from './MessageReceiver'
 import ActionMessage from './MessageAction'
 import EditorPopup from './EditorPopup';
 import { RiDeleteBin2Fill } from "react-icons/ri";
-import { FiMenu, FiArrowLeft } from "react-icons/fi";
+import { FiMenu, FiChevronLeft } from "react-icons/fi";
 import { IoMdArrowRoundUp, IoMdArrowRoundDown } from "react-icons/io";
 import { IoSearch } from "react-icons/io5";
 import Export from './Export'
@@ -83,7 +83,7 @@ function Phone() {
                     />
                     <div className='kkt-header-components'>
                         <div className='kkt-header-front'>
-                            <FiArrowLeft size={"1.25rem"} />
+                            <FiChevronLeft size={"1.75rem"} />
                             <p className='main-kkt-contact'>{chatName}</p>
                         </div>
                         <div className='kkt-header-back'>
@@ -95,11 +95,6 @@ function Phone() {
                 </div>
                 {messages.map((message, index) => {
                     const previousMessage = index > 0 ? messages[index - 1] : null;
-                    const nextMessage = index < messages.length - 1 ? messages[index + 1] : null;
-
-                    const isLastInSequence = !nextMessage || 
-                        message.contactName !== nextMessage.contactName || 
-                        message.statusType !== nextMessage.statusType;
 
                     const sameSenderAndStatus = previousMessage &&
                         message.contactName === previousMessage.contactName &&
@@ -128,7 +123,6 @@ function Phone() {
                                 includeContact={includeContact}
                                 showContactName={showContactName}
                                 sameSenderAndStatus={sameSenderAndStatus}
-                                isLastInSequence={isLastInSequence}
                             />
                         ) : message.statusType === 'send' ? (
                             <ReceiverMessage 
@@ -139,7 +133,6 @@ function Phone() {
                                 includeContact={includeContact}
                                 showContactName={showContactName}
                                 sameSenderAndStatus={sameSenderAndStatus}
-                                isLastInSequence={isLastInSequence}
                             />
                         ) : <ActionMessage
                                 key={index}

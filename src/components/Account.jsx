@@ -4,25 +4,25 @@ import Profile from './Profile';
 
 const Account = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
-    const [userId, setUserId] = useState(null);
-    const [userName, setUserName] = useState('');
+    const [userid, setUserid] = useState(null);
+    const [username, setUsername] = useState('');
 
-    const handleLogin = (userId, userName) => {
+    const handleLogin = (userid, username) => {
         setIsLoggedIn(true);
-        setUserId(userId);
-        setUserName(userName);
+        setUserid(userid);
+        setUsername(username);
     };
 
     const handleLogout = () => {
         setIsLoggedIn(false);
-        setUserId(null);
-        setUserName('');
+        setUserid(null);
+        setUsername('');
     };
 
     return (
         <div>
             {isLoggedIn ? (
-                <Profile userId={userId} username={userName} onLogout={handleLogout} />
+                <Profile userid={userid} username={username} onLogout={handleLogout} />
             ) : (
                 <Login onLogin={handleLogin} />
             )}

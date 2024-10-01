@@ -1,17 +1,22 @@
 import React from 'react'
 
-function SenderMessage({ contact, text, messageClass, sameSenderAndStatus, isLastInSequence }) {
+function SenderMessage({ contact, text, messageClass, sameSenderAndStatus }) {
 
     const iconURL = 'https://i.postimg.cc/7h3JQKVT/Character-Acheron-Icon.webp'
     const isPictureMessage = messageClass === 'kkt-picture';
+
     const messageMargin = {
-        marginTop: sameSenderAndStatus ? '-.75rem' : '.5rem' 
+        marginTop: sameSenderAndStatus ? '-.75rem' : '.5rem',
+        marginRight: sameSenderAndStatus ? '3.5rem' : '',
+        width: sameSenderAndStatus ? '80%' : '100%',
     };
-    const messageClassName = `kkt-reply kkt-${messageClass} ${!isLastInSequence ? 'no-after' : ''}`;
-    
+    const messageClassName = `kkt-text kkt-${messageClass}`;
     let backgroundStyle = {};
     if (isPictureMessage) {
         backgroundStyle = { backgroundImage: `url(${text})`, backgroundSize: 'cover', backgroundPosition: 'center' };
+    }
+    const changeMaxWidth = {
+        maxWidth: sameSenderAndStatus ? '62.5%' : '60%',
     }
 
     return (
@@ -19,17 +24,17 @@ function SenderMessage({ contact, text, messageClass, sameSenderAndStatus, isLas
         <table className='full-message full-kkt-reply' style={messageMargin}>
             <tbody>
                 <tr>
-                <td className='receiver-contact message-contact'>{contact}</td>
-                <td rowSpan='2' className='kkt-icon'>
+                {!sameSenderAndStatus && (<td className='receiver-contact message-contact'>{contact}</td>)}
+                {!sameSenderAndStatus && (<td rowSpan='2' className='kkt-icon'>
                     <img 
                         className='icon' 
                         src={iconURL} 
                         width='100%'
                         alt={contact} />
-                </td>
+                </td>)}
                 </tr>
                 <tr>
-                    <td className={messageClassName} style={backgroundStyle}>
+                    <td className={messageClassName} style={Object.assign(backgroundStyle, changeMaxWidth)}>
                     {!isPictureMessage && text}</td>
                 </tr>
             </tbody>
