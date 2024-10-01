@@ -5,7 +5,6 @@ function Home() {
 
     return (
         <div>
-            <h1 style={{textAlign: 'center'}}>UNDER CONSTRUCTION, DO NOT USE</h1>
             <Phone />
         </div>
     )
