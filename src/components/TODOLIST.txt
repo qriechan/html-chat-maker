@@ -1,2 +1,3 @@
 add query for contact name and icon from database 
-fix account logins
+fix account logins ??
+add edit message option 

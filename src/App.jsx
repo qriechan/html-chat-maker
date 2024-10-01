@@ -7,9 +7,9 @@ import Ios from './components/iOS/iOS'
 import Workskin from './components/Workskin'
 import Feedback from './components/Feedback'
 import KKT from './components/KKT/KKT'
-import Login from './components/Login'
-import Profile from './components/Profile'
-import Account from './components/Account'
+import Login from './components/accounts/Login'
+import Profile from './components/accounts/Profile'
+import Account from './components/accounts/Account'
 
 import './css/main.css'
 
