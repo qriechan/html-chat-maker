@@ -73,7 +73,6 @@ function Phone() {
                     <EditorPopup 
                         handleInputChange={handleInputChange}
                         handleTypeSwitch={handleTypeSwitch}
-                        handleContactName={handleContactName}
                         description={chatDesc}
                         channel={chatName}
                     />
