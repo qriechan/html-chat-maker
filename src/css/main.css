@@ -905,6 +905,13 @@ label {
   border-color: #121212;
   transition: 0.15s;
 }
+.write-kkt-text .contact-maker {
+  display: grid;
+  margin-left: auto;
+  margin-right: auto;
+  grid-template-columns: repeat(2, 1fr);
+  place-items: center;
+}
 .write-kkt-text .text-send {
   font-family: Helvetica, "Segoe UI", Inter, Roboto, sans-serif;
   border-color: #d4d8dc;

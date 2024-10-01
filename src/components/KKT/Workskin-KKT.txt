@@ -68,7 +68,7 @@
     margin-bottom: 0.5rem;
 }
 
-#workskin .full-kkt-reply .icon, .full-kkt-text .icon {
+#workskin .full-kkt-reply .kkt-kkt-icon, .full-kkt-text .kkt-kkt-icon {
     width: 45px;
     height: 45px;
     border-radius: 1.25rem;
@@ -129,7 +129,7 @@
     float: left;
     margin-left: 0;
 }
-#workskin .full-kkt-text .icon {
+#workskin .full-kkt-text .kkt-kkt-icon {
     margin-right: 0.5rem;
 }
 #workskin .full-kkt-reply {
@@ -166,7 +166,7 @@
     float: left;
     margin-right: 0;
 }
-#workskin .full-kkt-reply .icon {
+#workskin .full-kkt-reply .kkt-kkt-icon {
     margin-left: 0.5rem;
 }
 

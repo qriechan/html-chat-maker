@@ -1066,6 +1066,14 @@ label {
         }
     }
 
+    .contact-maker {
+        display: grid;
+        margin-left: auto;
+        margin-right: auto;
+        grid-template-columns: repeat(2, 1fr);
+        place-items: center;
+    }
+
     .text-send {
         @extend %my-button;
         font-family: $ios-font-family;

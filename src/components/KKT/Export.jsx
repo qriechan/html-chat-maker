@@ -6,7 +6,7 @@ function Export({ messages, chatName, chatDesc }) {
     const [exportedHTML, setExportedHTML] = useState('');
 
     const generateMessageHTML = (message, index) => {
-        const { contactName, textValue, statusType, messageType } = message;
+        const { contactName, contactIcon, textValue, statusType, messageType } = message;
         const isPictureMessage = messageType === 'kkt-picture';
         const backgroundStyle = isPictureMessage
         ? `background-image: url('${textValue}'); background-size: cover; background-position: center; height: 9.375rem; max-width: 75%; width: 20rem; border-radius: 1rem;`
@@ -29,6 +29,9 @@ function Export({ messages, chatName, chatDesc }) {
                 <tbody>
                     ${showContactName ? `
                     <tr>
+                        <td rowspan='2' class='kkt-icon'>
+                            <img class='kkt-kkt-icon' src='${contactIcon}' width='100%' alt='${contactName}' />
+                        </td>
                         <td class='sender-contact'>${contactName}</td>
                     </tr>` : ''}
                     <tr class='msg-row'>
@@ -46,6 +49,9 @@ function Export({ messages, chatName, chatDesc }) {
                     ${showContactName ? `
                     <tr>
                         <td class='receiver-contact'>${contactName}</td>
+                        <td rowspan='2' class='kkt-icon'>
+                            <img class='kkt-kkt-icon' src='${contactIcon}' width='100%' alt='${contactName}' />
+                        </td>
                     </tr>` : ''}
                     <tr class='msg-row'>
                             <td class='${messageClassName}' 

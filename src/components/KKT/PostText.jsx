@@ -4,6 +4,7 @@ function PostText(props){
 
     const [textValue, setTextValue] = useState('');
     const [contactName, setContactName] = useState('Unknown');
+    const [contactIcon, setContactIcon] = useState('');
     const [statusType, setStatusType] = useState('send');
     const [messageType, setMessageType] = useState('kkt-text');
     const inputPlaceholder = messageType === 'kkt-picture' 
@@ -17,7 +18,7 @@ function PostText(props){
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const messageDetails = { textValue, contactName, statusType, messageType };
+        const messageDetails = { textValue, contactName, contactIcon, statusType, messageType };
         console.log(messageDetails);
         props.onSubmit(messageDetails);
         setTextValue('');
@@ -26,12 +27,20 @@ function PostText(props){
     return (
         <div className='write-kkt-text'>
             <form onSubmit={handleSubmit}>
-                <input 
-                    type="text" 
-                    value={contactName} 
-                    onChange={(e) => setContactName(e.target.value)} 
-                    placeholder='Enter contact name...'
-                />
+                <div className='contact-maker'>
+                    <input 
+                        type="text" 
+                        value={contactName} 
+                        onChange={(e) => setContactName(e.target.value)} 
+                        placeholder='Contact name'
+                    />
+                    <input 
+                        type="text" 
+                        value={contactIcon} 
+                        onChange={(e) => setContactIcon(e.target.value)} 
+                        placeholder='Icon URL'
+                    />
+                </div>
                 <input 
                     type="text" 
                     required

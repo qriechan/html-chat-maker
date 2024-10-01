@@ -1,2 +1,1 @@
-1. add query for contact name and icon from database 
-2. remove contact icon and name on subsequent messages 
+add query for contact name and icon from database 

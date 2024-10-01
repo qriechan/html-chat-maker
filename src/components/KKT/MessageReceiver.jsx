@@ -1,8 +1,6 @@
 import React from 'react'
 
-function SenderMessage({ contact, text, messageClass, sameSenderAndStatus }) {
-
-    const iconURL = 'https://i.postimg.cc/7h3JQKVT/Character-Acheron-Icon.webp'
+function SenderMessage({ contact, icon, text, messageClass, sameSenderAndStatus }) {
     const isPictureMessage = messageClass === 'kkt-picture';
 
     const messageMargin = {
@@ -28,7 +26,7 @@ function SenderMessage({ contact, text, messageClass, sameSenderAndStatus }) {
                 {!sameSenderAndStatus && (<td rowSpan='2' className='kkt-icon'>
                     <img 
                         className='icon' 
-                        src={iconURL} 
+                        src={icon} 
                         width='100%'
                         alt={contact} />
                 </td>)}

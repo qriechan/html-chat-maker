@@ -18,7 +18,7 @@ function Phone() {
     const [chatDesc, setChatDesc] = useState('');
     const [channelType, setChannelType] = useState(''); 
     const [activeMessageIndex, setActiveMessageIndex] = useState(null); 
-    const [includeContact, setIncludeContact] = useState(false);
+    const defaultPfp = 'https://i.postimg.cc/4dx2brCt/default-avatar-icon-of-social-media-user-vector.jpg';
 
     useEffect(() => {
     }, [messages]);
@@ -64,9 +64,6 @@ function Phone() {
             setChatDesc(inputValue);
         }
     };
-    const handleContactName = (e) => {
-        setIncludeContact(e.target.checked);
-    }
 
     return (
         <div className='container'>
@@ -79,7 +76,6 @@ function Phone() {
                         handleContactName={handleContactName}
                         description={chatDesc}
                         channel={chatName}
-                        includeContact={includeContact}
                     />
                     <div className='kkt-header-components'>
                         <div className='kkt-header-front'>
@@ -120,7 +116,7 @@ function Phone() {
                                 text={message.textValue}
                                 messageClass={message.messageType}
                                 contact={message.contactName || ''}
-                                includeContact={includeContact}
+                                icon={message.contactIcon || defaultPfp}
                                 showContactName={showContactName}
                                 sameSenderAndStatus={sameSenderAndStatus}
                             />
@@ -130,7 +126,7 @@ function Phone() {
                                 text={message.textValue}
                                 messageClass={message.messageType}
                                 contact={message.contactName || ''}
-                                includeContact={includeContact}
+                                icon={message.contactIcon || defaultPfp}
                                 showContactName={showContactName}
                                 sameSenderAndStatus={sameSenderAndStatus}
                             />
@@ -170,7 +166,6 @@ function Phone() {
             messages={messages}
             chatName={chatName}
             chatDesc={chatDesc}
-            includeContact={includeContact}
         />
         </div>
     )
