@@ -1,0 +1,2 @@
+add query for contact name and icon from database 
+fix account logins

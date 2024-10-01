@@ -28,10 +28,10 @@ const navItems = [
         title: 'Feedback',
         url: '/feedback',
     },
-    {
-        title: 'Account',
-        url: '/account',
-    },
+    // {
+    //     title: 'Account',
+    //     url: '/account',
+    // },
 ];
 
 export default navItems
