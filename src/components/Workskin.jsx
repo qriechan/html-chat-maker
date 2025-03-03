@@ -26,7 +26,7 @@ function Workskin() {
     <div className='all-workskins'>
         <div className='workskin-container'>
             <WorkskinIOS 
-            textRef={textRef} />
+            textRef={iosRef} />
             <button className='copy-workskin' 
                 onClick={() => copyToClipboard(iosRef)}>
                 Copy iOS CSS
@@ -34,7 +34,7 @@ function Workskin() {
         </div>
         <div className='workskin-container'>
             <WorkskinHSR 
-            textRef={textRef} />
+            textRef={hsrRef} />
             <button className='copy-workskin' 
                 onClick={() => copyToClipboard(hsrRef)}>
                 Copy HSR CSS
@@ -42,7 +42,7 @@ function Workskin() {
         </div>
         <div className='workskin-container'>
             <WorkskinKKT 
-            textRef={textRef} />
+            textRef={kktRef} />
             <button className='copy-workskin' 
                 onClick={() => copyToClipboard(kktRef)}>
                 Copy KKT CSS
