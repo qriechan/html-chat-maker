@@ -75,7 +75,7 @@ function Workskin() {
             <WorkskinIOS 
             textRef={iosRef} />
             <button className='copy-workskin' 
-                onClick={() => copyToClipboard(iosRef)}>
+                onClick={() => copyToClipboard(iosFullText)}>
                 Copy iOS CSS
             </button>
         </div>
@@ -83,7 +83,7 @@ function Workskin() {
             <WorkskinHSR 
             textRef={hsrRef} />
             <button className='copy-workskin' 
-                onClick={() => copyToClipboard(hsrRef)}>
+                onClick={() => copyToClipboard(hsrFullText)}>
                 Copy HSR CSS
             </button>
         </div>
@@ -91,7 +91,7 @@ function Workskin() {
             <WorkskinKKT 
             textRef={kktRef} />
             <button className='copy-workskin' 
-                onClick={() => copyToClipboard(kktRef)}>
+                onClick={() => copyToClipboard(kktFullText)}>
                 Copy KKT CSS
             </button>
         </div>
