@@ -1,13 +1,38 @@
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import WorkskinHSR from './HSR/Workskin-HSR'
 import WorkskinIOS from './iOS/Workskin-iOS';
 import WorkskinKKT from './KKT/Workskin-KKT';
 
 function Workskin() {
     
+    // create references for each workskin 
     const iosRef = useRef(null);
     const hsrRef = useRef(null);
     const kktRef = useRef(null); 
+
+    // store the actual text content
+    const [iosFullText, setIosFullText] = useState('');
+    const [hsrFullText, setHsrFullText] = useState('');
+    const [kktFullText, setKktFullText] = useState('');
+
+    useEffect(() => {
+
+        fetch('/public/Workskin-iOS.txt')
+            .then(response => response.text())
+            .then(text => setIosFullText(text))
+            .catch(err => console.error("Failed to load iOS workskin:", err));
+
+        fetch('/public/Workskin-HSR.txt')
+            .then(response => response.text())
+            .then(text => setHsrFullText(text))
+            .catch(err => console.error("Failed to load HSR workskin:", err));
+
+        fetch('/public/Workskin-KKT.txt')
+            .then(response => response.text())
+            .then(text => setKktFullText(text))
+            .catch(err => console.error("Failed to load KKT workskin:", err));
+
+    })
 
     const copyToClipboard = (ref) => {
         if (ref.current) {

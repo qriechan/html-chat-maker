@@ -9,10 +9,10 @@ function WorkskinIOS({ textRef }) {
     useEffect(() => {
         
         // fetch txt file 
-        fetch('./Workskin-iOS.txt')
+        fetch('/public/Workskin-iOS.txt')
             .then(response => {
                 if (!response.ok) {
-                    throw new Error('Network response failure');
+                    throw new Error('Bad network response');
                 }
                 return response.text();
             })
