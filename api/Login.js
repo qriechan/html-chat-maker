@@ -24,10 +24,12 @@ export default async function handler(req, res) {
             }
 
             return res.status(200).json({ notification: 'Login successful!', user });
+
         } catch (error) {
             console.error('Error during login:', error);
             return res.status(500).json({ notification: 'Failed to login.' });
         }
+        
     } else {
         res.setHeader('Allow', ['POST']);
         return res.status(405).end(`Method ${req.method} Not Allowed`);

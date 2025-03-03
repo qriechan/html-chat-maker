@@ -41,14 +41,14 @@
 }
 #workskin .ios-reply {
     float: right;
-    margin: 0 0.75rem 0.75rem 0;
+    margin: 0 .75rem .75rem 0;
 }
 #workskin .full-text {
     margin-right: auto;
     margin-left: 0rem;
     width: 100%;
 }
-.full-ios-reply .ios-ios-picture, .full-ios-text .ios-ios-picture {
+#workskin .full-ios-reply .ios-ios-picture, .full-ios-text .ios-ios-picture {
     width: 12.5rem;
     height: 9.375rem;
     background-color: #000;
@@ -78,7 +78,7 @@
 }
 #workskin .full-text .ios-ios-picture {
     float: left;
-    margin: 0;
+    margin: 0.5rem 0.75rem 1rem 1.5rem;
 }
 #workskin .full-reply {
     margin-right: 0rem;
@@ -91,7 +91,7 @@
     margin: 0 0 0.5rem;
     border-radius: 1.25rem;
     padding: 0.75rem 1.25rem 0.75rem 1.25rem;
-    background: #e5e5ea;
+    background: #0b93f6;
     max-width: 70%;
     clear: both;
     position: relative;
@@ -104,12 +104,15 @@
     bottom: 0;
     width: 0.5rem;
     height: 1.5rem;
-    border-left: 0.75rem solid #e5e5ea;
+    border-left: 0.75rem solid #0b93f6;
     border-bottom-left-radius: 1.25rem 0.5rem;
 }
 #workskin .full-reply .ios-ios-picture {
     float: right;
-    margin: 0;
+    margin: 0.5rem 1.5rem 1rem .75rem;
+}
+#workskin .no-after::after {
+    content: none;
 }
 #workskin .sender-contact {
     font-weight: 500;
