@@ -8,7 +8,7 @@ function WorkskinKKT({ textRef }) {
     useEffect(() => {
         
         // fetch txt file 
-        fetch('/public/Workskin-KKT.txt')
+        fetch('/Workskin-KKT.txt')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Bad network response');

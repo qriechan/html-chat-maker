@@ -8,7 +8,7 @@ function WorkskinHSR({ textRef }) {
     useEffect(() => {
         
         // fetch txt file 
-        fetch('/public/Workskin-HSR.txt')
+        fetch('/Workskin-HSR.txt')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Bad network response');
