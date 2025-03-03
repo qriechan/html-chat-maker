@@ -17,35 +17,57 @@ function Workskin() {
 
     useEffect(() => {
 
-        fetch('/public/Workskin-iOS.txt')
-            .then(response => response.text())
-            .then(text => setIosFullText(text))
-            .catch(err => console.error("Failed to load iOS workskin:", err));
+        // use dependency array 
+        const fetchText = (file, setter) => {
+            fetch(file)
+                .then(response => response.text())
+                .then(text => setter(text))
+                .catch(err => console.error(`Failed to load ${file}:`, err));
+        };
+    
+        fetchText('/public/Workskin-iOS.txt', setIosFullText);
+        fetchText('/public/Workskin-HSR.txt', setHsrFullText);
+        fetchText('/public/Workskin-KKT.txt', setKktFullText);
 
-        fetch('/public/Workskin-HSR.txt')
-            .then(response => response.text())
-            .then(text => setHsrFullText(text))
-            .catch(err => console.error("Failed to load HSR workskin:", err));
-
-        fetch('/public/Workskin-KKT.txt')
-            .then(response => response.text())
-            .then(text => setKktFullText(text))
-            .catch(err => console.error("Failed to load KKT workskin:", err));
-
-    })
-
-    const copyToClipboard = (ref) => {
-        if (ref.current) {
-            const textToCopy = ref.current.innerText; 
-            navigator.clipboard.writeText(textToCopy) 
-                .then(() => {
-                    alert("Copied workskin to clipboard!");
-                })
-                .catch(err => {
-                    console.error("Failed to copy: ", err);
-                });
-        }
+    }, []);
+    
+    const copyToClipboard = (text) => {
+        navigator.clipboard.writeText(text)
+            .then(() => alert("Copied workskin to clipboard!"))
+            .catch(err => console.error("Failed to copy: ", err));
     };
+
+    // useEffect(() => {
+
+    //     fetch('/public/Workskin-iOS.txt')
+    //         .then(response => response.text())
+    //         .then(text => setIosFullText(text))
+    //         .catch(err => console.error("Failed to load iOS workskin:", err));
+
+    //     fetch('/public/Workskin-HSR.txt')
+    //         .then(response => response.text())
+    //         .then(text => setHsrFullText(text))
+    //         .catch(err => console.error("Failed to load HSR workskin:", err));
+
+    //     fetch('/public/Workskin-KKT.txt')
+    //         .then(response => response.text())
+    //         .then(text => setKktFullText(text))
+    //         .catch(err => console.error("Failed to load KKT workskin:", err));
+
+    // })
+
+    // const copyToClipboard = (ref) => {
+    //     if (ref.current) {
+    //         const textToCopy = ref.current.innerText; 
+    //         navigator.clipboard.writeText(textToCopy) 
+    //             .then(() => {
+    //                 alert("Copied workskin to clipboard!");
+    //             })
+    //             .catch(err => {
+    //                 console.error("Failed to copy: ", err);
+    //             });
+    //     }
+    // };
 
     return (
     <div className='all-workskins'>
