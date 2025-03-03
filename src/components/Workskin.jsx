@@ -25,9 +25,9 @@ function Workskin() {
                 .catch(err => console.error(`Failed to load ${file}:`, err));
         };
     
-        fetchText('/public/Workskin-iOS.txt', setIosFullText);
-        fetchText('/public/Workskin-HSR.txt', setHsrFullText);
-        fetchText('/public/Workskin-KKT.txt', setKktFullText);
+        fetchText('/Workskin-iOS.txt', setIosFullText);
+        fetchText('/Workskin-HSR.txt', setHsrFullText);
+        fetchText('/Workskin-KKT.txt', setKktFullText);
 
     }, []);
     
