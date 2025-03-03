@@ -1,32 +1,53 @@
 import React from 'react'
 
 function WorkskinKKT({ textRef }) {
-  return (
-    <div className='code-box'>
-        <h3>KKT Message Workskin</h3>
-        <div className='workskin-box' ref={textRef}> 
-        <p className='tiny'>#workskin .msg-row:hover {'{'}<br />&nbsp; &nbsp; background-color: #b1c6d9;<br />{'}'}</p>
-        <p className='tiny'>#workskin .kkt-phone {'{'}<br />&nbsp; &nbsp; font-family: Helvetica, "Segoe UI", Inter, Roboto, sans-serif;<br />&nbsp; &nbsp; max-width: 21.875rem;<br />&nbsp; &nbsp; display: table;<br />&nbsp; &nbsp; margin: auto;<br />&nbsp; &nbsp; padding-left: 1rem;<br />&nbsp; &nbsp; padding-right: 1rem;<br />&nbsp; &nbsp; padding-bottom: 1rem;<br />&nbsp; &nbsp; border-radius: 0.938rem;<br />&nbsp; &nbsp; background-color: #b1c6d9;<br />{'}'}</p>
-        <p className='tiny'>#workskin .kkt-header {'{'}<br />&nbsp; &nbsp; min-width: 21.875rem;<br />&nbsp; &nbsp; padding-bottom: 0.5rem;<br />&nbsp; &nbsp; padding-top: 0.5rem;<br />&nbsp; &nbsp; margin-left: -0.5rem;<br />&nbsp; &nbsp; margin-right: -0.5em;<br />&nbsp; &nbsp; margin-bottom: 1rem;<br />&nbsp; &nbsp; text-align: center;<br />&nbsp; &nbsp; text-transform: capitalize;<br />{'}'}</p>
-        <p className='tiny'>#workskin .kkt-header-back, .kkt-header-front, .kkt-header-components {'{'}<br />&nbsp; &nbsp; display: flex;<br />&nbsp; &nbsp; align-items: center;<br />{'}'}</p>
-        <p className='tiny'>#workskin .kkt-header-components {'{'}<br />&nbsp; &nbsp; justify-content: space-between;<br />{'}'}</p>
-        <p className='tiny'>#workskin .kkt-header-front {'{'}<br />&nbsp; &nbsp; justify-content: flex-start;<br />&nbsp; &nbsp; margin-left: 0.5rem;<br />{'}'}</p>
-        <p className='tiny'>#workskin .kkt-header-back {'{'}<br />&nbsp; &nbsp; justify-content: flex-end;<br />&nbsp; &nbsp; gap: 0.75rem;<br />&nbsp; &nbsp; margin-right: 0.75rem;<br />{'}'}</p>
-        <p className='tiny'>#workskin .main-kkt-contact {'{'}<br />&nbsp; &nbsp; color: #000;<br />&nbsp; &nbsp; font-weight: bold;<br />&nbsp; &nbsp; margin-top: 0.75rem;<br />&nbsp; &nbsp; margin-bottom: 0.75rem;<br />&nbsp; &nbsp; font-size: larger;<br />&nbsp; &nbsp; margin-left: 0.75rem;<br />{'}'}</p>
-        <p className='tiny'>#workskin .kkt-bio {'{'}<br />&nbsp; &nbsp; margin: 0.5rem auto 0.25rem auto;<br />&nbsp; &nbsp; color: #666868;<br />&nbsp; &nbsp; font-size: smaller;<br />{'}'}</p>
-        <p className='tiny'>#workskin .full-kkt-reply .kkt-kkt-picture, .full-kkt-text .kkt-kkt-picture {'{'}<br />&nbsp; &nbsp; width: 12.5rem;<br />&nbsp; &nbsp; height: 9.375rem;<br />&nbsp; &nbsp; background-color: #000;<br />&nbsp; &nbsp; border-radius: 1rem;<br />&nbsp; &nbsp; margin-bottom: 0.5rem;<br />{'}'}</p>
-        <p className='tiny'>#workskin .full-kkt-reply .kkt-kkt-icon, .full-kkt-text .kkt-kkt-icon {'{'}<br />&nbsp; &nbsp; width: 45px;<br />&nbsp; &nbsp; height: 45px;<br />&nbsp; &nbsp; border-radius: 1.25rem;<br />&nbsp; &nbsp; background-color: #121212;<br />{'}'}</p>
-        <p className='tiny'>#workskin .full-kkt-reply .kkt-icon, .full-kkt-text .kkt-icon {'{'}<br />&nbsp; &nbsp; width: 45px;<br />&nbsp; &nbsp; vertical-align: top;<br />{'}'}</p>
-        <p className='tiny'>#workskin .kkt-text {'{'}<br />&nbsp; &nbsp; float: left;<br />&nbsp; &nbsp; margin: 0 0 0.75rem 0.75rem;<br />{'}'}</p>
-        <p className='tiny'>#workskin .kkt-reply {'{'}<br />&nbsp; &nbsp; float: right;<br />&nbsp; &nbsp; margin: 0 0.75rem 0.75rem 0;<br />{'}'}</p>
-        <p className='tiny'>#workskin .full-kkt-reply .receiver-contact, .full-kkt-text .sender-contact {'{'}<br />&nbsp; &nbsp; font-size: small;<br />&nbsp; &nbsp; font-weight: 500;<br />&nbsp; &nbsp; color: #000;<br />&nbsp; &nbsp; padding: 0;<br />&nbsp; &nbsp; padding-bottom: 0.25rem;<br />{'}'}</p>
-        <p className='tiny'>#workskin .full-kkt-text {'{'}<br />&nbsp; &nbsp; margin-right: auto;<br />&nbsp; &nbsp; margin-left: 0;<br />&nbsp; &nbsp; width: 100%;<br />{'}'}<br />#workskin .full-kkt-text .kkt-kkt-text {'{'}<br />&nbsp; &nbsp; float: left;<br />&nbsp; &nbsp; color: #000;<br />&nbsp; &nbsp; margin: 0 0.5rem 0.5rem 0;<br />&nbsp; &nbsp; max-width: 60%;<br />&nbsp; &nbsp; border-radius: 1.1rem;<br />&nbsp; &nbsp; padding: 0.75rem 1rem;<br />&nbsp; &nbsp; background: #ffffff;<br />&nbsp; &nbsp; clear: both;<br />&nbsp; &nbsp; position: relative;<br />&nbsp; &nbsp; overflow-wrap: break-word;<br />{'}'}<br />#workskin .full-kkt-text .kkt-kkt-text::after {'{'}<br />&nbsp; &nbsp; content: "";<br />&nbsp; &nbsp; position: absolute;<br />&nbsp; &nbsp; left: -0.5rem;<br />&nbsp; &nbsp; top: 0;<br />&nbsp; &nbsp; width: 0.5rem;<br />&nbsp; &nbsp; height: 1.5rem;<br />&nbsp; &nbsp; border-right: 0.5rem solid #ffffff;<br />&nbsp; &nbsp; border-top-right-radius: 0.75rem 0.75rem;<br />{'}'}<br />#workskin .full-kkt-text .kkt-kkt-picture {'{'}<br />&nbsp; &nbsp; float: left;<br />&nbsp; &nbsp; margin-left: 0;<br />{'}'}<br />#workskin .full-kkt-text .kkt-kkt-icon {'{'}<br />&nbsp; &nbsp; margin-right: 0.5rem;<br />{'}'}<br />#workskin .full-kkt-reply {'{'}<br />&nbsp; &nbsp; margin-left: auto;<br />&nbsp; &nbsp; margin-right: 0rem;<br />&nbsp; &nbsp; width: 100%;<br />{'}'}<br />#workskin .full-kkt-reply .kkt-kkt-text {'{'}<br />&nbsp; &nbsp; float: right;<br />&nbsp; &nbsp; color: #000;<br />&nbsp; &nbsp; margin: 0 0 0.5rem 0.5rem;<br />&nbsp; &nbsp; max-width: 60%;<br />&nbsp; &nbsp; border-radius: 1.1rem;<br />&nbsp; &nbsp; padding: 0.75rem 1rem;<br />&nbsp; &nbsp; background: #ffec36;<br />&nbsp; &nbsp; clear: both;<br />&nbsp; &nbsp; position: relative;<br />&nbsp; &nbsp; overflow-wrap: break-word;<br />{'}'}<br />#workskin .full-kkt-reply .kkt-kkt-text::after {'{'}<br />&nbsp; &nbsp; content: "";<br />&nbsp; &nbsp; position: absolute;<br />&nbsp; &nbsp; right: -0.5rem;<br />&nbsp; &nbsp; top: 0;<br />&nbsp; &nbsp; width: 0.5rem;<br />&nbsp; &nbsp; height: 1.5rem;<br />&nbsp; &nbsp; border-left: 0.5rem solid #ffec36;<br />&nbsp; &nbsp; border-top-left-radius: 0.75rem 0.75rem;<br />{'}'}<br />#workskin .full-kkt-reply .kkt-kkt-text .no-after::after {'{'}<br />&nbsp; &nbsp; content: none;<br />{'}'}<br />#workskin .full-kkt-reply .kkt-kkt-picture {'{'}<br />&nbsp; &nbsp; float: left;<br />&nbsp; &nbsp; margin-right: 0;<br />{'}'}<br />#workskin .full-kkt-reply .kkt-kkt-icon {'{'}<br />&nbsp; &nbsp; margin-left: 0.5rem;<br />{'}'}</p>
-        <p className='tiny'>#workskin .sender-contact {'{'}<br />&nbsp; &nbsp; font-weight: 500;<br />&nbsp; &nbsp; font-size: 90%;<br />&nbsp; &nbsp; color: #666868;<br />&nbsp; &nbsp; padding: 0 0 0.25rem 0.75rem;<br />&nbsp; &nbsp; float: left;<br />{'}'}<br />#workskin .receiver-contact {'{'}<br />&nbsp; &nbsp; font-weight: 500;<br />&nbsp; &nbsp; font-size: 90%;<br />&nbsp; &nbsp; color: #666868;<br />&nbsp; &nbsp; padding: 0 0.75rem 0.25rem 0;<br />&nbsp; &nbsp; text-align: right;<br />&nbsp; &nbsp; float: right;<br />{'}'}<br />#workskin .fullalert {'{'}<br />&nbsp; &nbsp; vertical-align: middle;<br />&nbsp; &nbsp; width: -moz-fit-content;<br />&nbsp; &nbsp; width: fit-content;<br />&nbsp; &nbsp; margin-left: auto;<br />&nbsp; &nbsp; margin-right: auto;<br />{'}'}<br />#workskin .kkt-alert {'{'}<br />&nbsp; &nbsp; background-color: rgba(74, 74, 74, 0.25);<br />&nbsp; &nbsp; vertical-align: middle;<br />&nbsp; &nbsp; text-align: left;<br />&nbsp; &nbsp; color: #fff;<br />&nbsp; &nbsp; font-size: small;<br />&nbsp; &nbsp; padding: 0.25rem 0.5rem;<br />&nbsp; &nbsp; margin: 0.5rem 0 0.75rem 0rem;<br />&nbsp; &nbsp; display: table;<br />&nbsp; &nbsp; border-radius: 2rem;<br />{'}'}</p>
-        <p className='tiny'>#workskin .no-after::after {'{'}<br />&nbsp; &nbsp; content: none;<br />{'}'}</p>
+    const [textContent, setTextContent] = useState('');
+    const [isLoading, setIsLoading] = useState(true);
+    const [error, setError] = useState(null);
 
-      </div>
-    </div>
-  )
+    useEffect(() => {
+        
+        // fetch txt file 
+        fetch('/public/Workskin-KKT.txt')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Bad network response');
+                }
+                return response.text();
+            })
+            .then(text => {
+                setTextContent(text);
+                setIsLoading(false);
+            })
+            .catch(error => {
+                console.error('Error loading CSS workskin:', error);
+                setError('Failed to load workskin');
+                setIsLoading(false);
+            });
+    }, []);
+
+    const renderTextContent = () => {
+
+        // catch special cases 
+        if (isLoading) return <p className='tiny'>Loading...</p>
+        if (error) return <p className='tiny'>{error}</p>
+
+        // normal case
+        return textContent.split('\n').map((line, index) => (
+            <p className='tiny' key={index}>
+                {line}
+            </p>
+        ))
+    }
+
+    return (
+        <div className='code-box'>
+            <h3>KKT Message Workskin</h3>
+            <div className='workskin-box' ref={textRef}> 
+                {renderTextContent()}
+            </div>
+        </div>
+    )
 }
 
 export default WorkskinKKT
