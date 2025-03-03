@@ -1,9 +1,7 @@
-import { response } from 'express';
 import React, { useEffect, useState } from 'react'
 
 function WorkskinIOS({ textRef }) {
-    
-    // set
+
     const [textContent, setTextContent] = useState('');
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
