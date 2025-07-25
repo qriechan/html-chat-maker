@@ -74,7 +74,7 @@ function PostText(props){
                     <option value="Other">Other</option>
                 </select>
                 {contactName === 'Other' && (
-                    <div className='custom-char'>
+                    <div className='custom-name'>
                         <input 
                             type="text" 
                             placeholder="Enter custom name" 
