@@ -888,7 +888,22 @@ label {
     align-items: center;
     text-align: center;
 
-    input[type=text], input[type=url] {
+    input[type=text] {
+        margin-top: .75rem;
+        font-family: $hsr-font-family;
+        width: 60%;
+        padding: .5rem 1rem .5rem 1rem;
+        border: .094rem solid $bgcolor-hsr;
+        font-size: medium;
+        outline: none;
+
+        &:focus {
+            border-color: $dark-color;
+            transition: .15s;
+        }
+    }
+
+    input[type=url] {
         margin-top: .75rem;
         font-family: $hsr-font-family;
         width: 60%;

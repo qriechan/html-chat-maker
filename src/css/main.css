@@ -751,7 +751,7 @@ label {
   align-items: center;
   text-align: center;
 }
-.write-text input[type=text], .write-text input[type=url] {
+.write-text input[type=text] {
   margin-top: 0.75rem;
   font-family: Bahnschrift, Inter, sans-serif;
   width: 60%;
@@ -760,7 +760,20 @@ label {
   font-size: medium;
   outline: none;
 }
-.write-text input[type=text]:focus, .write-text input[type=url]:focus {
+.write-text input[type=text]:focus {
+  border-color: #121212;
+  transition: 0.15s;
+}
+.write-text input[type=url] {
+  margin-top: 0.75rem;
+  font-family: Bahnschrift, Inter, sans-serif;
+  width: 60%;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  border: 0.094rem solid #d4d8dc;
+  font-size: medium;
+  outline: none;
+}
+.write-text input[type=url]:focus {
   border-color: #121212;
   transition: 0.15s;
 }
