@@ -888,7 +888,7 @@ label {
     align-items: center;
     text-align: center;
 
-    input[type=text] {
+    input[type=text], input[type=url] {
         margin-top: .75rem;
         font-family: $hsr-font-family;
         width: 60%;
@@ -937,6 +937,7 @@ label {
         padding: .5rem 1rem .5rem 1rem;
         border: .094rem solid $bgcolor-hsr;
         font-size: medium;
+        width: 50%;
         outline: none;
         cursor: pointer;
 
