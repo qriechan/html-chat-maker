@@ -17,9 +17,6 @@ function About() {
         <h3>General</h3>
         <p>Q: My image is not displaying! How do I fix it?</p>
         <blockquote>A: Make sure the URL you paste into the text box is from "Copy image address" or otherwise a DIRECT LINK (you can host images on <a href='https://postimages.org'>postimages.org</a>). The link should include an image file extension, i.e. ".jpg", ".png", ".webp" and so on. On iOS, if you're saving an image directly from the website (not from Google search), it's probably the right link!</blockquote>
-        <h3>For HSR messages</h3>
-        <p>Q: My custom icon has a weird shape, how do I make it display properly?</p>
-        <blockquote>A: Crop it into a square and re-upload.</blockquote>
         <h3>For iOS or KKT messages</h3>
         <p>Q: Two or more of my contacts have the same name. How do I make it so they can appear differently?</p>
         <blockquote>A: Add a space (or multiple spaces) after the different contacts' names.</blockquote>
