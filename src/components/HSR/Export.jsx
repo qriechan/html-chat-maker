@@ -14,7 +14,7 @@ function Export({ messages, chatName, chatDesc, imageURLs }) {
     const generateMessageHTML = (message) => {
         const { contactName, textValue, statusType, messageType } = message;
         const iconRef = contactName.replace(/ /g, '_');
-        const iconURL = imageURLs[`${iconRef}_Icon`] || '';
+        const iconURL = message.customIconURL || imageURLs[`${iconRef}_Icon`] || '';
         const isPictureMessage = messageType === 'picture';
         const isStickerMessage = messageType === 'sticker';
         const stickerURL = isStickerMessage ? getStickerURL(textValue) : '';
