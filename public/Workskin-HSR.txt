@@ -1,5 +1,6 @@
 #workskin .phone {
   max-width: 75vw;
+  min-width: 50vw;
   font-family: Bahnschrift, Inter, sans-serif !important;
   display: table;
   margin: auto;
@@ -105,7 +106,7 @@
   padding: .5em 1em;
   background: #d9caa9;
   max-width: 80%;
-  clear: both; 
+  clear: both;
   position: relative;
   box-shadow: #9ea0a1 1px 2px;
 }
