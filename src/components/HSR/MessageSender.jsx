@@ -2,11 +2,11 @@ import React from 'react'
 import { imageURLs } from './ImageURLs';
 import stickerIDs from './StickerIDs';
 
-function SenderMessage({ contact , text, imageURLs, messageClass }) {
+function SenderMessage({ contact , text, imageURLs, messageClass, customIconURL }) {
 
     const iconRef = contact.replace(/ /g, '_');
     const iconKey = `${iconRef}_Icon`;
-    const iconURL = imageURLs[iconKey] || 'https://i.postimg.cc/xdGSdCQH/Character-Unknown-Icon.webp';
+    const iconURL = customIconURL || imageURLs[iconKey] || 'https://i.postimg.cc/xdGSdCQH/Character-Unknown-Icon.webp';
     const isPictureMessage = messageClass === 'picture';
     const isStickerMessage = messageClass === 'sticker';
     

@@ -102,16 +102,18 @@ function Phone() {
                                 key={index}
                                 contact={message.contactName}
                                 text={message.textValue}
-                                imageURLs = {imageURLs}
+                                imageURLs={imageURLs}
                                 messageClass={message.messageType}
+                                customIconURL={message.customIconURL}
                             />
                         ) : message.statusType === 'send' ? (
                             <ReceiverMessage 
                                 key={index}
                                 contact={message.contactName}
                                 text={message.textValue}
-                                imageURLs = {imageURLs}
+                                imageURLs={imageURLs}
                                 messageClass={message.messageType}
+                                customIconURL={message.customIconURL}
                             />
                         ) : <ActionMessage
                                 key={index}

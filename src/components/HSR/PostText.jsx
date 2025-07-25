@@ -11,6 +11,9 @@ function PostText(props){
     const [statusType, setStatusType] = useState('send');
     const [messageType, setMessageType] = useState('text');
     const [selectedStickerId, setSelectedStickerId] = useState('');
+    const [customName, setCustomName] = useState('');
+    const [customIconURL, setCustomIconURL] = useState('');
+    const [searchTerm, setSearchTerm] = useState('');
     const inputPlaceholder = messageType === 'picture' 
         ? 'Paste image URL...' 
         : messageType === 'sticker'
@@ -22,9 +25,19 @@ function PostText(props){
         {value: "action", label: "Action"}
     ];
 
+    const filteredNames = characterNames.filter(name =>
+        name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        const messageDetails = { textValue, contactName, statusType, messageType };
+        const messageDetails = {
+            textValue,
+            contactName: contactName === 'Other' ? customName || 'Other' : contactName,
+            statusType,
+            messageType,
+            customIconURL: contactName === 'Other' ? customIconURL : null
+        };        
         console.log(messageDetails);
         props.onSubmit(messageDetails);
         setTextValue('');
@@ -39,13 +52,45 @@ function PostText(props){
     return (
         <div className='write-text'>
             <form onSubmit={handleSubmit}>
-                <select value={contactName} onChange={(e) => setContactName(e.target.value)} required>
-                    {characterNames.map((name, index) => (
-                        <option key={index} value={name}>
-                            {name}
-                        </option>
+                <input 
+                    type="text" 
+                    placeholder="Search characters..." 
+                    value={searchTerm} 
+                    onChange={(e) => setSearchTerm(e.target.value)} 
+                />
+                <select                     
+                    value={contactName} 
+                    onChange={(e) => {
+                        setContactName(e.target.value);
+                        if (e.target.value !== 'Other') {
+                            setCustomName('');
+                            setCustomIconURL('');
+                        }
+                    }}  
+                    required>
+                    {filteredNames.map((name, index) => (
+                        <option key={index} value={name}>{name}</option>
                     ))}
+                    <option value="Other">Other</option>
                 </select>
+                {contactName === 'Other' && (
+                    <>
+                        <input 
+                            type="text" 
+                            placeholder="Enter custom name" 
+                            value={customName}
+                            onChange={(e) => setCustomName(e.target.value)}
+                            required
+                        />
+                        <input 
+                            type="url" 
+                            placeholder="Paste icon URL (image)" 
+                            value={customIconURL}
+                            onChange={(e) => setCustomIconURL(e.target.value)}
+                            required
+                        />
+                    </>
+                )}
                 <input 
                     type="text" 
                     required
