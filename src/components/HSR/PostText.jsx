@@ -74,10 +74,9 @@ function PostText(props){
                     <option value="Other">Other</option>
                 </select>
                 {contactName === 'Other' && (
-                    <div className='custom-name'>
+                    <>
                         <input 
                             type="text" 
-                            className="custom-input"
                             placeholder="Enter custom name" 
                             value={customName}
                             onChange={(e) => setCustomName(e.target.value)}
@@ -85,13 +84,12 @@ function PostText(props){
                         />
                         <input 
                             type="url" 
-                            className="custom-input"
                             placeholder="Paste icon URL (image)" 
                             value={customIconURL}
                             onChange={(e) => setCustomIconURL(e.target.value)}
                             required
                         />
-                    </div>
+                    </>
                 )}
                 <input 
                     type="text" 

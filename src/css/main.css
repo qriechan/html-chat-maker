@@ -816,21 +816,6 @@ label {
   background-color: #121212;
   border-color: #121212;
 }
-.write-text .custom-name {
-  background-color: #666868;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
-  margin-top: 1rem;
-  margin-bottom: 0.5rem;
-  width: 80%;
-  height: -moz-fit-content;
-  height: fit-content;
-}
-.write-text .custom-input {
-  margin-top: 0;
-}
 
 .write-ios-text {
   background-color: #cbcecf;

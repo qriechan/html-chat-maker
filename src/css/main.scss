@@ -972,23 +972,6 @@ label {
             border-color: $dark-color;
         }
     }
-
-    .custom-name {
-        background-color: $sub-color;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 0 auto;
-        margin-top: 1rem;
-        margin-bottom: .5rem;
-        width: 80%;
-        height: fit-content;
-    }
-
-    .custom-input {
-        margin-top: 0;
-    }
-
 }
 
 .write-ios-text {
