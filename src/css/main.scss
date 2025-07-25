@@ -888,7 +888,7 @@ label {
     align-items: center;
     text-align: center;
 
-    input[type=text] {
+    %input-text {
         margin-top: .75rem;
         font-family: $hsr-font-family;
         width: 60%;
@@ -903,19 +903,12 @@ label {
         }
     }
 
-    input[type=url] {
-        margin-top: .75rem;
-        font-family: $hsr-font-family;
-        width: 60%;
-        padding: .5rem 1rem .5rem 1rem;
-        border: .094rem solid $bgcolor-hsr;
-        font-size: medium;
-        outline: none;
+    input[type=text] {
+        @extend %input-text
+    }
 
-        &:focus {
-            border-color: $dark-color;
-            transition: .15s;
-        }
+    input[type=url] {
+        @extend %input-text
     }
 
     .text-send {
@@ -978,6 +971,10 @@ label {
             background-color: $dark-color;
             border-color: $dark-color;
         }
+    }
+
+    .custom-name {
+        background-color: $sub-color;
     }
 
 }
