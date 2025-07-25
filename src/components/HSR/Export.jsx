@@ -12,9 +12,9 @@ function Export({ messages, chatName, chatDesc, imageURLs }) {
     };
 
     const generateMessageHTML = (message) => {
-        const { contactName, textValue, statusType, messageType } = message;
+        const { contactName, textValue, statusType, messageType, customIconURL } = message;
         const iconRef = contactName.replace(/ /g, '_');
-        const iconURL = messages.customIconURL || imageURLs[`${iconRef}_Icon`] || '';
+        const iconURL = customIconURL || imageURLs[`${iconRef}_Icon`] || '';
         const isPictureMessage = messageType === 'picture';
         const isStickerMessage = messageType === 'sticker';
         const stickerURL = isStickerMessage ? getStickerURL(textValue) : '';
