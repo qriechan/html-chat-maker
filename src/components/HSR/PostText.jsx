@@ -33,10 +33,10 @@ function PostText(props){
         e.preventDefault();
         const messageDetails = {
             textValue,
-            contactName: contactName === 'Other' ? customName || 'Other' : contactName,
+            contactName: contactName === 'Custom' ? customName || 'Custom' : contactName,
             statusType,
             messageType,
-            customIconURL: contactName === 'Other' ? customIconURL : null
+            customIconURL: contactName === 'Custom' ? customIconURL : null
         };        
         console.log(messageDetails);
         props.onSubmit(messageDetails);
@@ -62,7 +62,7 @@ function PostText(props){
                     value={contactName} 
                     onChange={(e) => {
                         setContactName(e.target.value);
-                        if (e.target.value !== 'Other') {
+                        if (e.target.value !== 'Custom') {
                             setCustomName('');
                             setCustomIconURL('');
                         }
@@ -71,9 +71,9 @@ function PostText(props){
                     {filteredNames.map((name, index) => (
                         <option key={index} value={name}>{name}</option>
                     ))}
-                    <option value="Other">Other</option>
+                    <option value="Custom">Custom</option>
                 </select>
-                {contactName === 'Other' && (
+                {contactName === 'Custom' && (
                     <>
                         <input 
                             type="text" 

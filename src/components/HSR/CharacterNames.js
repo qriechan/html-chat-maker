@@ -1,6 +1,6 @@
 const characterNames = [
     "Unknown",
-    "Other",
+    "Custom",
     "Caelus",
     "Stelle",
     "Acheron",
