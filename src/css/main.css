@@ -818,6 +818,10 @@ label {
 }
 .write-text .custom-name {
   background-color: #666868;
+  width: 75%;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 1rem;
 }
 
 .write-ios-text {
