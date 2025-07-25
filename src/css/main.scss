@@ -975,9 +975,18 @@ label {
 
     .custom-name {
         background-color: $sub-color;
-        width: 75%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        margin-top: 1rem;
+        margin-bottom: .5rem;
+        width: 80%;
         height: fit-content;
-        padding: $main-padding;
+    }
+
+    .custom-input {
+        margin-top: 0;
     }
 
 }
