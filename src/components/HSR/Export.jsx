@@ -1,6 +1,5 @@
 import React from 'react'
 import { useState } from 'react'
-import { imageURLs } from './ImageURLs';
 import stickerIDs from './StickerIDs';
 
 function Export({ messages, chatName, chatDesc, imageURLs }) {
@@ -81,7 +80,7 @@ function Export({ messages, chatName, chatDesc, imageURLs }) {
             <p class='bio'>${chatDesc}</p>
         </div>
         `;
-        
+         
         const messagesHTML = messages.map(generateMessageHTML).join('');
         
         const fullHTML = `
